@@ -107,6 +107,11 @@ class ContactUsPage extends React.Component {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }
+
+  handleSubmit(e){
+    e.preventDefault();
+    const data = new FormData(e.target);
+  }
   render() {
     const { classes } = this.props;
     const url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCWtNL43rZAsC2bRkR5ryzOs005edUug6o"
@@ -140,7 +145,7 @@ class ContactUsPage extends React.Component {
                     <br />
                     <br />
                   </p>
-                  <form>
+                  <form onSubmit={this.handleSubmit}>
                     <CustomInput
                       labelText="Your Name"
                       id="float"
