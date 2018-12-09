@@ -126,32 +126,15 @@ function HeaderLinks({ ...props }) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={dropdownHoverColor}
-          buttonText="Coach | Consultant"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link
-              to="/sections#headers"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "headers")}
-            >
-              Free Training
-            </Link>,
-            <a
-              href="https://ericscroggins.clickfunnels.com/order-page"
-              className={classes.dropdownLink}
-            >
-              Vision Blockers Online Course
-            </a>,
-          ]}
-        />
+        <Link
+          to="/coach"
+          className={classes.navButton}
+          style={{color: 'black'}}
+        >
+          <Button color="transparent">
+            Coach | Consultant
+          </Button>
+        </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Link

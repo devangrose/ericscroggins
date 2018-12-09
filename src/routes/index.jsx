@@ -18,31 +18,16 @@ import Contact from "views/Contact/Contact.js";
 import Speaker from "views/Speaker/Speaker.js";
 import About from "views/About/About.js";
 import Booking from "views/Booking/Booking.js";
+import Coach from "views/Coach/Coach.js";
 
 var indexRoutes = [
-  { path: "/about-us", name: "AboutUsPage", component: AboutUsPage },
-  { path: "/blog-post", name: "BlogPostPage", component: BlogPostPage },
-  { path: "/blog-posts", name: "BlogPostsPage", component: BlogPostsPage },
-  { path: "/components", name: "Components", component: ComponentsPage },
-  { path: "/contact-us", name: "ContactUsPage", component: ContactUsPage },
-  { path: "/ecommerce-page", name: "EcommercePage", component: EcommercePage },
-  { path: "/landing-page", name: "LandingPage", component: LandingPage },
-  { path: "/login-page", name: "LoginPage", component: LoginPage },
-  { path: "/pricing", name: "PricingPage", component: PricingPage },
-  { path: "/profile-page", name: "ProfilePage", component: ProfilePage },
-  { path: "/product-page", name: "ProductPage", component: ProductPage },
-  { path: "/sections", name: "SectionsPage", component: SectionsPage },
-  {
-    path: "/shopping-cart-page",
-    name: "ShoppingCartPage",
-    component: ShoppingCartPage
-  },
   { path: "/signup-page", name: "SignupPage", component: SignupPage },
   { path: "/", name: "Home", component: Home },
   { path: "/contact", name: "Contact", component: Contact},
   { path: "/speaker", name: "Speaker", component: Speaker},
   { path: "/about", name: "About", component: About},
   { path: "/booking", name: "Booking", component: Booking},
+  { path: "/coach", name: "Coach", component: Coach},
 ];
 
 export default indexRoutes;
