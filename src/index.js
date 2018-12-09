@@ -5,6 +5,7 @@ import { Router, Route, Switch, Link } from "react-router-dom";
 // sections for this page
 import Header from "components/Header/Header.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import ScrollToTop from "Components/ScrollToTop.js";
 
 import indexRoutes from "routes/index.jsx";
 
@@ -15,7 +16,7 @@ var hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
-    <div>
+    <ScrollToTop>
     <Header
         brand={<Link to="/"><img src={logo} style={{width: "100%", textAlign: 'left'}}/></Link>}
         links={<HeaderLinks dropdownHoverColor="info" />}
@@ -27,7 +28,7 @@ ReactDOM.render(
         return <Route exact path={prop.path} key={key} component={prop.component} />;
       })}
       </div>
-    </div>
+    </ScrollToTop>
   </Router>,
   document.getElementById("root")
 );
