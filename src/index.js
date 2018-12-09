@@ -22,9 +22,11 @@ ReactDOM.render(
         fixed
         color="white"
       />
+      <div style={{marginTop: '100px'}}>
       {indexRoutes.map((prop, key) => {
         return <Route exact path={prop.path} key={key} component={prop.component} />;
       })}
+      </div>
     </div>
   </Router>,
   document.getElementById("root")
