@@ -79,11 +79,11 @@ class Components extends React.Component {
           </GridContainer>
         </div>
 
-        <div className={classNames(classes.main)} style={{background: primaryColor}}>
+        <div style={{paddingTop: '7%'}}>
+          <div style={{margin: 'auto', textAlign: 'center'}}>
+            <img src={require('assets/img/speakerLogo.png')} style={{height: '20vh', width: 'auto', }}/>
+          </div>
           <GridContainer style={{margin: "5%"}}>
-            <GridItem md={12}>
-              <h1 style={{color: "#ffffff", textAlign: "center"}}>Speaking</h1>
-            </GridItem>
             { speakingCards.map((card, index) => (
               <GridItem md={3} style={{margin: "0px"}}>
                 <HomeCard src={card.src} title={card.title} body={card.body} link={card.link}/>
@@ -92,11 +92,11 @@ class Components extends React.Component {
           </GridContainer>
         </div>
         <Testimonials/>
-        <div className={classNames(classes.main)} style={{background: primaryColor}}>
+        <div style={{paddingTop: '7%'}}>
+          <div style={{margin: 'auto', textAlign: 'center'}}>
+            <img src={require('assets/img/coachLogo.png')} style={{height: '20vh', width: 'auto', }}/>
+          </div>
           <GridContainer style={{margin: "5%"}}>
-            <GridItem md={12}>
-              <h1 style={{color: "#ffffff", textAlign: "center"}}>Coaching</h1>
-            </GridItem>
             { coachingCards.map((card, index) => (
               <GridItem md={3} style={{margin: "0px"}}>
                 <HomeCard src={card.src} title={card.title} body={card.body} link={card.link}/>
@@ -104,18 +104,20 @@ class Components extends React.Component {
             ))}
           </GridContainer>
         </div>
-        <div className={classes.container}>
+        <div>
           <GridContainer style={{margin: "5%"}}>
             <GridItem md={12} style={{margin: '5%'}}>
               <h1 style={{color: primaryColor, textAlign: "center"}}>Videos</h1>
             </GridItem>
-            <GridItem md={4}>
+            <GridItem md={4} style={{margin: '3% 0'}}>
+              <div style={{height: '30vh'}}>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </GridItem>
+            <GridItem md={4} style={{margin: '3% 0'}}>
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </GridItem>
-            <GridItem md={4}>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </GridItem>
-            <GridItem md={4}>
+            <GridItem md={4} style={{margin: '3% 0'}}>
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </GridItem>
           </GridContainer>
