@@ -30,8 +30,8 @@ import contactUsStyle from "assets/jss/material-kit-pro-react/views/contactUsSty
 const CustomSkinMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
-      defaultZoom={14}
-      defaultCenter={{ lat: 44.43353, lng: 26.093928 }}
+      defaultZoom={10}
+      defaultCenter={{ lat: 47.6062, lng: -122.3321 }}
       defaultOptions={{
         scrollwheel: false,
         zoomControl: true,
