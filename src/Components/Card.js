@@ -34,7 +34,7 @@ function CardExample(props) {
         <p>
           {props.body}
         </p>
-        <Button color="primary" round><Link className={classes.link} to={props.link}>Do something</Link></Button>
+        <Button color="primary" round><Link className={classes.link} to={props.link}>Learn More</Link></Button>
       </CardBody>
     </Card>
   );

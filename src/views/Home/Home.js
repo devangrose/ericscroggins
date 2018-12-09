@@ -20,14 +20,18 @@ import Parallax from "components/Parallax/Parallax.jsx";
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 import HomeCard from 'Components/Card.js';
 import Testimonials from './Testimonials.js';
+import Section from './Section.js';
 
 
 import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
 import coaching from "assets/coaching.jpg";
-import speaking from "assets/speaking.png";
+import coachingLogo from 'assets/img/coachLogo.png';
+import consultingLogo from 'assets/img/consultantLogo.png';
+import speaking from "assets/img/speakerLogo.png";
 
 import speakingCards from 'views/Home/speakingCards.js';
 import coachingCards from 'views/Home/coachingCards.js';
+import consultingCards from 'views/Home/consultingCards.js';
 
 const actions = [
   'succeed',
@@ -79,31 +83,12 @@ class Components extends React.Component {
           </GridContainer>
         </div>
 
-        <div style={{paddingTop: '7%'}}>
-          <div style={{margin: 'auto', textAlign: 'center'}}>
-            <img src={require('assets/img/speakerLogo.png')} style={{height: 'auto', maxWidth: '50%', }}/>
-          </div>
-          <GridContainer style={{margin: "5%"}}>
-            { speakingCards.map((card, index) => (
-              <GridItem md={3} style={{margin: "0px"}}>
-                <HomeCard src={card.src} title={card.title} body={card.body} link={card.link}/>
-              </GridItem>
-            ))}
-          </GridContainer>
-        </div>
+        <Section img={speaking} cards={speakingCards}/>
+
         <Testimonials/>
-        <div style={{paddingTop: '7%'}}>
-          <div style={{margin: 'auto', textAlign: 'center'}}>
-            <img src={require('assets/img/coachLogo.png')} style={{height: 'auto', maxWidth: '50%', }}/>
-          </div>
-          <GridContainer style={{margin: "5%"}}>
-            { coachingCards.map((card, index) => (
-              <GridItem md={3} style={{margin: "0px"}}>
-                <HomeCard src={card.src} title={card.title} body={card.body} link={card.link}/>
-              </GridItem>
-            ))}
-          </GridContainer>
-        </div>
+
+        <Section img={coachingLogo} cards={coachingCards}/>
+
         <div>
           <GridContainer style={{margin: "5%"}}>
             <GridItem md={12} style={{margin: '5%'}}>
@@ -122,6 +107,8 @@ class Components extends React.Component {
             </GridItem>
           </GridContainer>
         </div>
+
+        <Section img={consultingLogo} cards={consultingCards}/>
     </div>
     );
   }
