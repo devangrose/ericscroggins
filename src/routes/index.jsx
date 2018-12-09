@@ -15,6 +15,7 @@ import ShoppingCartPage from "views/ShoppingCartPage/ShoppingCartPage.jsx";
 import SignupPage from "views/SignupPage/SignupPage.jsx";
 import Home from "views/Home/Home.js";
 import Contact from "views/Contact/Contact.js";
+import Speaker from "views/Speaker/Speaker.js";
 
 var indexRoutes = [
   { path: "/about-us", name: "AboutUsPage", component: AboutUsPage },
@@ -37,6 +38,7 @@ var indexRoutes = [
   { path: "/signup-page", name: "SignupPage", component: SignupPage },
   { path: "/", name: "Home", component: Home },
   { path: "/contact", name: "Contact", component: Contact},
+  { path: "/speaker", name: "Speaker", component: Speaker},
 ];
 
 export default indexRoutes;
