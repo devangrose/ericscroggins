@@ -111,7 +111,7 @@ class ContactUsPage extends React.Component {
     const { classes } = this.props;
     const url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCWtNL43rZAsC2bRkR5ryzOs005edUug6o"
     return (
-      <div>
+      <div style={{marginBottom: '5vh'}}>
         <div className={classes.bigMap}>
           <CustomSkinMap
             googleMapURL={url}
