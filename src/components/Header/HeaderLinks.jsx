@@ -142,57 +142,14 @@ function HeaderLinks({ ...props }) {
               className={classes.dropdownLink}
               onClick={e => smoothScroll(e, "headers")}
             >
-              <Dns className={classes.dropdownIcons} /> Headers
+              Free Training
             </Link>,
-            <Link
-              to="/sections#features"
+            <a
+              href="https://ericscroggins.clickfunnels.com/order-page"
               className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "features")}
             >
-              <Build className={classes.dropdownIcons} /> Features
-            </Link>,
-            <Link
-              to="/sections#blogs"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "blogs")}
-            >
-              <ListIcon className={classes.dropdownIcons} /> Blogs
-            </Link>,
-            <Link
-              to="/sections#teams"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "teams")}
-            >
-              <People className={classes.dropdownIcons} /> Teams
-            </Link>,
-            <Link
-              to="/sections#projects"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "projects")}
-            >
-              <Assignment className={classes.dropdownIcons} /> Projects
-            </Link>,
-            <Link
-              to="/sections#pricing"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "pricing")}
-            >
-              <MonetizationOn className={classes.dropdownIcons} /> Pricing
-            </Link>,
-            <Link
-              to="/sections#testimonials"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "testimonials")}
-            >
-              <Chat className={classes.dropdownIcons} /> Testimonials
-            </Link>,
-            <Link
-              to="/sections#contacts"
-              className={classes.dropdownLink}
-              onClick={e => smoothScroll(e, "contacts")}
-            >
-              <Call className={classes.dropdownIcons} /> Contacts
-            </Link>
+              Vision Blockers Online Course
+            </a>,
           ]}
         />
       </ListItem>
@@ -215,6 +172,17 @@ function HeaderLinks({ ...props }) {
         >
           <Button color="transparent" style={{color: 'rgba(0,0,0,.87)'}}>
             Resources
+          </Button>
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link
+          to="/booking"
+          className={classes.navButton}
+          style={{color: 'rgba(0,0,0,.87)'}}
+        >
+          <Button color="primary" style={{color: 'white'}}>
+            Book Eric
           </Button>
         </Link>
       </ListItem>
