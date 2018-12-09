@@ -81,7 +81,7 @@ class Components extends React.Component {
 
         <div style={{paddingTop: '7%'}}>
           <div style={{margin: 'auto', textAlign: 'center'}}>
-            <img src={require('assets/img/speakerLogo.png')} style={{height: '20vh', width: 'auto', }}/>
+            <img src={require('assets/img/speakerLogo.png')} style={{height: 'auto', maxWidth: '50%', }}/>
           </div>
           <GridContainer style={{margin: "5%"}}>
             { speakingCards.map((card, index) => (
@@ -94,7 +94,7 @@ class Components extends React.Component {
         <Testimonials/>
         <div style={{paddingTop: '7%'}}>
           <div style={{margin: 'auto', textAlign: 'center'}}>
-            <img src={require('assets/img/coachLogo.png')} style={{height: '20vh', width: 'auto', }}/>
+            <img src={require('assets/img/coachLogo.png')} style={{height: 'auto', maxWidth: '50%', }}/>
           </div>
           <GridContainer style={{margin: "5%"}}>
             { coachingCards.map((card, index) => (
