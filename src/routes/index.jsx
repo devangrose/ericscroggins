@@ -13,7 +13,8 @@ import ProductPage from "views/ProductPage/ProductPage.jsx";
 import SectionsPage from "views/SectionsPage/SectionsPage.jsx";
 import ShoppingCartPage from "views/ShoppingCartPage/ShoppingCartPage.jsx";
 import SignupPage from "views/SignupPage/SignupPage.jsx";
-import Home from "views/Home/Home.js"
+import Home from "views/Home/Home.js";
+import Contact from "views/Contact/Contact.js";
 
 var indexRoutes = [
   { path: "/about-us", name: "AboutUsPage", component: AboutUsPage },
@@ -34,7 +35,8 @@ var indexRoutes = [
     component: ShoppingCartPage
   },
   { path: "/signup-page", name: "SignupPage", component: SignupPage },
-  { path: "/", name: "Home", component: Home }
+  { path: "/", name: "Home", component: Home },
+  { path: "/contact", name: "Contact", component: Contact},
 ];
 
 export default indexRoutes;
