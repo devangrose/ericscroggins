@@ -27,7 +27,8 @@ const styles = {
     color: 'white',
     fontWeight: 'bold',
     backgroundColor: primaryColor,
-    padding: '3vh 0'
+    padding: '3vh 0',
+    textTransform: 'uppercase',
   },
   gridContainer: {
     padding: '3vh 0',
