@@ -11,12 +11,12 @@ const styles = {
     margin: 'auto',
   },
   overlay: {
-    position: 'absolute',
-    top: '3%',
-    left: '3%',
+    marginTop: '3%',
+    marginLeft: '3%',
   },
   typography: {
     textTransform: 'uppercase',
+    color: 'white',
   },
 };
 class HeroImage extends Component {
@@ -38,10 +38,10 @@ class HeroImage extends Component {
       <div>
         <div className={classes.thumbnail} style={divStyle}>
           <div className={classes.overlay}>
-            <Typography variant="h5" className={classes.typography}>
+            <Typography component="h2" variant="h5" className={classes.typography}>
               {this.props.subheading}
             </Typography>
-            <Typography variant="h4" className={classes.typography}>
+            <Typography component="h1" variant="h4" className={classes.typography}>
               {this.props.heading}
             </Typography>
           </div>
