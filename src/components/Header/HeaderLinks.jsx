@@ -130,7 +130,7 @@ function HeaderLinks({ ...props }) {
           noLiPadding
           navDropdown
           hoverColor={dropdownHoverColor}
-          buttonText="Coach"
+          buttonText="Coach | Consultant"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
