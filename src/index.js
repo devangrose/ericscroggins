@@ -23,7 +23,7 @@ ReactDOM.render(
         color="white"
       />
       {indexRoutes.map((prop, key) => {
-        return <Route path={prop.path} key={key} component={prop.component} />;
+        return <Route exact path={prop.path} key={key} component={prop.component} />;
       })}
     </div>
   </Router>,
