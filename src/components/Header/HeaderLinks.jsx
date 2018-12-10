@@ -110,16 +110,16 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Link to="/speaker" className={classes.dropdownLink}>
               Corperate
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/speaker" className={classes.dropdownLink}>
               Sales
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/speaker" className={classes.dropdownLink}>
               Retreats
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/speaker" className={classes.dropdownLink}>
               Inspirational
             </Link>,
           ]}
@@ -137,16 +137,16 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Link to="/coach" className={classes.dropdownLink}>
               One-on-One
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/coach" className={classes.dropdownLink}>
               Group
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/coach" className={classes.dropdownLink}>
               Personal
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/coach" className={classes.dropdownLink}>
               Professional
             </Link>,
           ]}
@@ -164,11 +164,32 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Link to="/consultant" className={classes.dropdownLink}>
               Financial
             </Link>,
-            <Link to="/components" className={classes.dropdownLink}>
+            <Link to="/consultant" className={classes.dropdownLink}>
               Business Development
+            </Link>,
+          ]}
+        />
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          hoverColor={primaryColor}
+          buttonText="Contact"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={Apps}
+          dropdownList={[
+            <Link to="/contact" className={classes.dropdownLink}>
+              Contact Eric
+            </Link>,
+            <Link to="/meeting-planner" className={classes.dropdownLink}>
+              Meeting Planner
             </Link>,
           ]}
         />
