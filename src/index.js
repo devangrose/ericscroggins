@@ -17,13 +17,15 @@ var hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <ScrollToTop>
-    <Header
-        brand={<Link to="/"><img src={logo} style={{width: "100%", textAlign: 'left'}}/></Link>}
-        links={<HeaderLinks dropdownHoverColor="info" />}
-        fixed
-        color="white"
-      />
-      <div style={{marginTop: '100px'}}>
+      <div style={{ marginBottom: '71px'}}>
+        <Header
+            brand={<Link to="/"><img src={logo} style={{width: "100%", textAlign: 'left'}}/></Link>}
+            links={<HeaderLinks dropdownHoverColor="info" />}
+            color="white"
+            fixed
+        />
+      </div>
+      <div>
       {indexRoutes.map((prop, key) => {
         return <Route exact path={prop.path} key={key} component={prop.component} />;
       })}

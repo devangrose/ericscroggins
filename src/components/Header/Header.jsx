@@ -79,7 +79,7 @@ class Header extends React.Component {
       [classes.fixed]: fixed
     });
     return (
-      <AppBar className={appBarClasses}>
+      <AppBar className={appBarClasses} style={{zIndex: 10,}}>
         <Toolbar className={classes.container}>
           <Button className={classes.title}>
             <Link to="/">{brand}</Link>

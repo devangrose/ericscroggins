@@ -56,7 +56,7 @@ class Components extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div>
-        <Parallax image={require("assets/img/hero.jpg")} style={{marginTop: "80px"}}>
+        <Parallax image={require("assets/img/hero.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
