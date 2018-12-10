@@ -19,6 +19,7 @@ import Speaker from "views/Speaker/Speaker.js";
 import About from "views/About/About.js";
 import Booking from "views/Booking/Booking.js";
 import Coach from "views/Coach/Coach.js";
+import Resources from "../views/Resources/Rosources.js";
 
 var indexRoutes = [
   { path: "/signup-page", name: "SignupPage", component: SignupPage },
@@ -28,6 +29,7 @@ var indexRoutes = [
   { path: "/about", name: "About", component: About},
   { path: "/booking", name: "Booking", component: Booking},
   { path: "/coach", name: "Coach", component: Coach},
+  { path: "/resources", name: "Resources", component: Resources},
 ];
 
 export default indexRoutes;
