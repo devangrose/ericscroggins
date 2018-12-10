@@ -42,6 +42,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-kit-pro-react/components/headerLinksStyle.jsx";
+import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 
 function HeaderLinks({ ...props }) {
   const easeInOutQuad = (t, b, c, d) => {
@@ -101,7 +102,7 @@ function HeaderLinks({ ...props }) {
         <CustomDropdown
           noLiPadding
           navDropdown
-          hoverColor={dropdownHoverColor}
+          hoverColor={primaryColor}
           buttonText="Speaker"
           buttonProps={{
             className: classes.navLink,
@@ -110,42 +111,67 @@ function HeaderLinks({ ...props }) {
           buttonIcon={Apps}
           dropdownList={[
             <Link to="/" className={classes.dropdownLink}>
-              <LineStyle className={classes.dropdownIcons} /> Presentation Page
+              Corperate
             </Link>,
             <Link to="/components" className={classes.dropdownLink}>
-              <Layers className={classes.dropdownIcons} />All components
+              Sales
             </Link>,
-            <a
-              href="https://demos.creative-tim.com/material-kit-pro-react/#/documentation/tutorial"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              <Icon className={classes.dropdownIcons}>content_paste</Icon>Documentation
-            </a>
+            <Link to="/components" className={classes.dropdownLink}>
+              Retreats
+            </Link>,
+            <Link to="/components" className={classes.dropdownLink}>
+              Inspirational
+            </Link>,
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Link
-          to="/coach"
-          className={classes.navButton}
-          style={{color: 'black'}}
-        >
-          <Button color="transparent">
-            Coach | Consultant
-          </Button>
-        </Link>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          hoverColor={primaryColor}
+          buttonText="Coach"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={Apps}
+          dropdownList={[
+            <Link to="/" className={classes.dropdownLink}>
+              One-on-One
+            </Link>,
+            <Link to="/components" className={classes.dropdownLink}>
+              Group
+            </Link>,
+            <Link to="/components" className={classes.dropdownLink}>
+              Personal
+            </Link>,
+            <Link to="/components" className={classes.dropdownLink}>
+              Professional
+            </Link>,
+          ]}
+        />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Link
-          to="/contact"
-          className={classes.navButton}
-          style={{color: 'black'}}
-        >
-          <Button color="transparent">
-            Contact
-          </Button>
-        </Link>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          hoverColor={primaryColor}
+          buttonText="Consultant"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={Apps}
+          dropdownList={[
+            <Link to="/" className={classes.dropdownLink}>
+              Financial
+            </Link>,
+            <Link to="/components" className={classes.dropdownLink}>
+              Business Development
+            </Link>,
+          ]}
+        />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Link
