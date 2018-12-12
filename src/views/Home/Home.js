@@ -46,9 +46,12 @@ class Components extends React.Component {
     this.state= {
       index : 0,
     };
+  }
+
+  componentDidMount(){
     setInterval(() => {
       this.setState({
-        index: (this.state.index += 1) % 4
+        index: (this.state.index + 1) % 4
       });
     }, 3000);
   }
