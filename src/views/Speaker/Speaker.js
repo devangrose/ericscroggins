@@ -7,6 +7,12 @@ import HeroImage from "Components/HeroImage.js";
 
 import { primaryColor, grayColor } from "assets/jss/material-kit-pro-react.jsx";
 
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+
 const stickHeight = 125;
 
 const styles = {
@@ -21,23 +27,23 @@ const styles = {
     },
     rhomb: {
         boxSizing: "content-box",
-        width: "70px",
-        height: "70px",
+        width: "30px",
+        height: "30px",
         margin: "3px 0 0 30px",
-        border: "1px solid  " + primaryColor,
+        border: "3px solid  " + primaryColor,
         font: "normal 100%/normal Arial, Helvetica, sans-serif",
         color: grayColor,
         textOverflow: "clip",
         background: grayColor,
         transform: "rotateZ(-45deg)",
         transformOrigin: "0 100% 0deg",
-        borderRadius: '10px',
+        borderRadius: '5px',
     },
     line: {
       borderLeft: "6px solid " + primaryColor,
       height: "300px",
-      marginLeft: "63px",
-      top: "-410px",
+      marginLeft: "65px",
+      top: "-420px",
       position: "relative",
       zIndex: "-1",
     },
@@ -53,6 +59,7 @@ class Speaker extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     window.addEventListener("scroll", this.checkScroll, true);
     const slipperyDivHeight = this.refs.slipperyDiv.getBoundingClientRect().top ;
     this.setState({
@@ -84,34 +91,60 @@ class Speaker extends Component {
             </GridItem>
             <GridItem xs={4}>
               <div ref="slipperyDiv" hidden={this.state.stick} className={classes.slippery}>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div className={classes.line}> </div>
+                <List>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="FUEL YOUR TEAM'S VISION" />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="ERIC'S SPEAKING PHILOSOPHY" />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="SPEAKING TOPICS" />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="JOURNEY TO ONEREDMOND" />
+                  </ListItem>
+                </List>
               </div>
               <div ref="start" hidden={!this.state.stick} className={classes.sticky}>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div style={{ marginBottom: "50px" }}>
-                  <div className={classes.rhomb}> </div>
-                </div>
-                <div className={classes.line}> </div>
+                <List>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="FUEL YOUR TEAM'S VISION" />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="ERIC'S SPEAKING PHILOSOPHY" />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="SPEAKING TOPICS" />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <div className={classes.rhomb}> </div>
+                    </ListItemIcon>
+                    <ListItemText primary="JOURNEY TO ONEREDMOND" />
+                  </ListItem>
+                </List>
               </div>
             </GridItem>
             <GridItem xs={8}>
