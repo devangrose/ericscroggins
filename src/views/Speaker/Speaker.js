@@ -7,60 +7,59 @@ import HeroImage from "Components/HeroImage.js";
 
 import { primaryColor, grayColor } from "assets/jss/material-kit-pro-react.jsx";
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const stickHeight = 125;
 
 const styles = {
-    ...componentsStyle,
-    sticky: {
-        position: "fixed",
-        top: stickHeight + "px",
-    },
-    slippery: {
-        position: "relative",
-    },
-    rhomb: {
-        boxSizing: "content-box",
-        width: "30px",
-        height: "30px",
-        margin: "3px 0 0 30px",
-        border: "3px solid  " + primaryColor,
-        font: "normal 100%/normal Arial, Helvetica, sans-serif",
-        color: grayColor,
-        textOverflow: "clip",
-        background: grayColor,
-        transform: "rotateZ(-45deg)",
-        transformOrigin: "0 100% 0deg",
-        borderRadius: '5px',
-    },
-    line: {
-      borderLeft: "6px solid " + primaryColor,
-      height: "300px",
-      marginLeft: "65px",
-      top: "-420px",
-      position: "relative",
-      zIndex: "-1",
-    },
+  ...componentsStyle,
+  sticky: {
+    position: "fixed",
+    top: stickHeight + "px"
+  },
+  slippery: {
+    position: "relative"
+  },
+  rhomb: {
+    boxSizing: "content-box",
+    width: "30px",
+    height: "30px",
+    margin: "3px 0 0 30px",
+    border: "3px solid  " + primaryColor,
+    font: "normal 100%/normal Arial, Helvetica, sans-serif",
+    color: grayColor,
+    textOverflow: "clip",
+    background: grayColor,
+    transform: "rotateZ(-45deg)",
+    transformOrigin: "0 100% 0deg",
+    borderRadius: "5px"
+  },
+  line: {
+    borderLeft: "6px solid " + primaryColor,
+    height: "300px",
+    marginLeft: "65px",
+    top: "-420px",
+    position: "relative",
+    zIndex: "-1"
+  }
 };
 
 class Speaker extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       listWidth: 350,
-      stick: false,
+      stick: false
     };
   }
 
   componentDidMount() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     window.addEventListener("scroll", this.checkScroll, true);
+
     const slipperyDivHeight = this.refs.slipperyDiv.getBoundingClientRect().top ;
     const slipperyDivWidth = this.refs.slipperyDiv.getBoundingClientRect().width;
     const fuelHeight = this.refs.fuelYourTeamsVision.getBoundingClientRect().y;
@@ -70,62 +69,78 @@ class Speaker extends Component {
     const selectedStyle = { background: primaryColor };
     const unSelectedStyle = { background: grayColor };
     this.setState({
-        initialSlipperyHeight: slipperyDivHeight,
-        divWidth: slipperyDivWidth,
-        fuelHeight: fuelHeight,
-        ericsHeight: ericsHeight,
-        topicsHeight: topicsHeight,
-        journeyHeight: journeyHeight,
-        fuelStyle: selectedStyle,
-        ericsStyle: unSelectedStyle,
-        topicsStyle: unSelectedStyle,
-        journeyStyle: unSelectedStyle,
+      initialSlipperyHeight: slipperyDivHeight,
+      divWidth: slipperyDivWidth,
+      fuelHeight: fuelHeight,
+      ericsHeight: ericsHeight,
+      topicsHeight: topicsHeight,
+      journeyHeight: journeyHeight,
+      fuelStyle: selectedStyle,
+      ericsStyle: unSelectedStyle,
+      topicsStyle: unSelectedStyle,
+      journeyStyle: unSelectedStyle,
     });
   }
 
-  checkScroll = (e) => {
-    const slipperyDivHeight = this.refs.slipperyDiv.getBoundingClientRect().top ;
+  checkScroll = e => {
     const shouldStick = this.state.initialSlipperyHeight - stickHeight < window.scrollY;
-    const windowCenter = window.scrollY + (window.innerHeight / 2)
+    const windowCenter = window.scrollY + window.innerHeight / 2
     const selectedStyle = { background: primaryColor };
     const unSelectedStyle = { background: grayColor };
     if (windowCenter < this.state.ericsHeight) {
       this.setState({
-          fuelStyle: selectedStyle,
-          ericsStyle: unSelectedStyle,
-          topicsStyle: unSelectedStyle,
-          journeyStyle: unSelectedStyle,
+        fuelStyle: selectedStyle,
+        ericsStyle: unSelectedStyle,
+        topicsStyle: unSelectedStyle,
+        journeyStyle: unSelectedStyle
       });
     } else if (windowCenter < this.state.topicsHeight) {
       this.setState({
-          fuelStyle: unSelectedStyle,
-          ericsStyle: selectedStyle,
-          topicsStyle: unSelectedStyle,
-          journeyStyle: unSelectedStyle,
+        fuelStyle: unSelectedStyle,
+        ericsStyle: selectedStyle,
+        topicsStyle: unSelectedStyle,
+        journeyStyle: unSelectedStyle
       });
     } else if (windowCenter < this.state.journeyHeight) {
       this.setState({
-          fuelStyle: unSelectedStyle,
-          ericsStyle: unSelectedStyle,
-          topicsStyle: selectedStyle,
-          journeyStyle: unSelectedStyle,
+        fuelStyle: unSelectedStyle,
+        ericsStyle: unSelectedStyle,
+        topicsStyle: selectedStyle,
+        journeyStyle: unSelectedStyle
       });
     } else {
       this.setState({
-          fuelStyle: unSelectedStyle,
-          ericsStyle: unSelectedStyle,
-          topicsStyle: unSelectedStyle,
-          journeyStyle: selectedStyle,
+        fuelStyle: unSelectedStyle,
+        ericsStyle: unSelectedStyle,
+        topicsStyle: unSelectedStyle,
+        journeyStyle: selectedStyle
       });
     }
     this.setState({
-        stick: shouldStick,
+      stick: shouldStick,
     });
+  }
+
+  listClick = height => {
+      console.log("fun TIME");
+      return (e) => {
+         console.log("SCROLL TIME");
+      }
+  }
+
+    myfunction = height => {
+        return (e) => {
+          window.scroll({
+              top: height - (window.innerHeight / 4),
+              left: 0,
+              behavior: 'smooth' 
+          });
+        }
   }
 
   render(){
     const { classes } = this.props;
-    return(
+    return (
         <div>
           <HeroImage source={require('assets/img/hero.jpg')} heading="THE VOICE TO BREAK BARRIERS" />
           <div className={classes.container} onScroll={this.checkScroll}>
@@ -136,25 +151,25 @@ class Speaker extends Component {
             <GridItem xs={4}>
               <div ref="slipperyDiv" hidden={this.state.stick} className={classes.slippery}>
                 <List>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.fuelHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.fuelStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="FUEL YOUR TEAM'S VISION" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.ericsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.ericsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="ERIC'S SPEAKING PHILOSOPHY" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.topicsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="SPEAKING TOPICS" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.journeyHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
@@ -164,25 +179,25 @@ class Speaker extends Component {
               </div>
               <div style={{ width: this.state.divWidth }} hidden={!this.state.stick} className={classes.sticky}>
                 <List>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.fuelHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.fuelStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="FUEL YOUR TEAM'S VISION" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.ericsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.ericsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="ERIC'S SPEAKING PHILOSOPHY" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.topicsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="SPEAKING TOPICS" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem button onClick={this.myfunction(this.state.journeyHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
