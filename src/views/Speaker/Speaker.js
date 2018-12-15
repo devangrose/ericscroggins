@@ -1,16 +1,15 @@
-import React, { Component } from "react";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import { withStyles, Typography } from "@material-ui/core";
-import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
 import HeroImage from "Components/HeroImage.js";
-
-import { primaryColor, grayColor } from "assets/jss/material-kit-pro-react.jsx";
-
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import React, { Component } from "react";
+import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
+import { withStyles, withWidth, Typography } from "@material-ui/core";
+
+import { primaryColor, grayColor } from "assets/jss/material-kit-pro-react.jsx";
 
 const stickHeight = 125;
 
@@ -56,120 +55,113 @@ class Speaker extends Component {
     };
   }
 
+  // Determine if the diamond is onscreen and return the appropriate styling
+  getDiamondStyle(lowerBound, upperBound) {
+    // Check if the window center is between the bounds
+    const windowCenter = window.scrollY + window.innerHeight / 2;
+    const isOnEricDiv = lowerBound <= windowCenter && windowCenter < upperBound;
+    if (isOnEricDiv) {
+      return { background: primaryColor };
+    } else {
+      return { background: grayColor };
+    }
+  }
+
+  // Set the state for the diamonds styling
+  setDiamonds() {
+    this.setState({
+      fuelStyle: this.getDiamondStyle(0, this.state.ericsHeight),
+      ericsStyle: this.getDiamondStyle(
+        this.state.ericsHeight,
+        this.state.topicsHeight
+      ),
+      topicsStyle: this.getDiamondStyle(
+        this.state.topicsHeight,
+        this.state.journeyHeight
+      ),
+      journeyStyle: this.getDiamondStyle(this.state.journeyHeight, Infinity)
+    });
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
-    window.addEventListener("scroll", this.checkScroll, true);
+    window.addEventListener("scroll", this.updateDiamonds, true);
 
-    const slipperyDivHeight = this.refs.slipperyDiv.getBoundingClientRect().top ;
+    // Set up the slippery Div
+    const slipperyDivHeight = this.refs.slipperyDiv.getBoundingClientRect().y;
     const slipperyDivWidth = this.refs.slipperyDiv.getBoundingClientRect().width;
+
+    // Get the heights for the divs to be nav'ed by the diamonds
     const fuelHeight = this.refs.fuelYourTeamsVision.getBoundingClientRect().y;
     const ericsHeight = this.refs.EricsSpeakingPhilosophy.getBoundingClientRect().y;
     const topicsHeight = this.refs.speakingTopics.getBoundingClientRect().y;
     const journeyHeight = this.refs.journeyToOneRedmond.getBoundingClientRect().y;
-    const selectedStyle = { background: primaryColor };
-    const unSelectedStyle = { background: grayColor };
+    this.setState(
+      {
+        initialSlipperyHeight: slipperyDivHeight,
+        divWidth: slipperyDivWidth,
+        fuelHeight: fuelHeight,
+        ericsHeight: ericsHeight,
+        topicsHeight: topicsHeight,
+        journeyHeight: journeyHeight
+      },
+      () => this.setDiamonds()
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.updateDiamonds);
+  }
+
+  // Set the diamonds styling base on window position
+  updateDiamonds = () => {
+    const shouldStick =
+      this.state.initialSlipperyHeight - stickHeight < window.scrollY;
     this.setState({
-      initialSlipperyHeight: slipperyDivHeight,
-      divWidth: slipperyDivWidth,
-      fuelHeight: fuelHeight,
-      ericsHeight: ericsHeight,
-      topicsHeight: topicsHeight,
-      journeyHeight: journeyHeight,
-      fuelStyle: selectedStyle,
-      ericsStyle: unSelectedStyle,
-      topicsStyle: unSelectedStyle,
-      journeyStyle: unSelectedStyle,
+      stick: shouldStick
     });
+    this.setDiamonds();
+  };
+
+  getScrollToFunction(height) {
+    return () => {
+      window.scroll({
+        top: height - window.innerHeight / 4,
+        left: 0,
+        behavior: "smooth"
+      });
+    };
   }
 
-  checkScroll = e => {
-    const shouldStick = this.state.initialSlipperyHeight - stickHeight < window.scrollY;
-    const windowCenter = window.scrollY + window.innerHeight / 2
-    const selectedStyle = { background: primaryColor };
-    const unSelectedStyle = { background: grayColor };
-    if (windowCenter < this.state.ericsHeight) {
-      this.setState({
-        fuelStyle: selectedStyle,
-        ericsStyle: unSelectedStyle,
-        topicsStyle: unSelectedStyle,
-        journeyStyle: unSelectedStyle
-      });
-    } else if (windowCenter < this.state.topicsHeight) {
-      this.setState({
-        fuelStyle: unSelectedStyle,
-        ericsStyle: selectedStyle,
-        topicsStyle: unSelectedStyle,
-        journeyStyle: unSelectedStyle
-      });
-    } else if (windowCenter < this.state.journeyHeight) {
-      this.setState({
-        fuelStyle: unSelectedStyle,
-        ericsStyle: unSelectedStyle,
-        topicsStyle: selectedStyle,
-        journeyStyle: unSelectedStyle
-      });
-    } else {
-      this.setState({
-        fuelStyle: unSelectedStyle,
-        ericsStyle: unSelectedStyle,
-        topicsStyle: unSelectedStyle,
-        journeyStyle: selectedStyle
-      });
-    }
-    this.setState({
-      stick: shouldStick,
-    });
-  }
-
-  listClick = height => {
-      console.log("fun TIME");
-      return (e) => {
-         console.log("SCROLL TIME");
-      }
-  }
-
-    myfunction = height => {
-        return (e) => {
-          window.scroll({
-              top: height - (window.innerHeight / 4),
-              left: 0,
-              behavior: 'smooth' 
-          });
-        }
-  }
-
-  render(){
+  render() {
     const { classes } = this.props;
     return (
         <div>
           <HeroImage source={require('assets/img/hero.jpg')} heading="THE VOICE TO BREAK BARRIERS" />
-          <div className={classes.container} onScroll={this.checkScroll}>
-          <GridContainer spacing={12}>
-            <GridItem xs={12}>
-              <h2 style={{ textAlign: "center" }} > </h2>
-            </GridItem>
-            <GridItem xs={4}>
+          <div className={classes.container} >
+          <GridContainer spacing={24}>
+            <GridItem xs={12} md={4} hidden={['xs','s'].includes(this.props.width)}>
               <div ref="slipperyDiv" hidden={this.state.stick} className={classes.slippery}>
                 <List>
-                  <ListItem button onClick={this.myfunction(this.state.fuelHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.fuelHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.fuelStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="FUEL YOUR TEAM'S VISION" />
                   </ListItem>
-                  <ListItem button onClick={this.myfunction(this.state.ericsHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.ericsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.ericsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="ERIC'S SPEAKING PHILOSOPHY" />
                   </ListItem>
-                  <ListItem button onClick={this.myfunction(this.state.topicsHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.topicsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="SPEAKING TOPICS" />
                   </ListItem>
-                  <ListItem button onClick={this.myfunction(this.state.journeyHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.journeyHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
@@ -179,25 +171,25 @@ class Speaker extends Component {
               </div>
               <div style={{ width: this.state.divWidth }} hidden={!this.state.stick} className={classes.sticky}>
                 <List>
-                  <ListItem button onClick={this.myfunction(this.state.fuelHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.fuelHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.fuelStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="FUEL YOUR TEAM'S VISION" />
                   </ListItem>
-                  <ListItem button onClick={this.myfunction(this.state.ericsHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.ericsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.ericsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="ERIC'S SPEAKING PHILOSOPHY" />
                   </ListItem>
-                  <ListItem button onClick={this.myfunction(this.state.topicsHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.topicsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
                     <ListItemText primary="SPEAKING TOPICS" />
                   </ListItem>
-                  <ListItem button onClick={this.myfunction(this.state.journeyHeight)}>
+                  <ListItem button onClick={this.getScrollToFunction(this.state.journeyHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
@@ -206,8 +198,8 @@ class Speaker extends Component {
                 </List>
               </div>
             </GridItem>
-            <GridItem xs={8}>
-              <div onScroll={this.checkScroll}>
+            <GridItem item xs={12} md={8}>
+              <div>
                 <div ref="fuelYourTeamsVision">
                   <Typography component="h3" variant="h3" paragraph="true">When it comes to choosing a professional speaker for your next event, you’ll find no one more respected wtih more insight, no one who will leave your audience or colleagues with such a sense of enthusiasm, passion for life, and a “can do” attitude as Dr. Eric J. Scroggins.  Eric is one of the most gifted communicators of our generation, and sense 1991, he has been delivering dynamic messages of hope and inspiration ot audiences around the world.  Whether your audience is 10 or 10,000, in North America or abroad, Eric can deliver a tailor-made message of inspiration that will leave your audience mesmerized and ready for more. </Typography>
                 </div>
@@ -253,4 +245,4 @@ class Speaker extends Component {
   }
 }
 
-export default withStyles(styles)(Speaker);
+export default withStyles(styles)(withWidth()(Speaker));
