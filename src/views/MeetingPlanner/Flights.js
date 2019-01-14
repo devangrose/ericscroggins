@@ -14,11 +14,6 @@ import {
 const styles = {
   ...componentsStyle,
   cardTitle,
-  cardLink,
-  cardSubtitle,
-  root: {
-    height: '100%',
-  },
   card: {
     width: '100%',
   },
@@ -28,27 +23,28 @@ const styles = {
       color: primaryColor
     }
   },
+  root: {
+    height: '100%',
+  }
 };
 
-class Questionaire extends Component {
+class ConferenceCall extends Component {
   render(){
     const { classes } = this.props;
     return (
       <Card className={classes.root}>
         <CardBody>
           <Typography component="h3" variant="h3" className={classes.cardTitle}>
-            Client Questionaire
+            Flights
           </Typography>
           <Typography component="body1" variant="body1" paragraph>
-            To ensure the highest quality presentation, please complete the client questionnaire and return it to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
+            Our office will book Eric’s flights and forward the itinerary to you.
           </Typography>
-          <a className={classes.cardLink} href="#">
-            Download here! 
-          </a>
         </CardBody> 
       </Card>
     )
   }
 }
 
-export default withStyles(styles)(Questionaire);
+export default withStyles(styles)(ConferenceCall);
+

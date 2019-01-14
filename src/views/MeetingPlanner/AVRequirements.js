@@ -14,11 +14,6 @@ import {
 const styles = {
   ...componentsStyle,
   cardTitle,
-  cardLink,
-  cardSubtitle,
-  root: {
-    height: '100%',
-  },
   card: {
     width: '100%',
   },
@@ -27,28 +22,29 @@ const styles = {
     '&:visited':{
       color: primaryColor
     }
-  },
+  }
 };
 
-class Questionaire extends Component {
+class AVRequirements extends Component {
   render(){
     const { classes } = this.props;
     return (
-      <Card className={classes.root}>
+      <Card>
         <CardBody>
           <Typography component="h3" variant="h3" className={classes.cardTitle}>
-            Client Questionaire
+            Audio/Visual Requirements
           </Typography>
-          <Typography component="body1" variant="body1" paragraph>
-            To ensure the highest quality presentation, please complete the client questionnaire and return it to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
-          </Typography>
-          <a className={classes.cardLink} href="#">
-            Download here! 
-          </a>
+          <ul>
+            <li><Typography component="body1" variant="body1">Eric has a wireless lavaliere microphone and will need access to a professional PA system.</Typography></li>
+            <li><Typography component="body1" variant="body1">Laptop, projector, wireless slide advancer and screen for PowerPoint presentation.</Typography></li>
+            <li><Typography component="body1" variant="body1">5-minute AV check</Typography></li>
+            <li><Typography component="body1" variant="body1">Room temperature bottled water & hot water for tea</Typography></li>
+          </ul>
         </CardBody> 
       </Card>
     )
   }
 }
 
-export default withStyles(styles)(Questionaire);
+export default withStyles(styles)(AVRequirements);
+

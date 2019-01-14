@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles, Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import Card from "components/Card/Card.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
@@ -14,11 +15,6 @@ import {
 const styles = {
   ...componentsStyle,
   cardTitle,
-  cardLink,
-  cardSubtitle,
-  root: {
-    height: '100%',
-  },
   card: {
     width: '100%',
   },
@@ -27,28 +23,26 @@ const styles = {
     '&:visited':{
       color: primaryColor
     }
-  },
+  }
 };
 
-class Questionaire extends Component {
+class ConferenceCall extends Component {
   render(){
     const { classes } = this.props;
     return (
-      <Card className={classes.root}>
+      <Card style={{height: '100%'}}>
         <CardBody>
           <Typography component="h3" variant="h3" className={classes.cardTitle}>
-            Client Questionaire
+            Additional Resources
           </Typography>
           <Typography component="body1" variant="body1" paragraph>
-            To ensure the highest quality presentation, please complete the client questionnaire and return it to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
+            Eric’s Introduction, Bio, Photos, etc., can be found on the <Link to="/about" className={classes.cardLink}>about</Link> page of our website.
           </Typography>
-          <a className={classes.cardLink} href="#">
-            Download here! 
-          </a>
         </CardBody> 
       </Card>
     )
   }
 }
 
-export default withStyles(styles)(Questionaire);
+export default withStyles(styles)(ConferenceCall);
+

@@ -16,9 +16,6 @@ const styles = {
   cardTitle,
   cardLink,
   cardSubtitle,
-  root: {
-    height: '100%',
-  },
   card: {
     width: '100%',
   },
@@ -28,6 +25,9 @@ const styles = {
       color: primaryColor
     }
   },
+  root: {
+    height: '100%',
+  }
 };
 
 class Questionaire extends Component {
@@ -37,14 +37,11 @@ class Questionaire extends Component {
       <Card className={classes.root}>
         <CardBody>
           <Typography component="h3" variant="h3" className={classes.cardTitle}>
-            Client Questionaire
+            Ground Transportation – Car Service
           </Typography>
           <Typography component="body1" variant="body1" paragraph>
-            To ensure the highest quality presentation, please complete the client questionnaire and return it to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
+            When you receive Eric’s flight itinerary from our office, please make arrangements for car service to and from the airport. Please send the details to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
           </Typography>
-          <a className={classes.cardLink} href="#">
-            Download here! 
-          </a>
         </CardBody> 
       </Card>
     )
@@ -52,3 +49,5 @@ class Questionaire extends Component {
 }
 
 export default withStyles(styles)(Questionaire);
+
+

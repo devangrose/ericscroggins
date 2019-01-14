@@ -14,11 +14,6 @@ import {
 const styles = {
   ...componentsStyle,
   cardTitle,
-  cardLink,
-  cardSubtitle,
-  root: {
-    height: '100%',
-  },
   card: {
     width: '100%',
   },
@@ -28,27 +23,27 @@ const styles = {
       color: primaryColor
     }
   },
+  root: {
+    height: '100%',
+  }
 };
 
-class Questionaire extends Component {
+class PowerPoint extends Component {
   render(){
     const { classes } = this.props;
     return (
       <Card className={classes.root}>
         <CardBody>
           <Typography component="h3" variant="h3" className={classes.cardTitle}>
-            Client Questionaire
+            PowerPoint Presentation
           </Typography>
           <Typography component="body1" variant="body1" paragraph>
-            To ensure the highest quality presentation, please complete the client questionnaire and return it to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
+            Please send a conference-themed PowerPoint for Eric's title slide to <a href="mailto:eric@ericscroggins.com" className={classes.emailLink}>eric@ericscroggins.com</a>. After the conference call, Eric will prepare his PowerPoint and email it to you. Eric will also bring a backup of the presentation on a flash drive.
           </Typography>
-          <a className={classes.cardLink} href="#">
-            Download here! 
-          </a>
         </CardBody> 
       </Card>
     )
   }
 }
 
-export default withStyles(styles)(Questionaire);
+export default withStyles(styles)(PowerPoint);

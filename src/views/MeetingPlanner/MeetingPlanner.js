@@ -5,6 +5,12 @@ import GridItem from "components/Grid/GridItem.jsx";
 
 import Questionaire from "views/MeetingPlanner/Questionaire.js";
 import ConferenceCall from "views/MeetingPlanner/ConferenceCall.js";
+import PowerPoint from "views/MeetingPlanner/PowerPoint.js";
+import AVRequirements from "views/MeetingPlanner/AVRequirements.js";
+import Hotel from "views/MeetingPlanner/Hotel.js";
+import Flights from "views/MeetingPlanner/Flights.js";
+import Transportation from "views/MeetingPlanner/Transportation.js";
+import AdditionalResources from "views/MeetingPlanner/AdditionalResources.js";
 
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
@@ -23,6 +29,9 @@ const styles = {
     fontWeight: 'bold',
     padding: '3vh 0',
   },
+  gridWrapper: {
+    height: '80%',
+  }
 };
 
 class MeetingPlanner extends Component {
@@ -38,11 +47,45 @@ class MeetingPlanner extends Component {
         </Typography>
         <div className={classes.container}>
           <GridContainer spacing={24}>
-            <GridItem md={4} sm={12}>
-              <Questionaire />
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <Questionaire />
+              </div>
             </GridItem>
-            <GridItem md={4} sm={12}>
-              <ConferenceCall />
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <ConferenceCall />
+              </div>
+            </GridItem>
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <PowerPoint />
+              </div>
+            </GridItem>
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <AVRequirements />
+              </div>
+            </GridItem>
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <Hotel />
+              </div>
+            </GridItem>
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <Flights />
+              </div>
+            </GridItem>
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <Transportation />
+              </div>
+            </GridItem>
+            <GridItem md={6} sm={12}>
+              <div className={classes.gridWrapper}>
+                <AdditionalResources />
+              </div>
             </GridItem>
           </GridContainer>
         </div>

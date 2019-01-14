@@ -22,6 +22,9 @@ const styles = {
     '&:visited':{
       color: primaryColor
     }
+  },
+  root: {
+    height: '100%'
   }
 };
 
@@ -29,7 +32,7 @@ class ConferenceCall extends Component {
   render(){
     const { classes } = this.props;
     return (
-      <Card>
+      <Card className={classes.root}>
         <CardBody>
           <Typography component="h3" variant="h3" className={classes.cardTitle}>
             Conference Call
