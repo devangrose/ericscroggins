@@ -3,6 +3,9 @@ import { withStyles, Typography } from '@material-ui/core';
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 
+import Questionaire from "views/MeetingPlanner/Questionaire.js";
+import ConferenceCall from "views/MeetingPlanner/ConferenceCall.js";
+
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
 
@@ -19,7 +22,7 @@ const styles = {
     color: primaryColor,
     fontWeight: 'bold',
     padding: '3vh 0',
-  }
+  },
 };
 
 class MeetingPlanner extends Component {
@@ -35,7 +38,12 @@ class MeetingPlanner extends Component {
         </Typography>
         <div className={classes.container}>
           <GridContainer spacing={24}>
-
+            <GridItem md={4} sm={12}>
+              <Questionaire />
+            </GridItem>
+            <GridItem md={4} sm={12}>
+              <ConferenceCall />
+            </GridItem>
           </GridContainer>
         </div>
       </div>
