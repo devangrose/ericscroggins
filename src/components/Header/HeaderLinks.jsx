@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from "react";
+import React, { Component }  from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // react components for routing our app without refresh
@@ -10,6 +10,9 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Icon from "@material-ui/core/Icon";
+import Collapse from '@material-ui/core/Collapse';
+
+import Collapsable from "Components/Collapsable.js"
 
 // @material-ui/icons
 import Apps from "@material-ui/icons/Apps";
@@ -36,6 +39,9 @@ import PersonAdd from "@material-ui/icons/PersonAdd";
 import Layers from "@material-ui/icons/Layers";
 import ShoppingBasket from "@material-ui/icons/ShoppingBasket";
 import LineStyle from "@material-ui/icons/LineStyle";
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import StarBorder from '@material-ui/icons/StarBorder';
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
@@ -44,15 +50,23 @@ import Button from "components/CustomButtons/Button.jsx";
 import headerLinksStyle from "assets/jss/material-kit-pro-react/components/headerLinksStyle.jsx";
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 
-function HeaderLinks({ ...props }) {
-  const easeInOutQuad = (t, b, c, d) => {
+
+class HeaderLinks extends Component {
+  state = {
+    open: true,
+  };
+
+  handleClick = () => {
+    this.setState(state => ({ open: !state.open }));
+  };
+  easeInOutQuad = (t, b, c, d) => {
     t /= d / 2;
     if (t < 1) return c / 2 * t * t + b;
     t--;
     return -c / 2 * (t * (t - 2) - 1) + b;
   };
 
-  const smoothScroll = (e, target) => {
+  smoothScroll = (e, target) => {
     if (window.location.pathname === "/sections") {
       var isMobile = navigator.userAgent.match(
         /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
@@ -66,7 +80,7 @@ function HeaderLinks({ ...props }) {
       }
     }
   };
-  const scrollGo = (element, to, duration) => {
+  scrollGo = (element, to, duration) => {
     var start = element.scrollTop,
       change = to - start,
       currentTime = 0,
@@ -82,142 +96,163 @@ function HeaderLinks({ ...props }) {
     };
     animateScroll();
   };
-  var onClickSections = {};
 
-  const { classes, dropdownHoverColor } = props;
-  return (
-    <List className={classes.list + " " + classes.mlAuto}>
-      <ListItem className={classes.listItem}>
-        <Link
-          to="/about"
-          className={classes.navButton}
-          style={{color: 'rgba(0,0,0,.87)'}}
-        >
-          <Button color="transparent" style={{color: 'rgba(0,0,0,.87)'}}>
-            About
-          </Button>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={primaryColor}
-          buttonText="Speaker"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/speaker" className={classes.dropdownLink}>
-              Corperate
-            </Link>,
-            <Link to="/speaker" className={classes.dropdownLink}>
-              Sales
-            </Link>,
-            <Link to="/speaker" className={classes.dropdownLink}>
-              Retreats
-            </Link>,
-            <Link to="/speaker" className={classes.dropdownLink}>
-              Inspirational
-            </Link>,
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={primaryColor}
-          buttonText="Coach"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/coach" className={classes.dropdownLink}>
-              One-on-One
-            </Link>,
-            <Link to="/coach" className={classes.dropdownLink}>
-              Group
-            </Link>,
-            <Link to="/coach" className={classes.dropdownLink}>
-              Personal
-            </Link>,
-            <Link to="/coach" className={classes.dropdownLink}>
-              Professional
-            </Link>,
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={primaryColor}
-          buttonText="Consultant"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/consultant" className={classes.dropdownLink}>
-              Financial
-            </Link>,
-            <Link to="/consultant" className={classes.dropdownLink}>
-              Business Development
-            </Link>,
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          hoverColor={primaryColor}
-          buttonText="Contact"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/contact" className={classes.dropdownLink}>
-              Contact Eric
-            </Link>,
-            <Link to="/meeting-planner" className={classes.dropdownLink}>
-              Meeting Planner
-            </Link>,
-          ]}
-        />
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link
-          to="/resources"
-          className={classes.navButton}
-          style={{color: 'rgba(0,0,0,.87)'}}
-        >
-          <Button color="transparent" style={{color: 'rgba(0,0,0,.87)'}}>
-            Resources
-          </Button>
-        </Link>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link
-          to="/booking"
-          className={classes.navButton}
-          style={{color: 'rgba(0,0,0,.87)'}}
-        >
-          <Button color="primary" style={{color: 'white'}}>
-            Book Eric
-          </Button>
-        </Link>
-      </ListItem>
-    </List>
-  );
+  render() {
+    var onClickSections = {};
+
+    const { classes, dropdownHoverColor } = this.props;
+    return (
+      <List className={classes.list + " " + classes.mlAuto}>
+        <ListItem className={classes.listItem}>
+          <Link
+            to="/about"
+            className={classes.navButton}
+            style={{color: 'rgba(0,0,0,.87)'}}
+          >
+            <Button color="transparent" style={{color: 'rgba(0,0,0,.87)'}}>
+              Meet Eric
+            </Button>
+          </Link>
+        </ListItem>
+        <ListItem className={classes.listItem}>
+          <CustomDropdown
+            noLiPadding
+            navDropdown
+            hoverColor={primaryColor}
+            buttonText="Speaker | Coach | Consultant"
+            buttonProps={{
+              className: classes.navLink,
+              color: "transparent"
+            }}
+            buttonIcon={Apps}
+            dropdownList={[
+              <CustomDropdown
+                noLiPadding
+                innerDropdown
+                ref="multi"
+                hoverColor={primaryColor}
+                buttonText="Speaker"
+                buttonProps={{
+                  className: classes.navLink,
+                  color: "transparent"
+                }}
+                buttonIcon={Apps}
+                dropdownList={[
+                  <Link to="/speaker" className={classes.dropdownLink}>
+                    Keynote
+                  </Link>,
+                  <Link to="/speaker" className={classes.dropdownLink}>
+                    Workshops
+                  </Link>,
+                  <Link to="/speaker" className={classes.dropdownLink}>
+                    Inspirational
+                  </Link>,
+                  <Link to="/speaker" className={classes.dropdownLink}>
+                    Professional
+                  </Link>,
+                ]}
+              />,
+              <CustomDropdown
+                noLiPadding
+                innerDropdown
+                ref="multi"
+                hoverColor={primaryColor}
+                buttonText="Coach"
+                buttonProps={{
+                  className: classes.navLink,
+                  color: "transparent"
+                }}
+                buttonIcon={Apps}
+                dropdownList={[
+                  <Link to="/coach" className={classes.dropdownLink}>
+                    One-on-One
+                  </Link>,
+                  <Link to="/coach" className={classes.dropdownLink}>
+                    Group
+                  </Link>,
+                  <Link to="/coach" className={classes.dropdownLink}>
+                    Personal
+                  </Link>,
+                  <Link to="/coach" className={classes.dropdownLink}>
+                    Professional
+                  </Link>,
+                ]}
+              />,
+              <CustomDropdown
+                noLiPadding
+                innerDropdown
+                ref="multi"
+                hoverColor={primaryColor}
+                buttonText="Consultant"
+                buttonProps={{
+                  className: classes.navLink,
+                  color: "transparent"
+                }}
+                buttonIcon={Apps}
+                dropdownList={[
+                  <Link to="/consultant" className={classes.dropdownLink}>
+                    Financial
+                  </Link>,
+                  <Link to="/consultant" className={classes.dropdownLink}>
+                    Operations
+                  </Link>,
+                  <Link to="/consultant" className={classes.dropdownLink}>
+                    Business Development
+                  </Link>,
+                  <Link to="/consultant" className={classes.dropdownLink}>
+                    Sales and Marketing
+                  </Link>,
+                ]}
+              />
+            ]}
+          />
+        </ListItem>
+        <ListItem className={classes.listItem}>
+          <CustomDropdown
+            noLiPadding
+            navDropdown
+            hoverColor={primaryColor}
+            buttonText="Contact"
+            buttonProps={{
+              className: classes.navLink,
+              color: "transparent"
+            }}
+            buttonIcon={Apps}
+            dropdownList={[
+              <Link to="/contact" className={classes.dropdownLink}>
+                Contact Eric
+              </Link>,
+              <Link to="/meeting-planner" className={classes.dropdownLink}>
+                Meeting Planner
+              </Link>,
+            ]}
+          />
+        </ListItem>
+        <ListItem className={classes.listItem}>
+          <Link
+            to="/resources"
+            className={classes.navButton}
+            style={{color: 'rgba(0,0,0,.87)'}}
+          >
+            <Button color="transparent" style={{color: 'rgba(0,0,0,.87)'}}>
+              Resources
+            </Button>
+          </Link>
+        </ListItem>
+        <ListItem className={classes.listItem}>
+          <Link
+            to="/booking"
+            className={classes.navButton}
+            style={{color: 'rgba(0,0,0,.87)'}}
+          >
+            <Button color="primary" style={{color: 'white'}}>
+              Book Eric
+            </Button>
+          </Link>
+        </ListItem>
+      </List>
+    );
+    }
 }
 
 HeaderLinks.defaultProps = {
