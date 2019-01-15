@@ -28,7 +28,7 @@ class About extends Component {
       <div>
         <HeroImage source={require('assets/img/banner-smp.jpg')} subheading="Meet" heading="Dr. Eric J. Scroggins"/>
         <div className={classNames(classes.container, classes.content)}>
-          <GridContainer spacing={36}>
+          <GridContainer spacing={32}>
             <GridItem md={4} sm={12} className={classes.grid}>
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </GridItem>
