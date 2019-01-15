@@ -46,7 +46,7 @@ const styles = {
   }
 };
 
-class Coach extends Component {
+class Consultant extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -147,25 +147,25 @@ class Coach extends Component {
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.fuelStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="ONE-ON-ONE" />
+                    <ListItemText primary="FINANCIAL" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.ericsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.ericsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="GROUP" />
+                    <ListItemText primary="OPERATIONS" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.topicsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="PERSONAL" />
+                    <ListItemText primary="BUSINESS DEVELOPMENT" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.journeyHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="PROFESSIONAL" />
+                    <ListItemText primary="SALES AND MARKETING" />
                   </ListItem>
                 </List>
               </div>
@@ -175,25 +175,25 @@ class Coach extends Component {
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.fuelStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="ONE-ON-ONE" />
+                    <ListItemText primary="FINANCIAL" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.ericsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.ericsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="GROUP" />
+                    <ListItemText primary="OPERATIONS" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.topicsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="PERSONAL" />
+                    <ListItemText primary="BUSINESS DEVELOPMENT" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.journeyHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="PROFESSIONAL" />
+                    <ListItemText primary="SALES AND MARKETING" />
                   </ListItem>
                 </List>
               </div>
@@ -245,4 +245,4 @@ class Coach extends Component {
   }
 }
 
-export default withStyles(styles)(withWidth()(Coach));
+export default withStyles(styles)(withWidth()(Consultant));

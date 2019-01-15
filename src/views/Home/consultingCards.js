@@ -10,8 +10,20 @@ export default [
   },
   {
     src: speaking,
-    title: 'Business Development',
+    title: 'Operations',
     body: 'Dr Eric Scroggin\'s cultivated insight..',
+    link: '/speaking',
+  },
+  {
+    src: speaking,
+    title: 'Business Development',
+    body: 'Dr. Eric Scroggins can deliver a message...',
+    link: '/speaking',
+  },
+  {
+    src: speaking,
+    title: 'Sales and Marketing',
+    body: 'Dr. Eric Scroggins can deliver a message...',
     link: '/speaking',
   },
 ];
