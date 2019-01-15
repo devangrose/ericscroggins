@@ -109,7 +109,7 @@ class ShoppingCartPage extends React.Component {
                   tableHead={[
                     "",
                     "PRODUCT",
-                    "COLOR",
+                    "PRICE",
                     "QTY",
                     "AMOUNT",
                   ]}
