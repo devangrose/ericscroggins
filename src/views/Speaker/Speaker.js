@@ -147,25 +147,25 @@ class Speaker extends Component {
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.fuelStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="FUEL YOUR TEAM'S VISION" />
+                    <ListItemText primary="KEYNOTE" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.ericsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.ericsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="ERIC'S SPEAKING PHILOSOPHY" />
+                    <ListItemText primary="WORKSHOPS" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.topicsHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="SPEAKING TOPICS" />
+                    <ListItemText primary="INSPIRATIONAL" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.journeyHeight)}>
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="JOURNEY TO ONEREDMOND" />
+                    <ListItemText primary="CORPERATE" />
                   </ListItem>
                 </List>
               </div>

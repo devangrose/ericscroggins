@@ -12,8 +12,6 @@ import ListItem from "@material-ui/core/ListItem";
 import Icon from "@material-ui/core/Icon";
 import Collapse from '@material-ui/core/Collapse';
 
-import Collapsable from "Components/Collapsable.js"
-
 // @material-ui/icons
 import Apps from "@material-ui/icons/Apps";
 import ShoppingCart from "@material-ui/icons/ShoppingCart";
