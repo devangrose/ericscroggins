@@ -19,7 +19,7 @@ import Speaker from "views/Speaker/Speaker.js";
 import About from "views/About/About.js";
 import Booking from "views/Booking/Booking.js";
 import Coach from "views/Coach/Coach.js";
-import Resources from "views/Resources/Rosources.js";
+import Resources from "views/Resources/Resources.js";
 import MeetingPlanner from "views/MeetingPlanner/MeetingPlanner.js";
 
 var indexRoutes = [
