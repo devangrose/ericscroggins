@@ -109,7 +109,7 @@ class ShoppingCartPage extends React.Component {
                 <ShoppingCartRow image={paperback} title="Vision Blockers - Paperback" price={this.state.paperbackPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.paperback} total={this.state.paperbackTotal} incrementQuantity="paperback" incrementPrice="paperbackPrice" incrementTotal="paperbackTotal"/>
               </GridItem>
               <GridItem md={4} sm={12}>
-                <ShoppingCartRow image={hardcover} title="Obstaculos a su Vision" price={this.state.spanishPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.spanish} total={this.state.spanishTotal} incrementQuantity="spanish" incrementPrice="spanishPrice" incrementTotal="spanishTotal"/>
+                <ShoppingCartRow image={spanish} title="Obstaculos a su Vision" price={this.state.spanishPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.spanish} total={this.state.spanishTotal} incrementQuantity="spanish" incrementPrice="spanishPrice" incrementTotal="spanishTotal"/>
               </GridItem>
               <GridItem md={12}>
                 <Typography variant="h3" component="h3" align="right">
