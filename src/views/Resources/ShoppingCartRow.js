@@ -23,7 +23,7 @@ class ShoppingCartRow extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Card style={{ width: "20rem", margin: 'auto' }}>
+      <Card style={{ width: "20rem", margin: 'auto', marginTop: '15%' }}>
         <img
           style={{ height: "auto", width: "100%", display: "block" }}
           className={classes.imgCardTop}

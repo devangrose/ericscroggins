@@ -28,6 +28,13 @@ import hardcover from "assets/img/vision-blockers.png";
 import paperback from "assets/img/vision-blockers.png";
 import spanish from "assets/img/vision-blockers-spanish.jpg";
 
+const styles = {
+  ...shoppingCartStyle,
+  gridContainer: {
+    paddingTop: '5%',
+  }
+}
+
 class ShoppingCartPage extends React.Component {
   constructor(props){
     super(props);
@@ -101,7 +108,7 @@ class ShoppingCartPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)} style={{paddingBottom: '5%'}}>
           <div className={classes.container}>
-            <GridContainer spacing={12}>
+            <GridContainer spacing={12} className={classes.gridContainer}>
               <GridItem md={4} sm={12}>
                 <ShoppingCartRow image={hardcover} title="Vision Blockers - Hardcover" price={this.state.hardcoverPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.hardcover} total={this.state.hardcoverTotal} incrementQuantity="hardcover" incrementPrice="hardcoverPrice" incrementTotal="hardcoverTotal"/>
               </GridItem>

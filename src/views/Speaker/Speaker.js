@@ -138,7 +138,7 @@ class Speaker extends Component {
     return (
         <div>
           <HeroImage source={require('assets/img/hero.jpg')} heading="THE VOICE TO BREAK BARRIERS" />
-          <div className={classes.container} >
+          <div className={classes.container} style={{paddingTop: '8%'}}>
           <GridContainer spacing={24}>
             <GridItem xs={12} md={4} hidden={['xs','s'].includes(this.props.width)}>
               <div ref="slipperyDiv" hidden={this.state.stick} className={classes.slippery}>
