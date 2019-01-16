@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
+import { Typography } from "@material-ui/core";
 // @material-ui/icons
 // core components
 import Card from "components/Card/Card.jsx";
@@ -20,14 +21,16 @@ import Parallax from "components/Parallax/Parallax.jsx";
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 import HomeCard from 'Components/Card.js';
 import Testimonials from './Testimonials.js';
+import withWidth from '@material-ui/core/withWidth';
 import Section from './Section.js';
 
 
 import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
-import coaching from "assets/coaching.jpg";
+import coaching from "assets/table.jpg";
 import coachingLogo from 'assets/img/coachLogo.png';
 import consultingLogo from 'assets/img/consultantLogo.png';
 import speaking from "assets/img/speakerLogo.png";
+import wheel from "assets/wheel.png";
 
 import speakingCards from 'views/Home/speakingCards.js';
 import coachingCards from 'views/Home/coachingCards.js';
@@ -37,7 +40,10 @@ const actions = [
   'succeed',
   'achieve',
   'overcome',
-  'breakthrough'
+  'breakthrough',
+  'accomplish',
+  'inspire',
+
 ];
 
 class Components extends React.Component {
@@ -59,12 +65,16 @@ class Components extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div>
-        <Parallax image={require("assets/img/hero.jpg")}>
+        <Parallax image={require("assets/home-hero.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
                 <div className={classes.brand} style={{textAlign: "center", marginTop: "100px"}}>
+                  {['lg','xl'].includes(this.props.width) ?
                   <h1 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline"}}>{actions[this.state.index]}</span></h1>
+                    :
+                  <h2 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline"}}>{actions[this.state.index]}</span></h2>
+                  }
                 </div>
               </GridItem>
             </GridContainer>
@@ -74,14 +84,24 @@ class Components extends React.Component {
         <div className={classNames(classes.main)}>
           <h1 style={{margin: "auto", textAlign: "center", paddingTop: "25px", color: primaryColor}}>Meet Eric</h1>
           <hr style={{width: "70%"}}/>
-          <GridContainer style={{padding: "50px 25px"}}>
-            <GridItem md={4} style={{marginLeft: "50px", textAlign: "center"}}>
+          <GridContainer style={{padding: "5%"}}>
+            <GridItem md={4} style={{textAlign: "center"}}>
                 <img className={classes.imgCardTop} src={coaching} style={{width: "80%", margin:"auto"}} />
             </GridItem>
-            <GridItem md={6}>
-              <h3>
-                Dr. Eric J. Scroggins is an author, professional keynote speaker, pastor, banker, and recognized business leader. He has worked in both corporate and non-profit enterprises bringing leadership expertise, motivation, and strategic thinking to each assignment. Eric is most noted for transforming organizations and creating exceptional performance through proven sales techniques, improving customer service, and helping employees engage more effectively. His passion is to help others reach new heights by overcoming barriers and turning their careers or businesses into personal success stories. Dr. Scroggins is also the founder of M6 Global Resources, a not for profit resource generator bringing assistance to people around the world.
-              </h3>
+            <GridItem md={6} style={{paddingTop: ['lg','xl'].includes(this.props.width) ? '' : '5%'}}>
+              <Typography variant="h3" component="h3" paragraph>
+                Eric believes that education, experience and passion are enhanced when combined with real life experience. He brings these elements together to deliver a dynamic and unique service to individuals, businesses and organizations.
+              </Typography>
+              <Typography variant="h3" component="h3" paragraph>
+                Dr. Scroggins will give you the tools needed to take action today to have to the personal and professional life you want and that you are meant to live!
+              </Typography>
+              <div style={{textAlign: ['lg','xl'].includes(this.props.width) ? '' : 'center'}}>
+                <Button color="primary" variant="contained" style={{marginTop: '3%', }}>
+                  <Link to='/about' style={{color: 'white', width: '100%', height: '100%'}}>
+                    Learn more about Eric here
+                  </Link>
+                </Button>
+              </div>
             </GridItem>
           </GridContainer>
         </div>
@@ -91,6 +111,10 @@ class Components extends React.Component {
         <Testimonials/>
 
         <Section img={coachingLogo} cards={coachingCards}/>
+
+        <div style={{backgroundColor: "#ffffff",  textAlign: 'center', padding: '8% 0'}}>
+          <img src={wheel} style={{height: "45vh", width: 'auto', margin: '5%'}}/> 
+        </div>
 
         <div>
           <GridContainer style={{margin: "5%"}}>
@@ -117,4 +141,4 @@ class Components extends React.Component {
   }
 }
 
-export default withStyles(componentsStyle)(Components);
+export default withStyles(componentsStyle)(withWidth()(Components));

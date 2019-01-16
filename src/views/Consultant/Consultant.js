@@ -107,6 +107,28 @@ class Consultant extends Component {
       },
       () => this.setDiamonds()
     );
+    if(this.props.match.params){
+      const spot = this.props.match.params.name;
+      console.log("spot", spot);
+      let height = 0;
+      if(spot == "financial"){
+        height = fuelHeight;
+      }
+      else if(spot == "operations"){
+        height = ericsHeight;
+      }
+      else if(spot == "projectfocus"){
+        height = topicsHeight
+      }
+      else if(spot == "salesmarketing"){
+        height = journeyHeight;
+      }
+      window.scroll({
+        top: height - window.innerHeight / 4,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -159,7 +181,7 @@ class Consultant extends Component {
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="BUSINESS DEVELOPMENT" />
+                    <ListItemText primary="PROJECT FOCUS" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.journeyHeight)}>
                     <ListItemIcon>
@@ -187,7 +209,7 @@ class Consultant extends Component {
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.topicsStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="BUSINESS DEVELOPMENT" />
+                    <ListItemText primary="PROJECT FOCUS" />
                   </ListItem>
                   <ListItem button onClick={this.getScrollToFunction(this.state.journeyHeight)}>
                     <ListItemIcon>

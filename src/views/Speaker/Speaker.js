@@ -107,6 +107,27 @@ class Speaker extends Component {
       },
       () => this.setDiamonds()
     );
+    if(this.props.match.params){
+      const spot = this.props.match.params.name;
+      let height = 0;
+      if(spot == "keynote"){
+        height = fuelHeight;
+      }
+      else if(spot == "workshops"){
+        height = ericsHeight;
+      }
+      else if(spot == "inspirational"){
+        height = topicsHeight
+      }
+      else if(spot == "corperate"){
+        height = journeyHeight;
+      }
+      window.scroll({
+        top: height - window.innerHeight / 4,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
   }
 
   componentWillUnmount() {

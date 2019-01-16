@@ -108,7 +108,7 @@ class HeaderLinks extends Component {
             style={{color: 'rgba(0,0,0,.87)'}}
           >
             <Button color="transparent" style={{color: 'rgba(0,0,0,.87)'}}>
-              Meet Eric
+              About Eric
             </Button>
           </Link>
         </ListItem>
@@ -146,7 +146,7 @@ class HeaderLinks extends Component {
                     Inspirational
                   </Link>,
                   <Link to="/speaker" className={classes.dropdownLink}>
-                    Professional
+                    Corporate
                   </Link>,
                 ]}
               />,
@@ -188,14 +188,14 @@ class HeaderLinks extends Component {
                 }}
                 buttonIcon={Apps}
                 dropdownList={[
-                  <Link to="/consultant" className={classes.dropdownLink}>
+                  <Link to="/consultant/financial" className={classes.dropdownLink}>
                     Financial
                   </Link>,
                   <Link to="/consultant" className={classes.dropdownLink}>
                     Operations
                   </Link>,
                   <Link to="/consultant" className={classes.dropdownLink}>
-                    Business Development
+                    Project Focus
                   </Link>,
                   <Link to="/consultant" className={classes.dropdownLink}>
                     Sales and Marketing

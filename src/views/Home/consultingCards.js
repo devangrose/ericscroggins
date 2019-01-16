@@ -1,9 +1,11 @@
 import coaching from "assets/coaching.jpg";
 import speaking from "assets/speaking.png";
+import busdev from "assets/busdev.jpg";
+import financial from "assets/financial.jpg";
 
 export default [
   {
-    src: speaking,
+    src: financial,
     title: 'Financial',
     body: 'Dr. Eric Scroggins can deliver a message...',
     link: '/speaking',
@@ -15,8 +17,8 @@ export default [
     link: '/speaking',
   },
   {
-    src: speaking,
-    title: 'Business Development',
+    src: busdev,
+    title: 'Project Focus',
     body: 'Dr. Eric Scroggins can deliver a message...',
     link: '/speaking',
   },

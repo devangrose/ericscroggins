@@ -12,12 +12,15 @@ var indexRoutes = [
   { path: "/", name: "Home", component: Home },
   { path: "/contact", name: "Contact", component: Contact},
   { path: "/speaker", name: "Speaker", component: Speaker},
+  { path: "/speaker/:name", name: "Speaker", component: Speaker},
   { path: "/about", name: "About", component: About},
   { path: "/booking", name: "Booking", component: Booking},
   { path: "/coach", name: "Coach", component: Coach},
+  { path: "/coach/:name", name: "Coach", component: Coach},
   { path: "/resources", name: "Resources", component: Resources},
   { path: "/meeting-planner", name: "Meeting Planner", component: MeetingPlanner},
-  { path: "/consultant", name: "Consultant", component: Consultant}
+  { path: "/consultant", name: "Consultant", component: Consultant},
+  { path: "/consultant/:name", name: "Consultant", component: Consultant},
 ];
 
 export default indexRoutes;

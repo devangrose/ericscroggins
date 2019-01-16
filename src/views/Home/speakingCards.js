@@ -1,28 +1,30 @@
-import coaching from "assets/coaching.jpg";
-import speaking from "assets/speaking.png";
+import inspirational from "assets/inspirationalCard.jpg";
+import keynote from "assets/keynote.jpg";
+import workshop from "assets/workshop.jpg";
+import coporate from "assets/coporate.jpg";
 
 export default [
   {
-    src: speaking,
-    title: 'Coporate',
+    src: keynote,
+    title: 'Keynote',
     body: 'Dr. Eric Scroggins can deliver a message...',
     link: '/speaking',
   },
   {
-    src: speaking,
-    title: 'Sales',
+    src: workshop,
+    title: 'Workshops',
     body: 'Dr Eric Scroggin\'s cultivated insight..',
     link: '/speaking',
   },
   {
-    src: speaking,
-    title: 'Retreats',
+    src: inspirational,
+    title: 'Inspirational',
     body: 'Dr. Eric Scroggins can deliver a message...',
     link: '/speaking',
   },
   {
-    src: speaking,
-    title: 'Inspirational',
+    src: coporate,
+    title: 'Corporate',
     body: 'Dr. Eric Scroggins can deliver a message...',
     link: '/speaking',
   },
