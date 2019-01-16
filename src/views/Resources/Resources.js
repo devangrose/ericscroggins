@@ -3,24 +3,15 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { withStyles, Typography } from "@material-ui/core";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 // @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
-import Close from "@material-ui/icons/Close";
-import Remove from "@material-ui/icons/Remove";
-import Add from "@material-ui/icons/Add";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import ShoppingCartRow from "views/Resources/ShoppingCartRow.js";
 // core components
 import Parallax from "components/Parallax/Parallax.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import Table from "components/Table/Table.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
 
 import shoppingCartStyle from "assets/jss/material-kit-pro-react/views/shoppingCartStyle.jsx";
 
@@ -31,7 +22,15 @@ import spanish from "assets/img/vision-blockers-spanish.jpg";
 const styles = {
   ...shoppingCartStyle,
   gridContainer: {
-    paddingTop: '5%',
+    marginTop: '5%',
+  },
+  a: {
+    color: 'white',
+    width: '100%',
+    height: '100%',
+    '&:visited': {
+      color: 'white'
+    }
   }
 }
 
@@ -86,7 +85,8 @@ class ShoppingCartPage extends React.Component {
     return (
       <div style={{marginBottom: '5%'}}>
         <Parallax
-          image={require("assets/img/examples/bg2.jpg")}
+          image2={require("assets/img/examples/bg2.jpg")}
+          image={require("assets/books.jpg")}
           filter="dark"
           small
         >
@@ -101,14 +101,42 @@ class ShoppingCartPage extends React.Component {
                   classes.textCenter
                 )}
               >
-                <h2 className={classes.title}>Shopping Page</h2>
               </GridItem>
             </GridContainer>
           </div>
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)} style={{paddingBottom: '5%'}}>
           <div className={classes.container}>
+            <div style={{paddingTop: '5%'}}>
+              <Typography variant="h1" component="h1" style={{color: primaryColor}} align="center">
+                Vision Blockers Online Course
+              </Typography>
+              <Typography variant="h3" component="h3" align="center" paragraph>
+                (includes a copy of the book Vision Blockers)
+              </Typography>
+              <Typography variant="h3" component="h3" align="center">
+                 Where Change Begins!
+              </Typography>
+              <Typography variant="h3" component="h3" align="center" paragraph style={{marginTop: '1%'}}>
+                Walk with me through this series where we will go deeper into my book, Vision Blockers, and I will teach you HOW to apply the concepts to make lasting change.
+              </Typography>
+              <Typography variant="h3" component="h3" align="center" paragraph style={{marginTop: '1%'}}>
+                With these materials I will help you to recognize your power and your capacity to remove the barriers that are keeping you from achieving the life you desire!
+              </Typography>
+              <div style={{textAlign: 'center'}}>
+                <Button variant="contained" color="primary">
+                  <a href="https://ericscroggins.clickfunnels.com/order-page" target="_blank" className={classes.a}>
+                    Click Here to Register!
+                  </a>
+                </Button>
+              </div>
+            </div>
             <GridContainer spacing={12} className={classes.gridContainer}>
+              <GridItem sm={12} md={12}>
+                <Typography variant="h1" component="h1" style={{color: primaryColor}} align="center" paragraph>
+                  Buy A Copy Here!
+                </Typography>
+              </GridItem>
               <GridItem md={4} sm={12}>
                 <ShoppingCartRow image={hardcover} title="Vision Blockers - Hardcover" price={this.state.hardcoverPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.hardcover} total={this.state.hardcoverTotal} incrementQuantity="hardcover" incrementPrice="hardcoverPrice" incrementTotal="hardcoverTotal"/>
               </GridItem>
@@ -134,4 +162,4 @@ class ShoppingCartPage extends React.Component {
   }
 }
 
-export default withStyles(shoppingCartStyle)(ShoppingCartPage);
+export default withStyles(styles)(ShoppingCartPage);
