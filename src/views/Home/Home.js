@@ -112,30 +112,34 @@ class Components extends React.Component {
 
         <Section img={coachingLogo} cards={coachingCards}/>
 
-        <div style={{backgroundColor: "#ffffff",  textAlign: 'center', padding: '8% 0'}}>
-          <img src={wheel} style={{height: "45vh", width: 'auto', margin: '5%'}}/> 
+        <div style={{backgroundColor: "#ffffff",  textAlign: 'center', padding: ['lg','xl'].includes(this.props.width) ? '0' :'8% 0'}}>
+          <img src={wheel} style={{height: "45vh", width: 'auto', margin: '3%'}}/> 
         </div>
 
+        <Section img={consultingLogo} cards={consultingCards}/>
+
         <div>
-          <GridContainer style={{margin: "5%"}}>
-            <GridItem md={12} style={{margin: '5%'}}>
+          <GridContainer style={{margin: '5%'}}>
+            <GridItem md={12}>
               <h1 style={{color: primaryColor, textAlign: "center"}}>Videos</h1>
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>
               <div style={{height: '30vh'}}>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div style={{height: '30vh'}}>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div style={{height: '30vh'}}>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </GridItem>
           </GridContainer>
         </div>
-
-        <Section img={consultingLogo} cards={consultingCards}/>
     </div>
     );
   }

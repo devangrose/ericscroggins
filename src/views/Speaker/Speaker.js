@@ -82,7 +82,6 @@ class Speaker extends Component {
       journeyStyle: this.getDiamondStyle(this.state.journeyHeight, Infinity)
     });
   }
-
   componentDidMount() {
     window.scrollTo(0, 0);
     window.addEventListener("scroll", this.updateDiamonds, true);
@@ -119,7 +118,7 @@ class Speaker extends Component {
       else if(spot == "inspirational"){
         height = topicsHeight
       }
-      else if(spot == "corperate"){
+      else if(spot == "corporate"){
         height = journeyHeight;
       }
       window.scroll({

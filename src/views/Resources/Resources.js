@@ -84,7 +84,7 @@ class ShoppingCartPage extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div style={{marginBottom: '5%'}}>
         <Parallax
           image={require("assets/img/examples/bg2.jpg")}
           filter="dark"
@@ -118,7 +118,7 @@ class ShoppingCartPage extends React.Component {
               <GridItem md={4} sm={12}>
                 <ShoppingCartRow image={spanish} title="Obstaculos a su Vision" price={this.state.spanishPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.spanish} total={this.state.spanishTotal} incrementQuantity="spanish" incrementPrice="spanishPrice" incrementTotal="spanishTotal"/>
               </GridItem>
-              <GridItem md={12}>
+              <GridItem md={12} style={{marginTop: '3%'}}>
                 <Typography variant="h3" component="h3" align="right">
                   Total <small>$</small>{this.state.cartTotal.toFixed(2)}
                 </Typography>

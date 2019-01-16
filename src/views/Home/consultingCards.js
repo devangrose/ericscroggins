@@ -1,33 +1,31 @@
-import coaching from "assets/coaching.jpg";
-import speaking from "assets/speaking.png";
-import busdev from "assets/busdev.jpg";
+import projectfocus from "assets/projectfocus.jpg";
+import operations from "assets/operations.jpg";
 import financial from "assets/financial.jpg";
+import salesmarketing from "assets/salesmarketing.jpg";
 
 export default [
   {
     src: financial,
     title: 'Financial',
     body: 'Dr. Eric Scroggins can deliver a message...',
-    link: '/speaking',
+    link: '/consultant/financial',
   },
   {
-    src: speaking,
+    src: operations,
     title: 'Operations',
     body: 'Dr Eric Scroggin\'s cultivated insight..',
-    link: '/speaking',
+    link: '/consultant/operations',
   },
   {
-    src: busdev,
+    src: projectfocus,
     title: 'Project Focus',
     body: 'Dr. Eric Scroggins can deliver a message...',
-    link: '/speaking',
+    link: '/consultant/projectfocus',
   },
   {
-    src: speaking,
+    src: salesmarketing,
     title: 'Sales and Marketing',
     body: 'Dr. Eric Scroggins can deliver a message...',
-    link: '/speaking',
+    link: '/consultant/salesmarketing',
   },
 ];
-
-

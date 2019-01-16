@@ -8,24 +8,24 @@ export default [
     src: keynote,
     title: 'Keynote',
     body: 'Dr. Eric Scroggins can deliver a message...',
-    link: '/speaking',
+    link: '/speaker/keynote',
   },
   {
     src: workshop,
     title: 'Workshops',
     body: 'Dr Eric Scroggin\'s cultivated insight..',
-    link: '/speaking',
+    link: '/speaker/workshops',
   },
   {
     src: inspirational,
     title: 'Inspirational',
     body: 'Dr. Eric Scroggins can deliver a message...',
-    link: '/speaking',
+    link: '/speaker/inspirational',
   },
   {
     src: coporate,
     title: 'Corporate',
     body: 'Dr. Eric Scroggins can deliver a message...',
-    link: '/speaking',
+    link: '/speaker/corporate',
   },
 ];

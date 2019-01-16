@@ -17,7 +17,7 @@ var indexRoutes = [
   { path: "/booking", name: "Booking", component: Booking},
   { path: "/coach", name: "Coach", component: Coach},
   { path: "/coach/:name", name: "Coach", component: Coach},
-  { path: "/resources", name: "Resources", component: Resources},
+  { path: "/courses", name: "Resources", component: Resources},
   { path: "/meeting-planner", name: "Meeting Planner", component: MeetingPlanner},
   { path: "/consultant", name: "Consultant", component: Consultant},
   { path: "/consultant/:name", name: "Consultant", component: Consultant},

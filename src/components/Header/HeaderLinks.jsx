@@ -136,16 +136,16 @@ class HeaderLinks extends Component {
                 }}
                 buttonIcon={Apps}
                 dropdownList={[
-                  <Link to="/speaker" className={classes.dropdownLink}>
+                  <Link to="/speaker/keynote" className={classes.dropdownLink}>
                     Keynote
                   </Link>,
-                  <Link to="/speaker" className={classes.dropdownLink}>
+                  <Link to="/speaker/workshops" className={classes.dropdownLink}>
                     Workshops
                   </Link>,
-                  <Link to="/speaker" className={classes.dropdownLink}>
+                  <Link to="/speaker/inspirational" className={classes.dropdownLink}>
                     Inspirational
                   </Link>,
-                  <Link to="/speaker" className={classes.dropdownLink}>
+                  <Link to="/speaker/corporate" className={classes.dropdownLink}>
                     Corporate
                   </Link>,
                 ]}
@@ -162,16 +162,16 @@ class HeaderLinks extends Component {
                 }}
                 buttonIcon={Apps}
                 dropdownList={[
-                  <Link to="/coach" className={classes.dropdownLink}>
+                  <Link to="/coach/oneonone" className={classes.dropdownLink}>
                     One-on-One
                   </Link>,
-                  <Link to="/coach" className={classes.dropdownLink}>
+                  <Link to="/coach/group" className={classes.dropdownLink}>
                     Group
                   </Link>,
-                  <Link to="/coach" className={classes.dropdownLink}>
+                  <Link to="/coach/personal" className={classes.dropdownLink}>
                     Personal
                   </Link>,
-                  <Link to="/coach" className={classes.dropdownLink}>
+                  <Link to="/coach/professional" className={classes.dropdownLink}>
                     Professional
                   </Link>,
                 ]}
@@ -191,13 +191,13 @@ class HeaderLinks extends Component {
                   <Link to="/consultant/financial" className={classes.dropdownLink}>
                     Financial
                   </Link>,
-                  <Link to="/consultant" className={classes.dropdownLink}>
+                  <Link to="/consultant/operations" className={classes.dropdownLink}>
                     Operations
                   </Link>,
-                  <Link to="/consultant" className={classes.dropdownLink}>
+                  <Link to="/consultant/projectfocus" className={classes.dropdownLink}>
                     Project Focus
                   </Link>,
-                  <Link to="/consultant" className={classes.dropdownLink}>
+                  <Link to="/consultant/salesmarketing" className={classes.dropdownLink}>
                     Sales and Marketing
                   </Link>,
                 ]}
@@ -228,12 +228,12 @@ class HeaderLinks extends Component {
         </ListItem>
         <ListItem className={classes.listItem}>
           <Link
-            to="/resources"
+            to="/courses"
             className={classes.navButton}
             style={{color: 'rgba(0,0,0,.87)'}}
           >
             <Button color="transparent" style={{color: 'rgba(0,0,0,.87)'}}>
-              Resources
+              Courses
             </Button>
           </Link>
         </ListItem>

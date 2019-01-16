@@ -17,7 +17,7 @@ var hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <ScrollToTop>
-      <div style={{ marginBottom: '85px'}}>
+      <div style={{ marginBottom: '70px'}}>
         <Header
             brand={<Link to="/"><img src={logo} style={{width: "100%", textAlign: 'left'}}/></Link>}
             links={<HeaderLinks dropdownHoverColor="info" />}
