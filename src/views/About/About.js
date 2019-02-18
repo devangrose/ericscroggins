@@ -30,7 +30,7 @@ class About extends Component {
         <div className={classNames(classes.container, classes.content)}>
           <GridContainer spacing={32}>
             <GridItem md={4} sm={12} className={classes.grid}>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/y1-oweMM0NI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </GridItem>
             <GridItem md={8} sm={12} className={classes.grid}>
               <Typography component="h5" variant="h5" paragraph>

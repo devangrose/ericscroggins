@@ -43,6 +43,10 @@ const styles = {
     top: "-420px",
     position: "relative",
     zIndex: "-1"
+  },
+  section: {
+    marginTop: '20%',
+    marginBottom: '20%',
   }
 };
 
@@ -157,9 +161,15 @@ class Speaker extends Component {
     const { classes } = this.props;
     return (
         <div>
-          <HeroImage source={require('assets/img/hero.jpg')} heading="THE VOICE TO BREAK BARRIERS" />
-          <div className={classes.container} style={{paddingTop: '8%'}}>
+          {/*<HeroImage source={require('assets/img/hero.jpg')} heading="THE VOICE TO BREAK BARRIERS" />*/}
+          <div className={classes.container} style={{paddingTop: '2%'}}>
+					<div style={{width: '100%', height: '50vh'}}>
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/KO0DX2_Gu4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen;" allowfullscreen></iframe>
+					</div>
           <GridContainer spacing={24}>
+						<GridItem xs={12} md={12}>
+							
+						</GridItem>
             <GridItem xs={12} md={4} hidden={['xs','s'].includes(this.props.width)}>
               <div ref="slipperyDiv" hidden={this.state.stick} className={classes.slippery}>
                 <List>
@@ -185,7 +195,7 @@ class Speaker extends Component {
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="CORPERATE" />
+                    <ListItemText primary="CORPORATE" />
                   </ListItem>
                 </List>
               </div>
@@ -213,22 +223,31 @@ class Speaker extends Component {
                     <ListItemIcon>
                       <div className={classes.rhomb} style={this.state.journeyStyle}> </div>
                     </ListItemIcon>
-                    <ListItemText primary="CORPERATE" />
+                    <ListItemText primary="CORPORATE" />
                   </ListItem>
                 </List>
               </div>
             </GridItem>
             <GridItem item xs={12} md={8}>
               <div>
-                <div ref="fuelYourTeamsVision">
+                <div style={{marginBottom: '20%'}} ref="fuelYourTeamsVision">
+	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+	    		KEYNOTE
+	    	  </Typography>
                   <Typography component="h3" variant="h3" paragraph="true">When it comes to choosing a professional speaker for your next event, you’ll find no one more respected wtih more insight, no one who will leave your audience or colleagues with such a sense of enthusiasm, passion for life, and a “can do” attitude as Dr. Eric J. Scroggins.  Eric is one of the most gifted communicators of our generation, and sense 1991, he has been delivering dynamic messages of hope and inspiration ot audiences around the world.  Whether your audience is 10 or 10,000, in North America or abroad, Eric can deliver a tailor-made message of inspiration that will leave your audience mesmerized and ready for more. </Typography>
                 </div>
         <hr style={{ borderColor: primaryColor }}/>
-                <div ref="EricsSpeakingPhilosophy">
+                <div className={classes.section} ref="EricsSpeakingPhilosophy">
+	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+	    		WORKSHOPS
+	    	  </Typography>
                 <Typography component="h3" variant="h3" paragraph="true">Eric’s speaking philosophy is to ensure that he connects with the audience members and understands their greatest desires.  He knows that audiences want to hear real-life stories about real people that can help them relate the message to achieving their own destinies.  It isn’t uncommon to find Dr. Scroggins engaging with the audience prior to and after the presentation, making a human connection and inspiring participants to reach eyond their perceived limitations.  As a result, Eric’s speaking style incorporates humor, stories, information, and above all, inspiration that gives the audience a sense of passion to achieve extraordinary results. </Typography>
                 </div>
           <hr style={{ borderColor: primaryColor }}/>
-                <div ref="speakingTopics">
+                <div className={classes.section} ref="speakingTopics">
+	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+	    		INSPIRATIONAL
+	    	  </Typography>
                   <ul>
                     <li><Typography component="h3" variant="h3">Shattering Barriers</Typography></li>
                     <li><Typography component="h3" variant="h3">Embracing Change</Typography></li>
@@ -245,7 +264,10 @@ class Speaker extends Component {
                   </ul>
                 </div>
           <hr style={{ borderColor: primaryColor }}/>
-                <div ref="journeyToOneRedmond">
+                <div className={classes.section} ref="journeyToOneRedmond">
+	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+	    		CORPORATE
+	    	  </Typography>
                   <Typography component="h3" variant="h3" paragraph="true">
   OneRedmond is the start-up economic development organization located in Redmond, Washington.  This group was formed through a merger of three legacy organizations: Greater Redmond Chamber of Commerce, Realize Redmond and Redmond Economic Development Alliance.  In an effort to create one central entity with a focus on driving economic vitality throughout Redmond and Seattle’s eastside, OneRedmond was formed in 2011 and launched in 2012 and has become a world CLASS economic development organization.
                   </Typography>

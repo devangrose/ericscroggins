@@ -40,10 +40,12 @@ const actions = [
   'succeed',
   'achieve',
   'overcome',
-  'breakthrough',
+  'break through',
   'accomplish',
   'inspire',
-
+  'scale',
+  'grow',
+	'take action',
 ];
 
 class Components extends React.Component {
@@ -59,7 +61,7 @@ class Components extends React.Component {
       this.setState({
         index: (this.state.index + 1) % 4
       });
-    }, 3000);
+    }, 1500);
   }
   render() {
     const { classes, ...rest } = this.props;
@@ -96,10 +98,10 @@ class Components extends React.Component {
             </GridItem>
             <GridItem md={6} style={{paddingTop: ['lg','xl'].includes(this.props.width) ? '' : '5%'}}>
               <Typography variant="h3" component="h3" paragraph>
-                Eric believes that education, experience and passion are enhanced when combined with real life experience. He brings these elements together to deliver a dynamic and unique service to individuals, businesses and organizations.
+								Eric’s innate ability to connect with others personally, professionally and spiritually is what creates opportunity for him to teach people how to lead a no-limits life. Mr. Scroggins provides the resources for pushing through and taking action to attain success.
               </Typography>
               <Typography variant="h3" component="h3" paragraph>
-                Dr. Scroggins will give you the tools needed to take action today to have to the personal and professional life you want and that you are meant to live!
+								Eric believes that education and passion are enhanced when combined with real life experience. He brings these elements together to deliver dynamic and unique services to individuals, teams and organizations that are ready to level-up.
               </Typography>
               <div style={{textAlign: ['lg','xl'].includes(this.props.width) ? '' : 'center'}}>
                 <Button color="primary" variant="contained" style={{marginTop: '3%', }}>
