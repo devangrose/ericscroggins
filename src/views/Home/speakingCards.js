@@ -1,6 +1,6 @@
 import inspirational from "assets/inspirationalCard.jpg";
 import keynote from "assets/keynote.jpg";
-import workshop from "assets/workshop.jpg";
+import workshop from "assets/workshop2.jpg";
 import coporate from "assets/coporate.jpg";
 
 export default [

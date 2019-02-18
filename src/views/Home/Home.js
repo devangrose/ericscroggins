@@ -71,7 +71,14 @@ class Components extends React.Component {
               <GridItem>
                 <div className={classes.brand} style={{textAlign: "center", marginTop: "100px"}}>
                   {['lg','xl'].includes(this.props.width) ?
-                  <h1 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline"}}>{actions[this.state.index]}</span></h1>
+			  <div>
+			  	<div>
+					<h1 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN </h1>
+			  	</div>
+			  	<div>
+				<h1 className="fade-in" style={{display: "inline", textDecoration: "underline",fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}}>{actions[this.state.index]}</h1>
+			  	</div>
+			  </div>
                     :
                   <h2 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline"}}>{actions[this.state.index]}</span></h2>
                   }
@@ -83,8 +90,7 @@ class Components extends React.Component {
 
         <div className={classNames(classes.main)}>
           <h1 style={{margin: "auto", textAlign: "center", paddingTop: "25px", color: primaryColor}}>Meet Eric</h1>
-          <hr style={{width: "70%"}}/>
-          <GridContainer style={{padding: "5%"}}>
+          <hr style={{width: "70%"}}/> <GridContainer style={{padding: "5%"}}>
             <GridItem md={4} style={{textAlign: "center"}}>
                 <img className={classes.imgCardTop} src={coaching} style={{width: "80%", margin:"auto"}} />
             </GridItem>
