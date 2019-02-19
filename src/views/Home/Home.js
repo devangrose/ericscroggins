@@ -30,7 +30,6 @@ import coaching from "assets/table.jpg";
 import coachingLogo from 'assets/img/coachLogo.png';
 import consultingLogo from 'assets/img/consultantLogo.png';
 import speaking from "assets/img/speakerLogo.png";
-import wheel from "assets/wheel.png";
 
 import speakingCards from 'views/Home/speakingCards.js';
 import coachingCards from 'views/Home/coachingCards.js';
@@ -120,19 +119,14 @@ class Components extends React.Component {
 
         <Section img={coachingLogo} cards={coachingCards}/>
 
-        <div style={{backgroundColor: "#ffffff",  textAlign: 'center', padding: ['lg','xl'].includes(this.props.width) ? '0' :'8% 0'}}>
-          <img src={wheel} style={{height: "45vh", width: 'auto', margin: '3%'}}/> 
-        </div>
 
-        <Section img={consultingLogo} cards={consultingCards}/>
-
-        <div>
+        <div style={{ backgroundColor: '#ffffff', margin: '5% 0'}}>
           <GridContainer style={{margin: '5%'}}>
             <GridItem md={12}>
               <h1 style={{color: primaryColor, textAlign: "center"}}>Videos</h1>
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>
-              <div style={{height: '30vh'}}>
+              <div style={{height: '30vh',}}>
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </GridItem>
@@ -148,6 +142,9 @@ class Components extends React.Component {
             </GridItem>
           </GridContainer>
         </div>
+
+        <Section img={consultingLogo} cards={consultingCards}/>
+
     </div>
     );
   }

@@ -131,6 +131,7 @@ class ShoppingCartPage extends React.Component {
                 </Button>
               </div>
             </div>
+						<hr style={{width: '80%', margin: '10% auto', borderColor: primaryColor}}/>
             <GridContainer spacing={12} className={classes.gridContainer}>
               <GridItem sm={12} md={12}>
                 <Typography variant="h1" component="h1" style={{color: primaryColor}} align="center" paragraph>
