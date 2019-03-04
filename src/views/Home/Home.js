@@ -30,7 +30,6 @@ import coaching from "assets/table.jpg";
 import coachingLogo from 'assets/img/coachLogo.png';
 import consultingLogo from 'assets/img/consultantLogo.png';
 import speaking from "assets/img/speakerLogo.png";
-import wheel from "assets/wheel.png";
 
 import speakingCards from 'views/Home/speakingCards.js';
 import coachingCards from 'views/Home/coachingCards.js';
@@ -40,10 +39,12 @@ const actions = [
   'succeed',
   'achieve',
   'overcome',
-  'breakthrough',
+  'break through',
   'accomplish',
   'inspire',
-
+  'scale',
+  'grow',
+	'take action',
 ];
 
 class Components extends React.Component {
@@ -59,7 +60,7 @@ class Components extends React.Component {
       this.setState({
         index: (this.state.index + 1) % 4
       });
-    }, 3000);
+    }, 1500);
   }
   render() {
     const { classes, ...rest } = this.props;
@@ -71,7 +72,14 @@ class Components extends React.Component {
               <GridItem>
                 <div className={classes.brand} style={{textAlign: "center", marginTop: "100px"}}>
                   {['lg','xl'].includes(this.props.width) ?
-                  <h1 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline"}}>{actions[this.state.index]}</span></h1>
+			  <div>
+			  	<div>
+					<h1 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN </h1>
+			  	</div>
+			  	<div>
+				<h1 className="fade-in" style={{display: "inline", textDecoration: "underline",fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}}>{actions[this.state.index]}</h1>
+			  	</div>
+			  </div>
                     :
                   <h2 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline"}}>{actions[this.state.index]}</span></h2>
                   }
@@ -83,17 +91,16 @@ class Components extends React.Component {
 
         <div className={classNames(classes.main)}>
           <h1 style={{margin: "auto", textAlign: "center", paddingTop: "25px", color: primaryColor}}>Meet Eric</h1>
-          <hr style={{width: "70%"}}/>
-          <GridContainer style={{padding: "5%"}}>
+          <hr style={{width: "70%"}}/> <GridContainer style={{padding: "5%"}}>
             <GridItem md={4} style={{textAlign: "center"}}>
                 <img className={classes.imgCardTop} src={coaching} style={{width: "80%", margin:"auto"}} />
             </GridItem>
             <GridItem md={6} style={{paddingTop: ['lg','xl'].includes(this.props.width) ? '' : '5%'}}>
               <Typography variant="h3" component="h3" paragraph>
-                Eric believes that education, experience and passion are enhanced when combined with real life experience. He brings these elements together to deliver a dynamic and unique service to individuals, businesses and organizations.
+								Eric’s innate ability to connect with others personally, professionally and spiritually is what creates opportunity for him to teach people how to lead a no-limits life. Mr. Scroggins provides the resources for pushing through and taking action to attain success.
               </Typography>
               <Typography variant="h3" component="h3" paragraph>
-                Dr. Scroggins will give you the tools needed to take action today to have to the personal and professional life you want and that you are meant to live!
+								Eric believes that education and passion are enhanced when combined with real life experience. He brings these elements together to deliver dynamic and unique services to individuals, teams and organizations that are ready to level-up.
               </Typography>
               <div style={{textAlign: ['lg','xl'].includes(this.props.width) ? '' : 'center'}}>
                 <Button color="primary" variant="contained" style={{marginTop: '3%', }}>
@@ -112,19 +119,14 @@ class Components extends React.Component {
 
         <Section img={coachingLogo} cards={coachingCards}/>
 
-        <div style={{backgroundColor: "#ffffff",  textAlign: 'center', padding: ['lg','xl'].includes(this.props.width) ? '0' :'8% 0'}}>
-          <img src={wheel} style={{height: "45vh", width: 'auto', margin: '3%'}}/> 
-        </div>
 
-        <Section img={consultingLogo} cards={consultingCards}/>
-
-        <div>
+        <div style={{ backgroundColor: '#ffffff', margin: '5% 0'}}>
           <GridContainer style={{margin: '5%'}}>
             <GridItem md={12}>
               <h1 style={{color: primaryColor, textAlign: "center"}}>Videos</h1>
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>
-              <div style={{height: '30vh'}}>
+              <div style={{height: '30vh',}}>
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </GridItem>
@@ -140,6 +142,9 @@ class Components extends React.Component {
             </GridItem>
           </GridContainer>
         </div>
+
+        <Section img={consultingLogo} cards={consultingCards}/>
+
     </div>
     );
   }

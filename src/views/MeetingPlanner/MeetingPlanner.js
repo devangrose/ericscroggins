@@ -40,7 +40,7 @@ class MeetingPlanner extends Component {
     return (
       <div>
         <Typography component="h2" variant="h2" className={classes.header} align="center" paragraph>
-          Event Rider
+					Meeting Planner
         </Typography>
         <Typography component="h3" variant="h3" className={classes.subheader} style={{backgroundColor: 'transparent'}} align="center">
           Thank you for booking Eric Scroggins, here are 8 items that will help in the mutual exchange of information.
