@@ -2,10 +2,11 @@ import json
 
 print('Loading function')
 
+# Store a mapping from product to SKU
 PRODUCTS = {
-    'hardcover': 24.95,
-    'paperback': 19.99,
-    'spanish': 19.999,
+    'hardcover': 'sku_EdzrI13oo989YZ',
+    'paperback': 'sku_Edzr2jr37Mknyu',
+    'spanish': 'sku_EdzrT8cbJAyZjb',
 }
 
 
@@ -14,70 +15,70 @@ def respond(err, res=None):
         'statusCode': '400' if err else '200',
         'body': err.message if err else json.dumps(res),
         'headers': {
-               'Content-Type': 'application/json', 
-               'Access-Control-Allow-Origin': '*' 
+               'Content-Type': 'application/json',
+               'Access-Control-Allow-Origin': '*'
            }
     }
 
 
+def create_item(name, quantity):
+    return { 'type':'sku', 'parent': PRODUCTS[name], 'quantity': quantity, },
+
+
 def lambda_handler(event, context):
     #print("Received event: " + json.dumps(event, indent=2))
-    
-    
+
+
     if event['httpMethod'] == 'POST':
         body = event.get('body')
-        
-        
-        
+
+        # Get the data from the response
         json_body = json.loads(body)
         token = json_body.get('token')
-        purchases = json_body.get('purchases') 
-        
-        
+        purchases = json_body.get('purchases')
+        name = json_body.get('name')
+        address = json_body.get('address')
+        email = json_body.get('email')
+
+        # Validate it
         if not purchases:
             return respond(ValueError('purchases field required'))
-        
+
         if not token:
             return respond(ValueError('token field required'))
-        
-        total_cost = 0
+
+        if not name:
+            return respond(ValueError('name field required'))
+
+        if not address:
+            return respond(ValueError('address field required'))
+
+        if not email:
+            return respond(ValueError('email field required'))
+
         for name, quantity in purchases.items():
-            
             if name not in PRODUCTS:
                 return respond(ValueError('Could not find product ' + name))
-                
-            
-            
-            if type(quantity) is not int:
-                return respond(ValueError('quantity must be a non-negative integer'))
-            
-                
-            total_cost += PRODUCTS[name] * quantity
-            
-        if total_cost <= 0:
-            return respond(ValueError('negative total cost'))
-        
-        product_names = ', '.join(purchases.keys())
-        
-    
-        # Set your secret key: remember to change this to your live secret key in production
-        # See your keys here: https://dashboard.stripe.com/account/apikeys
-        # if False:
-            # stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
-            
-            # Token is created using Checkout or Elements!
-            # Get the payment token ID submitted by the form:
-            # token = request.form['stripeToken'] # Using Flask
-            
-            # charge = stripe.Charge.create(
-                # amount=total_cost,
-                # currency='usd',
-                # description='Purchase from Eric Scroggins of ' + product_names,
-                # source=token,
-            # )
-        
 
-        return respond(None, res={"worked?": True, "token": token, 'amount_charged': total_cost, 'products': product_names})
+            if type(quantity) is not int or quantity < 1:
+                return respond(ValueError('quantity must be a non-negative integer'))
+
+
+        # Create the order on stripe
+        stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+
+        order = stripe.Order.create(
+          currency='usd',
+          email=email,
+          items=[create_item(name, quantity) for name, quantity
+                 in purchases.items()],
+          shipping={
+            'name': name,
+            'address': address
+          }
+        )
+
+        return respond(None, res={ "token": token, 'order': order, 'products': product_names})
     else:
         return respond(ValueError('Unsupported method "{}"'.format(event['httpMethod'])))
 
