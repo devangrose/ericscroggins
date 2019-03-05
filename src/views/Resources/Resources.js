@@ -13,7 +13,11 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutModal from "views/Resources/CheckoutModal.js";
+
 import shoppingCartStyle from "assets/jss/material-kit-pro-react/views/shoppingCartStyle.jsx";
+
 
 import hardcover from "assets/img/vision-blockers.png";
 import paperback from "assets/img/vision-blockers.png";
@@ -34,6 +38,7 @@ const styles = {
   }
 }
 
+
 class ShoppingCartPage extends React.Component {
   constructor(props){
     super(props);
@@ -47,12 +52,19 @@ class ShoppingCartPage extends React.Component {
       spanish: 0,
       spanishPrice: 19.99,
       spanishTotal: 0,
-      cartTotal: 0.0
+      cartTotal: 0.0,
+      modalOpen: false,
     }
   }
   componentDidMount() {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
+  }
+  handleModalOpen = () => {
+    this.setState({ modalOpen: true });
+  }
+  handleModalClose = () => {
+    this.setState({ modalOpen: false });
   }
   handleIncrement = (quantity,price,total) => {
     let obj = {};
@@ -151,13 +163,19 @@ class ShoppingCartPage extends React.Component {
                 <Typography variant="h3" component="h3" align="right">
                   Total <small>$</small>{this.state.cartTotal.toFixed(2)}
                 </Typography>
-                <Button type="submit" color="primary" round style={{float: 'right'}}>
+                <Button type="submit" color="primary" round style={{float: 'right'}} onClick={this.handleModalOpen}>
                   Complete Purchase <KeyboardArrowRight />
                 </Button>
+                <StripeProvider apiKey="null">
+                  <Elements>
+                    <CheckoutModal open={this.state.modalOpen} handleClose={this.handleModalClose}/>
+                  </Elements>
+                </StripeProvider>
               </GridItem>
           </GridContainer>
         </div>
       </div>
+      {/* ------------------------ Modal Code ------------------------------- */}
     </div>
     );
   }
