@@ -1,0 +1,69 @@
+{
+  "active": true,
+  "attributes": {
+    "cover": "hard",
+    "language": "english"
+  },
+  "created": 1551809963,
+  "currency": "usd",
+  "id": "sku_EdzrI13oo989YZ",
+  "image": null,
+  "inventory": {
+    "quantity": null,
+    "type": "infinite",
+    "value": null
+  },
+  "livemode": false,
+  "metadata": {},
+  "object": "sku",
+  "package_dimensions": null,
+  "price": 2499,
+  "product": "prod_EdzhxTpPYNCOdW",
+  "updated": 1551809963
+}
+{
+  "active": true,
+  "attributes": {
+    "cover": "soft",
+    "language": "english"
+  },
+  "created": 1551809963,
+  "currency": "usd",
+  "id": "sku_Edzr2jr37Mknyu",
+  "image": null,
+  "inventory": {
+    "quantity": null,
+    "type": "infinite",
+    "value": null
+  },
+  "livemode": false,
+  "metadata": {},
+  "object": "sku",
+  "package_dimensions": null,
+  "price": 1999,
+  "product": "prod_EdzhxTpPYNCOdW",
+  "updated": 1551809963
+}
+{
+  "active": true,
+  "attributes": {
+    "cover": "soft",
+    "language": "spanish"
+  },
+  "created": 1551809963,
+  "currency": "usd",
+  "id": "sku_EdzrT8cbJAyZjb",
+  "image": null,
+  "inventory": {
+    "quantity": null,
+    "type": "infinite",
+    "value": null
+  },
+  "livemode": false,
+  "metadata": {},
+  "object": "sku",
+  "package_dimensions": null,
+  "price": 1999,
+  "product": "prod_EdzhxTpPYNCOdW",
+  "updated": 1551809963
+}

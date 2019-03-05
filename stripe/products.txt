@@ -1,0 +1,29 @@
+{
+  "active": true,
+  "attributes": [
+    "cover",
+    "language"
+  ],
+  "caption": null,
+  "created": 1551809412,
+  "deactivate_on": [],
+  "description": "Eric Scroggins book",
+  "id": "prod_EdzhxTpPYNCOdW",
+  "images": [],
+  "livemode": false,
+  "metadata": {},
+  "name": "Vision Blockers",
+  "object": "product",
+  "package_dimensions": null,
+  "shippable": true,
+  "skus": {
+    "data": [],
+    "has_more": false,
+    "object": "list",
+    "total_count": 0,
+    "url": "/v1/skus?product=prod_EdzhxTpPYNCOdW&active=true"
+  },
+  "type": "good",
+  "updated": 1551809412,
+  "url": null
+}
