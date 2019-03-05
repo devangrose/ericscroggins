@@ -8,7 +8,7 @@ hardcover = stripe.SKU.create(
   inventory={
     'type': 'infinite'
   },
-  price=2499,
+  price=2495,
   product='prod_EdzhxTpPYNCOdW',
   attributes={
       'cover': 'hard',
