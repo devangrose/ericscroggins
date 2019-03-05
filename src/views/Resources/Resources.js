@@ -166,9 +166,15 @@ class ShoppingCartPage extends React.Component {
                 <Button type="submit" color="primary" round style={{float: 'right'}} onClick={this.handleModalOpen}>
                   Complete Purchase <KeyboardArrowRight />
                 </Button>
-                <StripeProvider apiKey="null">
+                <StripeProvider apiKey="pk_test_A9oaJL9EGtWykQ3nxDXTYfhm">
                   <Elements>
-                    <CheckoutModal open={this.state.modalOpen} handleClose={this.handleModalClose}/>
+                    <CheckoutModal 
+                        open={this.state.modalOpen} 
+                        handleClose={this.handleModalClose}
+                        numHardCover={this.state.hardcover}
+                        numPaperBack={this.state.paperback}
+                        numSpanish={this.state.spanish}
+                    />
                   </Elements>
                 </StripeProvider>
               </GridItem>
