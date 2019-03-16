@@ -40,12 +40,18 @@ class _CheckoutModal extends Component {
     ev.preventDefault();
 
     if (this.props.stripe) {
-      this.props.stripe
-        .createToken()
-        .then((payload) => {
+      this.props.stripe.createToken({name: this.state.name})
+        .then(({token}) => {
+          this.createOrder(token);
+          console.log('[token]', token)
+        });
+          /*this.props.stripe
+        .createToken({'name': this.state.name})
+        .then(({payload}) => {
           this.createOrder(payload);
           console.log('[token]', payload)
         });
+        */
     } else {
       console.log("Stripe.js hasn't loaded yet.");
     }
@@ -64,16 +70,18 @@ class _CheckoutModal extends Component {
           country: this.state.country,
           state: this.state.state,
       }
+      const data = {
+        token: token,
+        purchases: purchases,
+        address: address,
+        name: this.state.name,
+        email: this.state.email,
+      } 
+      console.log('data',data);
       axios({
         method: 'POST',
         url: 'https://jwt030zmy5.execute-api.us-east-1.amazonaws.com/default/scroggins-stripe',
-        data: {
-          token: token,
-          purchases: purchases,
-          address: address,
-          name: this.state.name,
-          email: this.state.email,
-        },
+        data: data,
         headers: {
                'Content-Type': 'application/json',
         }
