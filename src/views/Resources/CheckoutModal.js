@@ -87,7 +87,7 @@ class _CheckoutModal extends Component {
         }
       }).then(response => {
         this.setState({
-          successMessage: "Order Submitted Successfully
+          successMessage: "Order Submitted Successfully"
         });
         console.log('[lambda]', response);
       })
