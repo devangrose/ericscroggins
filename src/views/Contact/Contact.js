@@ -136,15 +136,9 @@ class ContactUsPage extends React.Component {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.contactContent}>
             <div className={classes.container}>
-              <h2 className={classes.title}>Send us a message</h2>
+              <h2 className={classes.title}>Send Eric a message</h2>
               <GridContainer>
                 <GridItem md={6} sm={6}>
-                  <p>
-                    You can contact us with anything related to our Products.
-                    We'll get in touch with you as soon as possible.
-                    <br />
-                    <br />
-                  </p>
                   <form onSubmit={this.handleSubmit}>
                     <CustomInput
                       labelText="Your Name"
@@ -180,24 +174,12 @@ class ContactUsPage extends React.Component {
                     />
                     <div className={classes.textCenter}>
                       <Button color="primary" round>
-                        Contact us
+                        Send message
                       </Button>
                     </div>
                   </form>
                 </GridItem>
                 <GridItem md={4} sm={4} className={classes.mlAuto}>
-                  <InfoArea
-                    className={classes.info}
-                    title="Find us at the office"
-                    description={
-                      <p>
-                        Bld Mihail Kogalniceanu, nr. 8, <br /> 7652 Bucharest,{" "}
-                        <br /> Romania
-                      </p>
-                    }
-                    icon={PinDrop}
-                    iconColor="primary"
-                  />
                   <InfoArea
                     className={classes.info}
                     title="Give us a ring"
@@ -208,18 +190,6 @@ class ContactUsPage extends React.Component {
                       </p>
                     }
                     icon={Phone}
-                    iconColor="primary"
-                  />
-                  <InfoArea
-                    className={classes.info}
-                    title="Legal Information"
-                    description={
-                      <p>
-                        Creative Tim Ltd. <br /> VAT · EN2341241 <br /> IBAN ·
-                        EN8732ENGB2300099123 <br /> Bank · Great Britain Bank
-                      </p>
-                    }
-                    icon={BusinessCenter}
                     iconColor="primary"
                   />
                 </GridItem>

@@ -38,7 +38,7 @@ class ConferenceCall extends Component {
             Conference Call
           </Typography>
           <Typography component="body1" variant="body1" paragraph>
-            A 30 – minute call is used by Eric to gain more in-depth information about your group, your expectations, and your goals for the event. Please return the completed Client Questionnaire to our office at least one day prior to the scheduled call.
+            A 30–minute call is used by Eric to gain more in-depth information about your group, your expectations, and your goals for the event. Please return the completed Client Questionnaire to our office at least one day prior to the scheduled call.
           </Typography>
         </CardBody> 
       </Card>
