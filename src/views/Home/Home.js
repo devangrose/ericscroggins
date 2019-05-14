@@ -97,7 +97,7 @@ class Components extends React.Component {
             </GridItem>
             <GridItem md={6} style={{paddingTop: ['lg','xl'].includes(this.props.width) ? '' : '5%'}}>
               <Typography variant="h3" component="h3" paragraph>
-								Eric’s innate ability to connect with others personally, professionally and spiritually is what creates opportunity for him to teach people how to lead a no-limits life. Mr. Scroggins provides the resources for pushing through and taking action to attain success.
+								Eric’s innate ability to connect with others personally, professionally and spiritually is what creates opportunity for him to teach people how to lead a no-limits life. Dr. Scroggins provides the resources for pushing through and taking action to attain success.
               </Typography>
               <Typography variant="h3" component="h3" paragraph>
 								Eric believes that education and passion are enhanced when combined with real life experience. He brings these elements together to deliver dynamic and unique services to individuals, teams and organizations that are ready to level-up.
