@@ -33,27 +33,27 @@ class _CheckoutModal extends Component {
         state: "",
         postal_code: "",
         country: "",
+        apiCallHold: false,
+        successMessage: false,
+        errorMessage: false,
     };
   }
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-
-    if (this.props.stripe) {
-      this.props.stripe.createToken({name: this.state.name})
-        .then(({token}) => {
-          this.createOrder(token);
-          console.log('[token]', token)
-        });
-          /*this.props.stripe
-        .createToken({'name': this.state.name})
-        .then(({payload}) => {
-          this.createOrder(payload);
-          console.log('[token]', payload)
-        });
-        */
-    } else {
-      console.log("Stripe.js hasn't loaded yet.");
+    // Check to see if a call is already made to prevent multiple purchases
+    if(!this.state.apiCallHold){
+      this.setState({apiCallHold: true}, () => {
+        if (this.props.stripe) {
+          this.props.stripe.createToken({name: this.state.name})
+            .then(({token}) => {
+              this.createOrder(token);
+              console.log('[token]', token)
+            });
+        } else {
+          console.log("Stripe.js hasn't loaded yet.");
+        }
+      }
     }
   };
 
@@ -85,7 +85,20 @@ class _CheckoutModal extends Component {
         headers: {
                'Content-Type': 'application/json',
         }
-      }).then(response => console.log('[lambda]', response));
+      }).then(response => {
+        this.setState({
+          successMessage: "Order Submitted Successfully"
+        });
+        console.log('[lambda]', response);
+      })
+      .catch(response => {
+        this.setState({
+          apiCallHoold: false,
+          errorMessage: 'There has been an error'
+        });
+        console.log('[ERROR]', response);
+      });
+      
   }
 
 
@@ -111,6 +124,16 @@ class _CheckoutModal extends Component {
             style={{width: '80vw'}}
           >
             <div id="stripe" style={{width: "100%"}}>
+              {this.state.successMessage && 
+                <Typography style={{color: 'green'}}>
+                  {this.state.successsMessage}
+                </Typography>
+              }
+              {this.state.successMessage && 
+                <Typography style={{color: 'red'}}>
+                  {this.state.errorMessage}
+                </Typography>
+              }
               <form onSubmit={this.handleSubmit}>
                   <Typography variant="h2"> Payment Form </Typography>
                 <label>
