@@ -31,10 +31,7 @@ function CardExample(props) {
         alt="Card-img-cap"
       />
       <CardBody>
-        <h4 className={classes.cardTitle}>{props.title}</h4>
-        <p>
-          {props.body}
-        </p>
+        <h4  style={{textAlign: ['lg','xl'].includes(props.width) ? "" : "center"}} className={classes.cardTitle}>{props.title}</h4>
         <div style={{textAlign: ['lg','xl'].includes(props.width) ? "" : "center"}}>
           <Button color="primary" round><Link className={classes.link} to={props.link}>Learn More</Link></Button>
         </div>

@@ -53,9 +53,9 @@ class _CheckoutModal extends Component {
         } else {
           console.log("Stripe.js hasn't loaded yet.");
         }
-      }
+      });
     }
-  };
+  }
 
   createOrder = (token) => {
       let purchases = {
