@@ -232,51 +232,50 @@ class Speaker extends Component {
             <GridItem item xs={12} md={8}>
               <div>
                 <div style={{marginBottom: '20%'}} ref="fuelYourTeamsVision">
-	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
-	    		ONE-ON-ONE
-	    	  </Typography>
-                  <Typography component="h3" variant="h3" paragraph="true">When it comes to choosing a professional speaker for your next event, you’ll find no one more respected wtih more insight, no one who will leave your audience or colleagues with such a sense of enthusiasm, passion for life, and a “can do” attitude as Dr. Eric J. Scroggins.  Eric is one of the most gifted communicators of our generation, and sense 1991, he has been delivering dynamic messages of hope and inspiration ot audiences around the world.  Whether your audience is 10 or 10,000, in North America or abroad, Eric can deliver a tailor-made message of inspiration that will leave your audience mesmerized and ready for more. </Typography>
+                  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+                  ONE-ON-ONE
+                  </Typography>
+                  <Typography component="h3" variant="h3" paragraph="true">
+                    Targeted, confidential, accountable conversations that focus on the specific areas holding you back or limiting your performance.  In life and business everyone needs someone to talk too and focus in on the barriers getting in the way.  Dr. Scroggins has an innate and intuitive ability to ask question and give direction that lead to quick change and incredible results.  This allows you to be introduced to you in a whole new way.
+                  </Typography>
+                  <Typography component="h3" variant="h3" paragraph="true">
+                    Eric’s one-on-one coaching is design specifically for you.  Custom tailored to the areas that are most important to your overall success.  This targeted approach allows you to focus and “win” faster with sustainable results.
+                  </Typography>
+                  <Typography component="h3" variant="h3" paragraph="true">
+                    Dr. Scroggins helps you personally and professionally realize that “You Can”.
+                  </Typography>
+                        </div>
+                <hr style={{ borderColor: primaryColor }}/>
+                        <div className={classes.section} ref="EricsSpeakingPhilosophy">
+                  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+                  GROUP
+                  </Typography>
+                  <Typography component="h3" variant="h3" paragraph="true">
+                    Coaching with likeminded leaders in a group setting or with your team allows synergy to drive the learning process.  Dr. Scroggins utilizes the dynamic of the group as a powerful tool to help you meet objectives.  He engages the synergistic learning that the group environment provides and allows the differing mindsets to stretch your thinking to new levels.
+                  </Typography>
+                  <Typography component="h3" variant="h3" paragraph="true">
+                    Group coaching with Eric is fun, encouraging and filled with humor and real conversations that help you partner with colleagues for greater success.
+                  </Typography>
                 </div>
-        <hr style={{ borderColor: primaryColor }}/>
-                <div className={classes.section} ref="EricsSpeakingPhilosophy">
-	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
-	    		GROUP
-	    	  </Typography>
-                <Typography component="h3" variant="h3" paragraph="true">Eric’s speaking philosophy is to ensure that he connects with the audience members and understands their greatest desires.  He knows that audiences want to hear real-life stories about real people that can help them relate the message to achieving their own destinies.  It isn’t uncommon to find Dr. Scroggins engaging with the audience prior to and after the presentation, making a human connection and inspiring participants to reach eyond their perceived limitations.  As a result, Eric’s speaking style incorporates humor, stories, information, and above all, inspiration that gives the audience a sense of passion to achieve extraordinary results. </Typography>
-                </div>
-          <hr style={{ borderColor: primaryColor }}/>
+                <hr style={{ borderColor: primaryColor }}/>
                 <div className={classes.section} ref="speakingTopics">
-	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
-	    		PERSONAL
-	    	  </Typography>
-                  <ul>
-                    <li><Typography component="h3" variant="h3">Shattering Barriers</Typography></li>
-                    <li><Typography component="h3" variant="h3">Embracing Change</Typography></li>
-                    <li><Typography component="h3" variant="h3">Pursuing Your Passions</Typography></li>
-                    <li><Typography component="h3" variant="h3">Overcoming Your Fears</Typography></li>
-                    <li><Typography component="h3" variant="h3">Growing Small Businesses</Typography></li>
-                    <li><Typography component="h3" variant="h3">Selling In Any Economy</Typography></li>
-                    <li><Typography component="h3" variant="h3">Prospecting Properly</Typography></li>
-                    <li><Typography component="h3" variant="h3">Connecting Correctly – The Power of Teamwork</Typography></li>
-                    <li><Typography component="h3" variant="h3">Leading With Vision</Typography></li>
-                    <li><Typography component="h3" variant="h3">Breaking the Limiting Beliefs</Typography></li>
-                    <li><Typography component="h3" variant="h3">Creating a Healthy Lifestyle</Typography></li>
-                    <li><Typography component="h3" variant="h3">Achieving Prosperity</Typography></li>
-                  </ul>
+                  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+                  PERSONAL
+                  </Typography>
+                  <Typography component="h3" variant="h3" paragraph="true">
+                    Are you ready to dig deep?  When it comes to personal development high performers are constantly exploring their inner most thoughts and beliefs to identify what’s holding them back.  Personal coaching with Dr. Scroggins encourages you to dig deeper to find those things while simultaneously develop a customized plan of action to overcome each one.
+                  </Typography>
                 </div>
-          <hr style={{ borderColor: primaryColor }}/>
+                <hr style={{ borderColor: primaryColor }}/>
                 <div className={classes.section} ref="journeyToOneRedmond">
-	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
-	    		PROFESSIONAL
-	    	  </Typography>
-                  <Typography component="h3" variant="h3" paragraph="true">
-  OneRedmond is the start-up economic development organization located in Redmond, Washington.  This group was formed through a merger of three legacy organizations: Greater Redmond Chamber of Commerce, Realize Redmond and Redmond Economic Development Alliance.  In an effort to create one central entity with a focus on driving economic vitality throughout Redmond and Seattle’s eastside, OneRedmond was formed in 2011 and launched in 2012 and has become a world CLASS economic development organization.
+                  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+                  PROFESSIONAL
                   </Typography>
                   <Typography component="h3" variant="h3" paragraph="true">
-  The formation and launch process was not an easy one.  Each legacy group had certain expectations and preconceived ideas regarding the new organization.  As an early adopter and founding board member, my role was to assist each person involved see the vision of the new organization and to promote the overall benefits to the community.  Today, I am honored to serve as the President of the Board of Directors or a second term with a vision to help OneRedmond impact a larger geographic area and provide powerful tools to drive economic vitality in our region.  As of our latest management report, OneRedmond has achieved its annual goals in business expansion and has assisted in bringing more than 5 companies to the Redmond area with great work happening in community development and robust partnerships forming with education.
+                    High performance productivity requires certain habits and disciplines.  If you want to become a high-performance professional that reaches untapped levels of success it takes professional coaching.  Dr. Scroggins will help you build in discipline, create habits and provide resources that will propel you to the next level of success and productivity.
                   </Typography>
                   <Typography component="h3" variant="h3" paragraph="true">
-  OneRedmond is focused on four main areas: Business Acquisition, Business Retention, Community Development and Education.  These four areas form the basis for the strategic plan to make Redmond the place of choice for new business and growing businesses.
+                  Whether through technology, a collaborative connected community or with a customized strategy for your industry and position, Dr. Scroggins will partner with you to reach these unexplored heights.
                   </Typography>
                 </div>
               </div>

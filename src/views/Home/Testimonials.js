@@ -16,6 +16,7 @@ import Muted from "components/Typography/Muted.jsx";
 import Warning from "components/Typography/Warning.jsx";
 
 import testimonialsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/testimonialsStyle.jsx";
+import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 
 import kendall from "assets/img/faces/kendall.jpg";
 import christian from "assets/img/faces/christian.jpg";
@@ -44,79 +45,28 @@ function SectionTestimonials({ ...props }) {
               <Carousel {...settings}>
                 <div>
                   <Card testimonial plain className={classes.card2}>
-                    <CardAvatar testimonial plain>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        <img src={kendall} alt="..." />
-                      </a>
-                    </CardAvatar>
                     <CardBody plain>
-                      <h5 className={classes.cardDescription}>
-                        "I speak yell scream directly at the old guard on behalf
-                        of the future. I gotta say at that time I’d like to meet
-                        Kanye I speak yell scream directly at the old guard on
-                        behalf of the future. My brother Chance!!!<br />Thank
-                        you for letting me work on this masterpiece. One of my
-                        favorite people."
+                      <h5 className={classes.cardDescription} style={{color: primaryColor, fontWeight: 'bold'}}>
+                        "My dear friends Dr. Eric and Saundra, you left us on fire here in Uganda! Everybody is on fire and they can’t wait to put into practice everything you taught us! Everybody keeps asking that when is Dr. Eric and Saundra coming back this YEAR!!! The teachings, impartation and fire you ignited among us is so incredible. I appreciate your time and man, the workshops were Devine, practical, and life changing…."
                       </h5>
-                      <h4 className={classes.cardTitle}>Kendall Thompson</h4>
+                      <h4 className={classes.cardTitle}>Martin Ssepuuya</h4>
                       <Muted>
-                        <h6>CEO @ Marketing Digital Ltd.</h6>
+                        <h6>CEO, Asante Tours Safaris & Travel LTD.</h6>
                       </Muted>
                     </CardBody>
-                    <div>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                    </div>
                   </Card>
                 </div>
                 <div>
                   <Card testimonial plain className={classes.card2}>
-                    <CardAvatar testimonial plain>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        <img src={christian} alt="..." />
-                      </a>
-                    </CardAvatar>
                     <CardBody plain>
-                      <h5 className={classes.cardDescription}>
-                        "Thank you Anna for the invite thank you to the whole
-                        Vogue team Called I Miss the Old Kanye At the God's last
-                        game Chop up the soul Kanye. I promise I will never let
-                        the people down. I want a better life for all!!! Pablo
-                        Pablo Pablo Pablo! Thank you Anna for the invite thank
-                        you to the whole Vogue team."
+                      <h5 className={classes.cardDescription} style={{color: primaryColor, fontWeight: "bold"}}>
+                        "Have you ever felt that pull toward something greater, a pull that comes from a place rooted so deep you know in your heart it is your true direction, yet it is rooted so deep that the way there, the way from where you are now to where you want to be is obscure and seemingly nonexistent?  Through Eric Scroggins’ book, through his lessons and through his passion, you will find your way; you will find your way to the life you only thought could exist in a dream. Get ready to find your vision, and live it."
                       </h5>
-                      <h4 className={classes.cardTitle}>Christian Louboutin</h4>
+                      <h4 className={classes.cardTitle}>Jennifer Lee Tracy</h4>
                       <Muted>
-                        <h6>Designer @ Louboutin & Co.</h6>
+                        <h6>Author of Sincerely, The Mentor: A Journey of Perception</h6>
                       </Muted>
                     </CardBody>
-                    <div>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                      <Warning>
-                        <Star className={classes.starIcons} />
-                      </Warning>
-                    </div>
                   </Card>
                 </div>
               </Carousel>
