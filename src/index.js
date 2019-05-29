@@ -4,6 +4,7 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Link } from "react-router-dom";
 // sections for this page
 import Header from "components/Header/Header.jsx";
+import Footer from "components/Footer.js";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import ScrollToTop from "Components/ScrollToTop.js";
 
@@ -30,6 +31,7 @@ ReactDOM.render(
         return <Route exact path={prop.path} key={key} component={prop.component} />;
       })}
       </div>
+      <Footer />
     </ScrollToTop>
   </Router>,
   document.getElementById("root")

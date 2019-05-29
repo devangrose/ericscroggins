@@ -24,8 +24,31 @@ import InfoArea from "components/InfoArea/InfoArea.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Footer from "components/Footer/Footer.jsx";
+import Facebook from '../../assets/facebook-logo.png';
+import Insta from '../../assets/instagram-logo.png';
+import LinkedIn from "../../assets/linkedin-logo.png";
+import Twitter from "../../assets/twitter-logo.png";
+import { primaryColor as redColor } from "assets/jss/material-kit-pro-react.jsx";
+import Youtube from '../../assets/youtube-logo.png';
 
 import contactUsStyle from "assets/jss/material-kit-pro-react/views/contactUsStyle.jsx";
+
+const styles = {
+  ...contactUsStyle,
+  socials: {
+    filter: 'invert(1)',
+    height: "2rem",
+    width: "auto",
+    margin: "1px",
+    color: redColor,
+    '&:hover': {
+      fontStyle: "italic",
+    },
+    '&:visited':{
+      color: redColor
+    } 
+  },
+}
 
 const CustomSkinMap = withScriptjs(
   withGoogleMap(props => (
@@ -192,6 +215,36 @@ class ContactUsPage extends React.Component {
                     icon={Phone}
                     iconColor="primary"
                   />
+                  <InfoArea
+                    className={classes.info}
+                    title="Check us out on social media!"
+                    description={
+                      <GridContainer
+                         spacing={0}
+                         direction="row"
+                         alignItems="center"
+                         justify="center"
+                      >
+                        <GridItem xs={2}>
+                          <a href="https://www.facebook.com/pamneighborsSMPSeattle/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
+                        </GridItem>
+                        <GridItem xs={2}>
+                          <a href="https://www.instagram.com/scalpmicropigmentationseattle/?hl=en"><img alt="instagram" className={classes.socials} src={Insta} /></a>
+                        </GridItem>
+                        <GridItem xs={2}>
+                          <a href="https://www.youtube.com/channel/UCBPTN3OPwu_ugQ1xSpiPUpA"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
+                        </GridItem>
+                        <GridItem xs={2}>
+                          <a href="https://www.facebook.com/pamneighborsSMPSeattle/"><img alt="twitter" className={classes.socials} src={Twitter} /></a>
+                        </GridItem>
+                        <GridItem xs={2}>
+                          <a href="https://www.facebook.com/pamneighborsSMPSeattle/"><img alt="linkedin" style={{height: "2.1rem"}} src={LinkedIn} /></a>
+                        </GridItem>
+                      </GridContainer>
+                    }
+                    icon={Favorite}
+                    iconColor="primary"
+                  />
                 </GridItem>
               </GridContainer>
             </div>
@@ -202,4 +255,4 @@ class ContactUsPage extends React.Component {
   }
 }
 
-export default withStyles(contactUsStyle)(ContactUsPage);
+export default withStyles(styles)(ContactUsPage);

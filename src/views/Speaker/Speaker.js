@@ -230,54 +230,54 @@ class Speaker extends Component {
             </GridItem>
             <GridItem item xs={12} md={8}>
               <div>
-                <div style={{marginBottom: '20%'}} ref="fuelYourTeamsVision">
-	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
+        <div style={{marginBottom: '20%'}} ref="fuelYourTeamsVision">
+          <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
 	    		KEYNOTE
 	    	  </Typography>
-                  <Typography component="h3" variant="h3" paragraph="true">When it comes to choosing a professional speaker for your next event, you’ll find no one more respected wtih more insight, no one who will leave your audience or colleagues with such a sense of enthusiasm, passion for life, and a “can do” attitude as Dr. Eric J. Scroggins.  Eric is one of the most gifted communicators of our generation, and sense 1991, he has been delivering dynamic messages of hope and inspiration ot audiences around the world.  Whether your audience is 10 or 10,000, in North America or abroad, Eric can deliver a tailor-made message of inspiration that will leave your audience mesmerized and ready for more. </Typography>
-                </div>
+          <Typography component="h3" variant="h3" paragraph="true">When it comes to choosing a professional speaker for your next event, you won’t find someone who will leave your audience or colleagues with such a sense of enthusiasm, passion for life, and a YOU CAN attitude as Dr. Eric J. Scroggins. </Typography>
+          <Typography component="h3" variant="h3" paragraph="true">As a result, Eric’s speaking style incorporates humor, stories, information, and above all, inspiration that gives the audience a sense of passion to achieve extraordinary results. </Typography>
+          <Typography component="h3" variant="h3" paragraph="true">If you are looking for a speaker who will leave a lasting impression and cause your audience to take action, then book Eric today.</Typography>
+        </div>
         <hr style={{ borderColor: primaryColor }}/>
-                <div className={classes.section} ref="EricsSpeakingPhilosophy">
+        <div className={classes.section} ref="EricsSpeakingPhilosophy">
 	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
 	    		WORKSHOPS
 	    	  </Typography>
-                <Typography component="h3" variant="h3" paragraph="true">Eric’s speaking philosophy is to ensure that he connects with the audience members and understands their greatest desires.  He knows that audiences want to hear real-life stories about real people that can help them relate the message to achieving their own destinies.  It isn’t uncommon to find Dr. Scroggins engaging with the audience prior to and after the presentation, making a human connection and inspiring participants to reach eyond their perceived limitations.  As a result, Eric’s speaking style incorporates humor, stories, information, and above all, inspiration that gives the audience a sense of passion to achieve extraordinary results. </Typography>
-                </div>
+          <Typography component="h3" variant="h3" paragraph="true">Eric loves working with groups to obtain common goals. Whether he is provided with the needs of a team or whether he develops a presentation based on the organization’s industry and current issues his training is tailored and delivered with such energy that the solutions are easily received, and the work begins before the group even leaves the event!</Typography>
+          <Typography component="h3" variant="h3" paragraph="true">It isn’t uncommon to find Dr. Scroggins engaging with the audience prior to and after the presentation. Making a human connection and encouraging participants to dig deep is what he does best and he wants to hear and understand that what he is delivering is what is needed.</Typography>
+        </div>
           <hr style={{ borderColor: primaryColor }}/>
-                <div className={classes.section} ref="speakingTopics">
+        <div className={classes.section} ref="speakingTopics">
 	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
 	    		INSPIRATIONAL
 	    	  </Typography>
-                  <ul>
-                    <li><Typography component="h3" variant="h3">Shattering Barriers</Typography></li>
-                    <li><Typography component="h3" variant="h3">Embracing Change</Typography></li>
-                    <li><Typography component="h3" variant="h3">Pursuing Your Passions</Typography></li>
-                    <li><Typography component="h3" variant="h3">Overcoming Your Fears</Typography></li>
-                    <li><Typography component="h3" variant="h3">Growing Small Businesses</Typography></li>
-                    <li><Typography component="h3" variant="h3">Selling In Any Economy</Typography></li>
-                    <li><Typography component="h3" variant="h3">Prospecting Properly</Typography></li>
-                    <li><Typography component="h3" variant="h3">Connecting Correctly – The Power of Teamwork</Typography></li>
-                    <li><Typography component="h3" variant="h3">Leading With Vision</Typography></li>
-                    <li><Typography component="h3" variant="h3">Breaking the Limiting Beliefs</Typography></li>
-                    <li><Typography component="h3" variant="h3">Creating a Healthy Lifestyle</Typography></li>
-                    <li><Typography component="h3" variant="h3">Achieving Prosperity</Typography></li>
-                  </ul>
-                </div>
+          <Typography component="h3" variant="h3" paragraph="true">Dr. Scroggins has been delivering insightful messages of hope and inspiration to audiences around the world since 1991. Whether your audience is 10 or 10,000, in North America or abroad, Eric knows that audiences want to hear real-life stories about real people that can help them relate his message to achieving their own successes.</Typography>
+          <Typography component="h3" variant="h3" paragraph="true">Eric can deliver a tailor-made message of inspiration that will leave your audience mesmerized and ready for more.</Typography>
+          <Typography component="h3" variant="h3" paragraph="true">Eric’s speaking philosophy is to ensure that he connects with the audience members and understands their greatest desires. He knows that audiences want to hear real-life stories about real people that can help them relate the message to achieving their own destinies and he delivers just that.</Typography>
+        </div>
           <hr style={{ borderColor: primaryColor }}/>
-                <div className={classes.section} ref="journeyToOneRedmond">
+        <div className={classes.section} ref="journeyToOneRedmond">
 	    	  <Typography component="h2" variant="h2" paragraph="true" align="center" style={{color: primaryColor}}>
 	    		CORPORATE
 	    	  </Typography>
-                  <Typography component="h3" variant="h3" paragraph="true">
-  OneRedmond is the start-up economic development organization located in Redmond, Washington.  This group was formed through a merger of three legacy organizations: Greater Redmond Chamber of Commerce, Realize Redmond and Redmond Economic Development Alliance.  In an effort to create one central entity with a focus on driving economic vitality throughout Redmond and Seattle’s eastside, OneRedmond was formed in 2011 and launched in 2012 and has become a world CLASS economic development organization.
-                  </Typography>
-                  <Typography component="h3" variant="h3" paragraph="true">
-  The formation and launch process was not an easy one.  Each legacy group had certain expectations and preconceived ideas regarding the new organization.  As an early adopter and founding board member, my role was to assist each person involved see the vision of the new organization and to promote the overall benefits to the community.  Today, I am honored to serve as the President of the Board of Directors or a second term with a vision to help OneRedmond impact a larger geographic area and provide powerful tools to drive economic vitality in our region.  As of our latest management report, OneRedmond has achieved its annual goals in business expansion and has assisted in bringing more than 5 companies to the Redmond area with great work happening in community development and robust partnerships forming with education.
-                  </Typography>
-                  <Typography component="h3" variant="h3" paragraph="true">
-  OneRedmond is focused on four main areas: Business Acquisition, Business Retention, Community Development and Education.  These four areas form the basis for the strategic plan to make Redmond the place of choice for new business and growing businesses.
-                  </Typography>
-                </div>
+          <Typography component="h3" variant="h3" paragraph="true">Eric works with each client to develop a customized presentation to meet the organization’s needs and goals. He is sure to provide takeaways that are aligned with the client’s desired outcomes and that can be immediately applied and measured. </Typography>
+          <Typography component="h3" variant="h3" paragraph="true">Because Dr. Scroggins has worked in the corporate arena in both for-profit and non-profit capacities, he has a powerful understanding of what needs to be presented to audiences looking to level up. He takes great pride in providing the necessary information to make a shift that can radically change the course of an organization in a positive direction.</Typography>
+          <Typography component="h3" variant="h3" paragraph="true">This is a list of topics Dr. Scroggins can tailor for your audience, but he is always open to developing topic that will resonate with your organization.</Typography>
+          <ul>
+            <li><Typography component="h3" variant="h3">Shattering Barriers</Typography></li>
+            <li><Typography component="h3" variant="h3">Embracing Change</Typography></li>
+            <li><Typography component="h3" variant="h3">Pursuing Your Passions</Typography></li>
+            <li><Typography component="h3" variant="h3">Overcoming Your Fears</Typography></li>
+            <li><Typography component="h3" variant="h3">Growing Small Businesses</Typography></li>
+            <li><Typography component="h3" variant="h3">Selling in Any Economy</Typography></li>
+            <li><Typography component="h3" variant="h3">Prospecting Properly</Typography></li>
+            <li><Typography component="h3" variant="h3">Connecting Correctly - The Power of Teamwork</Typography></li>
+            <li><Typography component="h3" variant="h3">Leading with Vision</Typography></li>
+            <li><Typography component="h3" variant="h3">Breaking the Limiting Beliefs</Typography></li>
+            <li><Typography component="h3" variant="h3">Creating a Healthy Lifestyle</Typography></li>
+            <li><Typography component="h3" variant="h3">Achieving Prosperity</Typography></li>
+          </ul>
+        </div>
               </div>
             </GridItem>
           </GridContainer>
