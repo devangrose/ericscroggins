@@ -89,7 +89,6 @@ class ShoppingCartPage extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
   }
 
   render() {
@@ -151,13 +150,19 @@ class ShoppingCartPage extends React.Component {
                 </Typography>
               </GridItem>
               <GridItem md={4} sm={12}>
-                <ShoppingCartRow image={hardcover} title="Vision Blockers - Hardcover" price={this.state.hardcoverPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.hardcover} total={this.state.hardcoverTotal} incrementQuantity="hardcover" incrementPrice="hardcoverPrice" incrementTotal="hardcoverTotal"/>
+                <div style={{height: "100%"}}>
+                  <ShoppingCartRow image={hardcover} title="Vision Blockers - Hardcover" price={this.state.hardcoverPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.hardcover} total={this.state.hardcoverTotal} incrementQuantity="hardcover" incrementPrice="hardcoverPrice" incrementTotal="hardcoverTotal"/>
+                </div>
               </GridItem>
               <GridItem md={4} sm={12}>
-                <ShoppingCartRow image={paperback} title="Vision Blockers - Paperback" price={this.state.paperbackPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.paperback} total={this.state.paperbackTotal} incrementQuantity="paperback" incrementPrice="paperbackPrice" incrementTotal="paperbackTotal"/>
+                <div style={{height: "100%"}}>
+                  <ShoppingCartRow image={paperback} title="Vision Blockers - Paperback" price={this.state.paperbackPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.paperback} total={this.state.paperbackTotal} incrementQuantity="paperback" incrementPrice="paperbackPrice" incrementTotal="paperbackTotal"/>
+                </div>
               </GridItem>
               <GridItem md={4} sm={12}>
-                <ShoppingCartRow image={spanish} title="Obstaculos a su Vision" price={this.state.spanishPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.spanish} total={this.state.spanishTotal} incrementQuantity="spanish" incrementPrice="spanishPrice" incrementTotal="spanishTotal"/>
+                <div>
+                  <ShoppingCartRow image={spanish} title="Obstaculos a su Vision" price={this.state.spanishPrice} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} quantity={this.state.spanish} total={this.state.spanishTotal} incrementQuantity="spanish" incrementPrice="spanishPrice" incrementTotal="spanishTotal"/>
+                </div>
               </GridItem>
               <GridItem md={12} style={{marginTop: '3%'}}>
                 <Typography variant="h3" component="h3" align="right">

@@ -7,6 +7,7 @@ import Logo from '../assets/logo.jpg';
 import Facebook from '../assets/facebook-logo.png';
 import Insta from '../assets/instagram-logo.png';
 import Youtube from '../assets/youtube-logo.png';
+import Twitter from "../assets/twitter-logo.png";
 
 import { primaryColor as redColor } from "assets/jss/material-kit-pro-react.jsx";
 
@@ -45,7 +46,7 @@ const styles = theme => ({
     color: 'blue',
     lineHeight: "1rem",
     whiteSpace: "nowrap",
-    textAlign: 'left',
+    textAlign: 'center',
     '&:visited':{
       color: "blue",
     },
@@ -58,7 +59,8 @@ const styles = theme => ({
     overflow: "hidden",
     lineHeight: "1rem",
     whiteSpace: "nowrap",
-    margin: "0"
+    margin: "0",
+    textAlign: "center",
   },
   footerTitle: {
     marginBottom: "0"
@@ -113,10 +115,10 @@ function Footer(props) {
               <img alt="logo" className={classes.logo} style={{margin: 'auto'}} src={Logo}/>
             </Grid>
             <Grid item xs={12} md={3} style={{paddingLeft: "2rem"}}>
-              <Typography  className={classes.footerTitle} style={{textAlign: 'left'}}><strong>PHONE</strong></Typography>
-              <Typography  className={classes.footerItem} style={{color: 'blue'}}><a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:425-258-6245"><span style={{color: 'black'}}>WA</span> 425.258.6245</a></Typography>
-              <Typography  className={classes.footerTitle} style={{textAlign: 'left'}}><strong>EMAIL</strong></Typography>
-              <Typography  className={classes.footerItem} style={{color: 'blue'}}><a href="mailto:pam@trilliumink.net" style={{textDecoration: "none",color: 'inherit'}}>pam@trilliumink.net</a></Typography>
+              <Typography  className={classes.footerTitle} align="center"><strong>PHONE</strong></Typography>
+              <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:971-319-5430"><span style={{color: 'black'}}></span> 971-319-5430</a></Typography>
+              <Typography  className={classes.footerTitle}><strong>EMAIL</strong></Typography>
+              <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a href="mailto:info@ericscroggins.com" style={{textDecoration: "none",color: 'inherit'}}>info@ericscroggins.com </a></Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -127,9 +129,9 @@ function Footer(props) {
               <Typography  className={classes.footerTitle} ><span style={{paddingRight: '6%'}}>Mon-Fri</span>9:30AM-5:30PM</Typography>
             </Grid> 
             <Grid item xs={12} md={6} className={classes.socialsContainer}>
-                <a href="https://www.facebook.com/pamneighborsSMPSeattle/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
-                <a href="https://www.instagram.com/scalpmicropigmentationseattle/?hl=en"><img alt="instagram" className={classes.socials} src={Insta} /></a>
-                <a href="https://www.youtube.com/channel/UCBPTN3OPwu_ugQ1xSpiPUpA"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
+                <a href="https://www.facebook.com/ericjscroggins/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
+                <a href="https://www.youtube.com/user/1scroger"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
+                <a href="https://twitter.com/ericscroggins"><img alt="twitter" className={classes.socials} src={Twitter} /></a>
             </Grid>
           </Grid>
         </Grid>

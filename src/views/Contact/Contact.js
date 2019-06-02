@@ -23,10 +23,8 @@ import GridItem from "components/Grid/GridItem.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-import Footer from "components/Footer/Footer.jsx";
 import Facebook from '../../assets/facebook-logo.png';
 import Insta from '../../assets/instagram-logo.png';
-import LinkedIn from "../../assets/linkedin-logo.png";
 import Twitter from "../../assets/twitter-logo.png";
 import { primaryColor as redColor } from "assets/jss/material-kit-pro-react.jsx";
 import Youtube from '../../assets/youtube-logo.png';
@@ -225,20 +223,14 @@ class ContactUsPage extends React.Component {
                          alignItems="center"
                          justify="center"
                       >
-                        <GridItem xs={2}>
-                          <a href="https://www.facebook.com/pamneighborsSMPSeattle/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
+                        <GridItem xs={4}>
+                          <a href="https://www.facebook.com/ericjscroggins/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
                         </GridItem>
-                        <GridItem xs={2}>
-                          <a href="https://www.instagram.com/scalpmicropigmentationseattle/?hl=en"><img alt="instagram" className={classes.socials} src={Insta} /></a>
+                        <GridItem xs={4}>
+                          <a href="https://www.youtube.com/user/1scroger"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
                         </GridItem>
-                        <GridItem xs={2}>
-                          <a href="https://www.youtube.com/channel/UCBPTN3OPwu_ugQ1xSpiPUpA"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
-                        </GridItem>
-                        <GridItem xs={2}>
-                          <a href="https://www.facebook.com/pamneighborsSMPSeattle/"><img alt="twitter" className={classes.socials} src={Twitter} /></a>
-                        </GridItem>
-                        <GridItem xs={2}>
-                          <a href="https://www.facebook.com/pamneighborsSMPSeattle/"><img alt="linkedin" style={{height: "2.1rem"}} src={LinkedIn} /></a>
+                        <GridItem xs={4}>
+                          <a href="https://twitter.com/ericscroggins"><img alt="twitter" className={classes.socials} src={Twitter} /></a>
                         </GridItem>
                       </GridContainer>
                     }

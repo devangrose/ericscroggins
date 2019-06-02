@@ -23,9 +23,9 @@ class ShoppingCartRow extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Card style={{ width: "20rem", margin: 'auto'}}>
+      <Card style={{ width: "20rem", margin: 'auto', height: "100%"}}>
         <img
-          style={{ height: "auto", width: "100%", display: "block" }}
+          style={{ height: "auto", width: "100%", display: "block", paddingTop: this.props.title.includes("Vision") ? "2vh" : "0" }}
           className={classes.imgCardTop}
           src={this.props.image}
           alt={this.props.alt}
