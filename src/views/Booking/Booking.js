@@ -5,6 +5,7 @@ import GridItem from "components/Grid/GridItem.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import axios from "axios";
 // @material-ui/icons
 import Check from "@material-ui/icons/Check";
 import Card from "components/Card/Card.jsx";
@@ -46,10 +47,60 @@ const styles = {
 
 class Booking extends Component {
 
-  handleSubmit(e){
-    e.preventDefault();
-    const data = new FormData(e.target);
+  constructor(props) {
+    super(props);
+    this.state = {
+      callInProgress: false 
+    };
   }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit = (event)=> {
+    event.preventDefault();
+
+    const url = "https://lvd8h5fog7.execute-api.us-east-1.amazonaws.com/default/sendEmail";
+
+    if( this.state.callInProgress == false) {
+      this.setState({ callInProgress: true }, () => 
+      {
+    
+        var template_params = {
+         "name": this.state.name,
+         "email": this.state.email,
+         "phone": this.state.phone,
+         "message": this.state.message,
+         "company": this.state.company,
+          "topic": this.state.topic,
+          "date": this.state.date,
+         "toEmail": "devangrose@gmail.com",
+        }
+      
+        axios.post(url, template_params)
+          .then( success => {
+            console.log(success);
+            if(success.data.status == 200) {
+              this.setState({ result: "success",
+              callInProgress: false });
+            }
+            else if (success.data.status == 400) {
+              this.setState({ result: "fail",
+              callInProgress: false });
+            }
+          })
+          .catch( error => {
+            console.log(error);
+            this.setState({ result: "fail",
+              callInProgress: false
+            });
+          });
+      });
+    }
+  } 
 
   render(){
     const { classes } = this.props;
@@ -65,26 +116,14 @@ class Booking extends Component {
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div className={classes.feeInfo}>
-                <Typography component="h3" variant="h3" style={{marginRight: 'auto',textDecoration: 'underline', color: 'black'}} paragraph>
+                <Typography component="h3" variant="h3" className={classes.left} style={{marginRight: 'auto',textDecoration: 'underline', color: 'black'}} paragraph>
                   Estimated Fee
                 </Typography>
-                <Typography component="h4" variant="h4" className={classes.left}>
-                  United States and Canada
-                </Typography>
                 <Typography component="h4" variant="h4" className={classes.right} align="right">
-                  $15,000
-                </Typography>
-                <Typography component="h4" variant="h4" className={classes.left}>
-                  International
-                </Typography>
-                <Typography component="h4" variant="h4" className={classes.right} align="right">
-                  $20,000
+                  20,000
                 </Typography>
                 <br style={{clear: 'both'}}/>
                 <br/>
-                <Typography component="h4" variant="h4" paragraph>
-                  *The speaking fee is inclusive of airfare, hotel, ground transportation, food and all other miscellaneous expenses. The fee also includes pre-speech interviews so Eric can customize his presentation to meet the goals and objectives of your meeting. Additional savings are available if you select his “Pre-Pay Option.” Ask for more details on this option.
-                </Typography>
                 <Typography component="h4" variant="h4" >
                   Dr. Eric Scroggins will make every effort to be accommodating and work within your speaker budget. He books his engagements 3-24 months in advance. Eric also offers volume discounts on his book, “Vision Blockers: How to Shatter Barriers to Achieve Your Destiny”, to be included in your conference amenity bags to be given to all attendees upon meeting registration.
                 </Typography>
@@ -102,21 +141,17 @@ class Booking extends Component {
                     </CardHeader>
                     <CardBody>
                       <GridContainer>
-                        <GridItem xs={12} sm={6} md={6}>
+                        <GridItem xs={12} sm={12} md={12}>
                           <CustomInput
-                            labelText="First Name"
-                            id="first"
-                            formControlProps={{
-                              fullWidth: true
-                            }}
-                          />
-                        </GridItem>
-                        <GridItem xs={12} sm={6} md={6}>
-                          <CustomInput
-                            labelText="Last Name"
+                            labelText="Name"
                             id="last"
                             formControlProps={{
                               fullWidth: true
+                            }}
+                            inputProps={{
+                              onChange: this.handleChange,
+                              name: "name",
+                              type: "text",
                             }}
                           />
                         </GridItem>
@@ -127,12 +162,22 @@ class Booking extends Component {
                         formControlProps={{
                           fullWidth: true
                         }}
+                        inputProps={{
+                          onChange: this.handleChange,
+                          name: "company",
+                          type: "text",
+                        }}
                       />
                       <CustomInput
                         labelText="Phone Number"
                         id="phone-number"
                         formControlProps={{
                           fullWidth: true
+                        }}
+                        inputProps={{
+                          onChange: this.handleChange,
+                          name: "phone",
+                          type: "text",
                         }}
                       />
                       <CustomInput
@@ -141,6 +186,11 @@ class Booking extends Component {
                         formControlProps={{
                           fullWidth: true
                         }}
+                        inputProps={{
+                          onChange: this.handleChange,
+                          name: "date",
+                          type: "text",
+                        }}
                       />
                       <CustomInput
                         labelText="Event Topic"
@@ -148,12 +198,22 @@ class Booking extends Component {
                         formControlProps={{
                           fullWidth: true
                         }}
+                        inputProps={{
+                          onChange: this.handleChange,
+                          name: "topic",
+                          type: "text",
+                        }}
                       />
                       <CustomInput
                         labelText="Email Address"
                         id="email-address"
                         formControlProps={{
                           fullWidth: true
+                        }}
+                        inputProps={{
+                          onChange: this.handleChange,
+                          name: "email",
+                          type: "text",
                         }}
                       />
                       <CustomInput
@@ -164,15 +224,21 @@ class Booking extends Component {
                         }}
                         inputProps={{
                           multiline: true,
-                          rows: 5
+                          rows: 5,
+                          onChange: this.handleChange,
+                          name: "message",
                         }}
                       />
-                    </CardBody>
-                    <CardFooter className={classes.justifyContentBetween}>
-                      <Button color="primary" className={classes.pullRight}>
+                      <Typography component="h3" style={{color: "green", display: this.state.result == "success" ? "block" : "none"}}>
+                        Message Sent Successfully.
+                      </Typography>
+                      <Typography component="h3" style={{color: "red", display: this.state.result == "fail" ? "block" : "none"}}>
+                        There was an error sending your message.
+                      </Typography>
+                      <Button color="primary" style={{display: 'block'}}  onClick={this.handleSubmit}>
                         Send Message
                       </Button>
-                    </CardFooter>
+                    </CardBody>
                   </form>
                 </Card>
               </GridItem>

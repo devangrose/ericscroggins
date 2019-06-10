@@ -57,6 +57,9 @@ function SectionTestimonials({ ...props }) {
                   </Card>
                 </div>
                 <div>
+                  <iframe width="100%" height="100%" src="https://vimeo.com/340045487" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div>
                   <Card testimonial plain className={classes.card2}>
                     <CardBody plain>
                       <h5 className={classes.cardDescription} style={{color: primaryColor, fontWeight: "bold"}}>

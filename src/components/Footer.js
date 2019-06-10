@@ -116,7 +116,7 @@ function Footer(props) {
             </Grid>
             <Grid item xs={12} md={3} style={{paddingLeft: "2rem"}}>
               <Typography  className={classes.footerTitle} align="center"><strong>PHONE</strong></Typography>
-              <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:971-319-5430"><span style={{color: 'black'}}></span> 971-319-5430</a></Typography>
+              <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:971.319.5430"><span style={{color: 'black'}}></span> 971-319-5430</a></Typography>
               <Typography  className={classes.footerTitle}><strong>EMAIL</strong></Typography>
               <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a href="mailto:info@ericscroggins.com" style={{textDecoration: "none",color: 'inherit'}}>info@ericscroggins.com </a></Typography>
             </Grid>
@@ -132,6 +132,8 @@ function Footer(props) {
                 <a href="https://www.facebook.com/ericjscroggins/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
                 <a href="https://www.youtube.com/user/1scroger"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
                 <a href="https://twitter.com/ericscroggins"><img alt="twitter" className={classes.socials} src={Twitter} /></a>
+                <a href="https://www.instagram.com/ericjscroggins/"><img alt="instagram" className={classes.socials} src={Insta} /></a>
+
             </Grid>
           </Grid>
         </Grid>

@@ -39,7 +39,7 @@ const actions = [
   'succeed',
   'achieve',
   'overcome',
-  'break through',
+  'excel',
   'accomplish',
   'inspire',
   'scale',

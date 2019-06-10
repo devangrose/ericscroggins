@@ -23,9 +23,9 @@ const style = {
 function CardExample(props) {
   const { classes } = props;
   return (
-    <Card style={{ width: ['lg','xl'].includes(props.width) ? "100%" : "80%", maxWidth: "30rem", margin: "3% auto"}}>
+    <Card style={{ width: ['lg','xl'].includes(props.width) ? "100%" : "80%", maxWidth: "30rem", height: "100%",margin: "3% auto"}}>
       <img
-        style={{ height: "180px", width: "100%", display: "block" }}
+        style={{ height: "auto", width: "100%", display: "block" }}
         className={classes.imgCardTop}
         src={props.src}
         alt="Card-img-cap"

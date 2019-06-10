@@ -19,7 +19,9 @@ class Section extends Component {
           <GridContainer style={{margin: "5%"}}>
             { this.props.cards.map((card, index) => (
               <GridItem md={12 / this.props.cards.length} style={{margin: "0px"}}>
-                <HomeCard src={card.src} title={card.title} body={card.body} link={card.link}/>
+                <div style={{height: "100%"}}>
+                  <HomeCard src={card.src} title={card.title} body={card.body} link={card.link}/>
+                </div>
               </GridItem>
             ))}
           </GridContainer>

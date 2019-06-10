@@ -12,6 +12,7 @@ import {
 import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import axios from "axios";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 import PinDrop from "@material-ui/icons/PinDrop";
@@ -19,6 +20,7 @@ import Phone from "@material-ui/icons/Phone";
 import BusinessCenter from "@material-ui/icons/BusinessCenter";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
+import { Typography } from "@material-ui/core";
 import GridItem from "components/Grid/GridItem.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
@@ -28,6 +30,7 @@ import Insta from '../../assets/instagram-logo.png';
 import Twitter from "../../assets/twitter-logo.png";
 import { primaryColor as redColor } from "assets/jss/material-kit-pro-react.jsx";
 import Youtube from '../../assets/youtube-logo.png';
+import * as emailjs from "emailjs-com";
 
 import contactUsStyle from "assets/jss/material-kit-pro-react/views/contactUsStyle.jsx";
 
@@ -124,15 +127,69 @@ const CustomSkinMap = withScriptjs(
 );
 
 class ContactUsPage extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      name: null,
+      email: null,
+      message: null,
+      phone: null,
+      result: null,
+      callInProgress: false,
+    }
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    const data = new FormData(e.target);
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
+
+
+  handleSubmit = (event)=> {
+    event.preventDefault();
+
+    const url = "https://lvd8h5fog7.execute-api.us-east-1.amazonaws.com/default/sendEmail";
+
+    if( this.state.callInProgress == false) {
+      this.setState({ callInProgress: true }, () => 
+      {
+    
+        var template_params = {
+         "name": this.state.name,
+         "email": this.state.email,
+         "phone": this.state.phone,
+         "message": this.state.message,
+         "toEmail": "devangrose@gmail.com",
+        }
+      
+        axios.post(url, template_params)
+          .then( success => {
+            console.log(success);
+            if(success.data.status == 200) {
+              this.setState({ result: "success",
+              callInProgress: false });
+            }
+            else if (success.data.status == 400) {
+              this.setState({ result: "fail",
+              callInProgress: false });
+            }
+          })
+          .catch( error => {
+            console.log(error);
+            this.setState({ result: "fail",
+              callInProgress: false
+            });
+          });
+      });
+    }
+  } 
   render() {
     const { classes } = this.props;
     const url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCWtNL43rZAsC2bRkR5ryzOs005edUug6o"
@@ -160,41 +217,65 @@ class ContactUsPage extends React.Component {
               <h2 className={classes.title}>Send Eric a message</h2>
               <GridContainer>
                 <GridItem md={6} sm={6}>
-                  <form onSubmit={this.handleSubmit}>
+                  <form onSubmit={(e) => this.handleSubmit(e)}>
                     <CustomInput
                       labelText="Your Name"
-                      id="float"
+                      id="name"
                       formControlProps={{
                         fullWidth: true
+                      }}
+                      inputProps={{
+                        onChange: this.handleChange,
+                        name: "name",
+                        type: "text",
                       }}
                     />
                     <CustomInput
                       labelText="Email address"
-                      id="float"
+                      id="email"
                       formControlProps={{
                         fullWidth: true
+                      }}
+                      inputProps={{
+                        onChange: this.handleChange,
+                        name: "email",
+                        type: "text",
                       }}
                     />
                     <CustomInput
                       labelText="Phone"
-                      id="float"
+                      id="phone"
                       formControlProps={{
                         fullWidth: true
+                      }}
+                      inputProps={{
+                        onChange: this.handleChange,
+                        name: "phone",
+                        type: "text",
                       }}
                     />
                     <CustomInput
                       labelText="Your message"
-                      id="float"
+                      id="message"
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
                         multiline: true,
-                        rows: 6
+                        rows: 6,
+                        onChange: this.handleChange,
+                        name: "message",
+                        type: "text",
                       }}
                     />
                     <div className={classes.textCenter}>
-                      <Button color="primary" round>
+                      <Typography component="h3" style={{color: "green", display: this.state.result == "success" ? "block" : "none"}}>
+                        Message Sent Successfully.
+                      </Typography>
+                      <Typography component="h3" style={{color: "red", display: this.state.result == "fail" ? "block" : "none"}}>
+                        There was an error sending your message.
+                      </Typography>
+                      <Button color="primary" round type="submit">
                         Send message
                       </Button>
                     </div>
@@ -206,8 +287,8 @@ class ContactUsPage extends React.Component {
                     title="Give us a ring"
                     description={
                       <p>
-                        Michael Jordan <br /> +40 762 321 762 <br /> Mon - Fri,
-                        8:00-22:00
+                        Eric Scroggins <br /> <a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:971.319.5430">971.319.5430</a> <br /> Mon - Fri,
+                        9:30am-5:30pm
                       </p>
                     }
                     icon={Phone}
@@ -223,14 +304,17 @@ class ContactUsPage extends React.Component {
                          alignItems="center"
                          justify="center"
                       >
-                        <GridItem xs={4}>
+                        <GridItem xs={3}>
                           <a href="https://www.facebook.com/ericjscroggins/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
                         </GridItem>
-                        <GridItem xs={4}>
+                        <GridItem xs={3}>
                           <a href="https://www.youtube.com/user/1scroger"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
                         </GridItem>
-                        <GridItem xs={4}>
+                        <GridItem xs={3}>
                           <a href="https://twitter.com/ericscroggins"><img alt="twitter" className={classes.socials} src={Twitter} /></a>
+                        </GridItem>
+                        <GridItem xs={3}>
+                          <a href="https://www.instagram.com/ericjscroggins/"><img alt="instagram" className={classes.socials} src={Insta} /></a>
                         </GridItem>
                       </GridContainer>
                     }
