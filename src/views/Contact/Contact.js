@@ -30,7 +30,7 @@ import Insta from '../../assets/instagram-logo.png';
 import Twitter from "../../assets/twitter-logo.png";
 import { primaryColor as redColor } from "assets/jss/material-kit-pro-react.jsx";
 import Youtube from '../../assets/youtube-logo.png';
-import * as emailjs from "emailjs-com";
+import loading from "assets/img/loading.gif";
 
 import contactUsStyle from "assets/jss/material-kit-pro-react/views/contactUsStyle.jsx";
 
@@ -269,6 +269,7 @@ class ContactUsPage extends React.Component {
                       }}
                     />
                     <div className={classes.textCenter}>
+                      <img src={loading} style={{margin: '0 auto', maxWidth: '50%',  display: this.state.callInProgress ? "block" : "none" }} />
                       <Typography component="h3" style={{color: "green", display: this.state.result == "success" ? "block" : "none"}}>
                         Message Sent Successfully.
                       </Typography>

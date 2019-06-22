@@ -13,6 +13,7 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import Button from "components/CustomButtons/Button.jsx";
+import loading from "assets/img/loading.gif";
 
 import contactsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/contactsStyle.jsx";
 
@@ -223,6 +224,7 @@ class Booking extends Component {
                           name: "message",
                         }}
                       />
+                      <img src={loading} style={{margin: '0 auto', maxWidth: '50%',  display: this.state.callInProgress ? "block" : "none" }} />
                       <Typography component="h3" style={{color: "green", display: this.state.result == "success" ? "block" : "none"}}>
                         Message Sent Successfully.
                       </Typography>
