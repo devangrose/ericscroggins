@@ -112,7 +112,10 @@ function Footer(props) {
             alignItems="center"
           >
             <Grid item xs={12} md={5} className={classes.logoWrapper} style={{textAlign: 'center', margin: '0 3%'}}>
-              <img alt="logo" className={classes.logo} style={{margin: 'auto'}} src={Logo}/>
+              <div>
+                <img alt="logo" className={classes.logo} style={{margin: 'auto', display: "block"}} src={Logo}/>
+                <Typography variant="subtitle1">Designed by Code Solutions, LLC</Typography>
+              </div>
             </Grid>
             <Grid item xs={12} md={3} style={{paddingLeft: "2rem"}}>
               <Typography  className={classes.footerTitle} align="center"><strong>PHONE</strong></Typography>
@@ -127,13 +130,13 @@ function Footer(props) {
             <Grid item xs={12} md={6} className={classes.businessHoursContainer}>
               <Typography  className={classes.footerTitle} ><strong>BUSINESS HOURS</strong></Typography>
               <Typography  className={classes.footerTitle} ><span style={{paddingRight: '6%'}}>Mon-Fri</span>9:30AM-5:30PM</Typography>
+
             </Grid> 
             <Grid item xs={12} md={6} className={classes.socialsContainer}>
                 <a href="https://www.facebook.com/ericjscroggins/"><img alt="facebook" className={classes.socials} src={Facebook} /></a>
                 <a href="https://www.youtube.com/user/1scroger"><img alt="youtube" className={classes.socials} src={Youtube} /></a>
                 <a href="https://twitter.com/ericscroggins"><img alt="twitter" className={classes.socials} src={Twitter} /></a>
                 <a href="https://www.instagram.com/ericjscroggins/"><img alt="instagram" className={classes.socials} src={Insta} /></a>
-
             </Grid>
           </Grid>
         </Grid>
