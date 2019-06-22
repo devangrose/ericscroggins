@@ -159,19 +159,19 @@ class Speaker extends Component {
 
   render() {
     const { classes } = this.props;
+
     return (
         <div>
-          {/*<HeroImage source={require('assets/img/hero.jpg')} heading="THE VOICE TO BREAK BARRIERS" />*/}
           <div className={classes.container} style={{paddingTop: '2%'}}>
 					<div style={{width: '100%', height: '50vh'}}>
 						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ksB9f6QLlRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture fullscreen;" allowfullscreen></iframe>
 					</div>
           <GridContainer spacing={24}>
-						<GridItem xs={12} md={12}>
+		<GridItem xs={12} md={12}>
 							
-						</GridItem>
-            <GridItem xs={12} md={4} hidden={['xs','s'].includes(this.props.width)}>
-              <div ref="slipperyDiv" hidden={this.state.stick} className={classes.slippery}>
+		</GridItem>
+            <GridItem xs={12} md={4} style={{ display: ['xs','sm'].includes(this.props.width) ? 'none' : ''}}>
+              <div ref="slipperyDiv" hidden={this.state.stick || ['xs','sm'].includes(this.props.width)} className={classes.slippery}>
                 <List>
                   <ListItem button onClick={this.getScrollToFunction(this.state.fuelHeight)}>
                     <ListItemIcon>
@@ -200,7 +200,7 @@ class Speaker extends Component {
                   </ListItem>
                 </List>
               </div>
-              <div style={{ width: this.state.divWidth }} hidden={!this.state.stick} className={classes.sticky}>
+              <div style={{ width: this.state.divWidth }} hidden={!this.state.stick || ['xs','sm'].includes(this.props.width)} className={classes.sticky}>
                 <List>
                   <ListItem button onClick={this.getScrollToFunction(this.state.fuelHeight)}>
                     <ListItemIcon>
@@ -239,10 +239,10 @@ class Speaker extends Component {
                     Targeted, confidential, accountable conversations that focus on the specific areas holding you back or limiting your performance.  In life and business everyone needs someone to talk too and focus in on the barriers getting in the way.  Dr. Scroggins has an innate and intuitive ability to ask question and give direction that lead to quick change and incredible results.  This allows you to be introduced to you in a whole new way.
                   </Typography>
                   <Typography component="h3" variant="h3" paragraph="true">
-                    Eric’s one-on-one coaching is design specifically for you.  Custom tailored to the areas that are most important to your overall success.  This targeted approach allows you to focus and “win” faster with sustainable results.
+                    Eric’s one-on-one coaching is designed specifically for you.  Custom tailored to the areas that are most important to your overall success.  This targeted approach allows you to focus and “win” faster with sustainable results.
                   </Typography>
                   <Typography component="h3" variant="h3" paragraph="true">
-                    Dr. Scroggins helps you personally and professionally realize that “You Can”.
+                    Dr. Scroggins helps you personally and professionally realize that “YOU CAN”.
                   </Typography>
                         </div>
                 <hr style={{ borderColor: primaryColor }}/>

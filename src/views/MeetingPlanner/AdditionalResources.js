@@ -6,6 +6,8 @@ import CardBody from "components/Card/CardBody.jsx";
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 
 import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
+import wheel from "assets/wheel.png";
+import photos from "assets/EricPhotos.zip";
 
 import {
   cardTitle,
@@ -35,8 +37,14 @@ class ConferenceCall extends Component {
           <Typography component="h3" variant="h3" className={classes.cardTitle}>
             Additional Resources
           </Typography>
-          <Typography component="body1" variant="body1" paragraph>
-            Eric’s Introduction, Bio, Photos, etc., can be found on the <Link to="/about" className={classes.cardLink}>about</Link> page of our website.
+          <Typography component="body1" variant="body1" >
+            Find Eric's downloadable bio <Link to="/about" className={classes.cardLink}>here</Link>.
+          </Typography>
+          <Typography component="body1" variant="body1" >
+            His logo <a className={classes.cardLink} href={wheel} download="EricLogo.png">here</a>.
+          </Typography>
+          <Typography component="body1" variant="body1" >
+            <a className={classes.cardLink} href={photos} download="EricPhotos.zip">Photos of Eric authorized for promotional use</a>.
           </Typography>
         </CardBody> 
       </Card>

@@ -23,20 +23,22 @@ const style = {
 function CardExample(props) {
   const { classes } = props;
   return (
-    <Card style={{ width: ['lg','xl'].includes(props.width) ? "100%" : "80%", maxWidth: "30rem", height: "100%",margin: "3% auto"}}>
+	  <div style={{display: 'inline-block', marginTop: '3vh', margin: '0 auto'}}>
+    <Card style={{ width: ['lg','xl'].includes(props.width) ? "100%" : "80%", maxWidth: "30rem", height: "100%",margin: "3vh auto"}}>
       <img
-        style={{ height: "auto", width: "100%", display: "block" }}
+        style={{ height: "auto", width: "100%", display: "block", margin: '0 auto' }}
         className={classes.imgCardTop}
         src={props.src}
         alt="Card-img-cap"
       />
-      <CardBody>
-        <h4  style={{textAlign: ['lg','xl'].includes(props.width) ? "" : "center"}} className={classes.cardTitle}>{props.title}</h4>
-        <div style={{textAlign: ['lg','xl'].includes(props.width) ? "" : "center"}}>
-          <Button color="primary" round><Link className={classes.link} to={props.link}>Learn More</Link></Button>
+      <div style={{padding: ['lg','xl'].includes(props.width) ? '3vh 3vw' : '3vh 0'}}>
+        <h4  style={{textAlign: ['lg','xl'].includes(props.width) ? "left" : "center"}} className={classes.cardTitle}>{props.title}</h4>
+        <div style={{textAlign: ['lg','xl'].includes(props.width) ? "left" : "center", width: '100%', margin: '0', padding: '0'}}>
+          <Button color="primary" round style={{maxWidth: '28rem'}}><Link className={classes.link} to={props.link}>Learn More</Link></Button>
         </div>
-      </CardBody>
+      </div>
     </Card>
+	  </div>
   );
 }
 

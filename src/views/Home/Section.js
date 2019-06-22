@@ -16,9 +16,9 @@ class Section extends Component {
           <div style={{margin: 'auto', textAlign: 'center'}}>
             <img src={this.props.img} style={{height: 'auto', maxWidth: '50%', }}/>
           </div>
-          <GridContainer style={{margin: "5%"}}>
+          <GridContainer style={{margin: "5%", textAlign: 'center'}}>
             { this.props.cards.map((card, index) => (
-              <GridItem md={12 / this.props.cards.length} style={{margin: "0px"}}>
+              <GridItem md={12 / this.props.cards.length} style={{margin: "0px, auto"}}>
                 <div style={{height: "100%"}}>
                   <HomeCard src={card.src} title={card.title} body={card.body} link={card.link}/>
                 </div>

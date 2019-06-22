@@ -170,7 +170,7 @@ class Speaker extends Component {
 						<GridItem xs={12} md={12}>
 							
 						</GridItem>
-            <GridItem xs={12} md={4} hidden={['xs','s'].includes(this.props.width)}>
+            <GridItem xs={12} md={4} hidden={['xs','sm'].includes(this.props.width)}>
               <div ref="slipperyDiv" hidden={this.state.stick} className={classes.slippery}>
                 <List>
                   <ListItem button onClick={this.getScrollToFunction(this.state.fuelHeight)}>

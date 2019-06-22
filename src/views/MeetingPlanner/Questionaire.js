@@ -5,7 +5,6 @@ import CardBody from "components/Card/CardBody.jsx";
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 
 import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
-import ClientQuestionnaire from "../../assets/Client_Questionnaire.docx";
 
 import {
   cardTitle,
@@ -43,7 +42,7 @@ class Questionaire extends Component {
           <Typography component="body1" variant="body1" paragraph>
             To ensure the highest quality presentation, please complete the client questionnaire and return it to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
           </Typography>
-          <a className={classes.cardLink} href={ClientQuestionnaire}>
+          <a className={classes.cardLink} href="https://drive.google.com/uc?export=download&id=1Brn4ccXIe9S8wEj8wl59Upg02m26C3jG">
             Download here! 
           </a>
         </CardBody> 

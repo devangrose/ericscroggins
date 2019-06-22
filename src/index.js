@@ -6,11 +6,11 @@ import { Router, Route, Switch, Link } from "react-router-dom";
 import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer.js";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import ScrollToTop from "Components/ScrollToTop.js";
+import ScrollToTop from "components/ScrollToTop.js";
 
 import indexRoutes from "routes/index.jsx";
 
-import "assets/scss/material-kit-pro-react.css?v=1.2.0";
+import "./assets/scss/material-kit-pro-react.css";
 import logo from './assets/img/logo-header.jpg';
 
 var hist = createBrowserHistory();

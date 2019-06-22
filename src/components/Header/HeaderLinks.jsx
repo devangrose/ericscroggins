@@ -4,6 +4,7 @@ import React, { Component }  from "react";
 import PropTypes from "prop-types";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -57,6 +58,13 @@ class HeaderLinks extends Component {
   handleClick = () => {
     this.setState(state => ({ open: !state.open }));
   };
+
+  componentDidUpdate(prevProps) {
+	if(prevProps.location != this.props.location) {
+		this.setState({ open: false });
+	}
+  }
+
   easeInOutQuad = (t, b, c, d) => {
     t /= d / 2;
     if (t < 1) return c / 2 * t * t + b;
@@ -100,7 +108,7 @@ class HeaderLinks extends Component {
 
     const { classes, dropdownHoverColor } = this.props;
     return (
-      <List className={classes.list + " " + classes.mlAuto}>
+      <List key={this.props.location.pathname} className={classes.list + " " + classes.mlAuto}>
         <ListItem className={classes.listItem}>
           <Link
             to="/about"
@@ -269,4 +277,4 @@ HeaderLinks.propTypes = {
   ])
 };
 
-export default withStyles(headerLinksStyle)(HeaderLinks);
+export default withRouter(withStyles(headerLinksStyle)(HeaderLinks));

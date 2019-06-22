@@ -5,6 +5,7 @@ import Carousel from "react-slick";
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
 import Star from "@material-ui/icons/Star";
+import Iframe from 'react-iframe';
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -56,8 +57,12 @@ function SectionTestimonials({ ...props }) {
                     </CardBody>
                   </Card>
                 </div>
-                <div>
-                  <iframe width="100%" height="100%" src="https://vimeo.com/340045487" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div style={{height: '40vh'}}>
+                  <Card testimonial plain className={classes.card2} style={{height: '40vh'}}>
+                    <CardBody plain style={{height: '100%'}}>
+		  <iframe src="https://player.vimeo.com/video/340047818" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen/>
+	  		</CardBody>
+	  	</Card>
                 </div>
                 <div>
                   <Card testimonial plain className={classes.card2}>
@@ -69,6 +74,40 @@ function SectionTestimonials({ ...props }) {
                       <Muted>
                         <h6>Author of Sincerely, The Mentor: A Journey of Perception</h6>
                       </Muted>
+                    </CardBody>
+                  </Card>
+                </div>
+                <div style={{height: '40vh'}}>
+                  <Card testimonial plain className={classes.card2} style={{height: '50vh'}}>
+                    <CardBody plain style={{height: '100%'}}>
+                      <iframe src="https://player.vimeo.com/video/340045487" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen/>
+                    </CardBody>
+                  </Card>
+                </div>
+                <div>
+                  <Card testimonial plain className={classes.card2}>
+                    <CardBody plain>
+                      <h5 className={classes.cardDescription} style={{color: primaryColor, fontWeight: 'bold'}}>
+                        Good Afternoon Eric,
+                      </h5>
+                      <h5 className={classes.cardDescription} style={{color: primaryColor, fontWeight: 'bold'}}>
+                        I wanted to personally thank you for Saturday. The class was epic on many levels for the team and our family members.
+                        You had a keen ability to help my daughter regain herself after her panic attack, for that I thank you.
+                        You’re an amazing speaker and I hope to learn from you in the future. 
+                        Appreciate all that you do for NLC!
+                      </h5>
+                      <h4 className={classes.cardTitle}>Rachel</h4>
+                    </CardBody>
+                  </Card>
+                </div>
+                <div>
+                  <Card testimonial plain className={classes.card2}>
+                    <CardBody plain>
+                      <h5 className={classes.cardDescription} style={{color: primaryColor, fontWeight: 'bold'}}>
+                        Eric - Just had a phenomenal day. Got out of my own way and saw some big positive results so I'm pumped!
+                        Been in a funk since Tuesday. But our talk today and my mentality going into today turned things around!
+                      </h5>
+                      <h4 className={classes.cardTitle}>Mike Lee</h4>
                     </CardBody>
                   </Card>
                 </div>

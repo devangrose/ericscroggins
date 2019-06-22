@@ -66,7 +66,7 @@ class Components extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div>
-        <Parallax image={require("assets/home-hero.jpg")}>
+        <Parallax image={require("assets/erichero.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
@@ -74,14 +74,14 @@ class Components extends React.Component {
                   {['lg','xl'].includes(this.props.width) ?
 			  <div>
 			  	<div>
-					<h1 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN </h1>
+					<h1 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px", fontFamily: 'roboto'}} >YOU CAN </h1>
 			  	</div>
 			  	<div>
-				<h1 className="fade-in" style={{display: "inline", textDecoration: "underline",fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}}>{actions[this.state.index]}</h1>
+				<h1 className="fade-in" style={{display: "inline", textDecoration: "underline",fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px", fontFamily: 'roboto'}}>{actions[this.state.index]}</h1>
 			  	</div>
 			  </div>
                     :
-                  <h2 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline"}}>{actions[this.state.index]}</span></h2>
+                  <h2 className={classes.title} style={{fontSize: "50", backgroundColor: "rgba(0,0,0,.3)", padding: "20px 50px"}} >YOU CAN <span className="fade-in" style={{textDecoration: "underline", fontFamily: 'roboto'}}>{actions[this.state.index]}</span></h2>
                   }
                 </div>
               </GridItem>
@@ -93,7 +93,7 @@ class Components extends React.Component {
           <h1 style={{margin: "auto", textAlign: "center", paddingTop: "25px", color: primaryColor}}>Meet Eric</h1>
           <hr style={{width: "70%"}}/> <GridContainer style={{padding: "5%"}}>
             <GridItem md={4} style={{textAlign: "center"}}>
-                <img className={classes.imgCardTop} src={coaching} style={{width: "80%", margin:"auto"}} />
+                <img className={classes.imgCardTop} src={require("assets/home-hero.jpg")} style={{width: "80%", margin:"auto"}} />
             </GridItem>
             <GridItem md={6} style={{paddingTop: ['lg','xl'].includes(this.props.width) ? '' : '5%'}}>
               <Typography variant="h3" component="h3" paragraph>
@@ -127,12 +127,12 @@ class Components extends React.Component {
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>
               <div style={{height: '30vh',}}>
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KO0DX2_Gu4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KO0DX2_Gu4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
               </div>
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>
               <div style={{height: '30vh'}}>
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ksB9f6QLlRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ksB9f6QLlRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
               </div>
             </GridItem>
             <GridItem md={4} style={{margin: '3% 0'}}>

@@ -16,29 +16,29 @@ import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsS
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 
 const styles = {
-  ...componentsStyle,
-  content: {
-    paddingTop: '50px',
-		backgroundColor: '#ffffff'
-  },
-  grid: {
-    marginBottom: '50px',
-  }
+...componentsStyle,
+content: {
+paddingTop: '50px',
+	backgroundColor: '#ffffff'
+},
+grid: {
+marginBottom: '50px',
+}
 };
 
 class About extends Component {
 
-  render(){
-    const { classes } = this.props;
-    return (
-      <div style={{marginTop: '100px'}}>
-        <div style={{paddingTop: '3%',  textAlign: 'center'}}>
-					<Typography variant="h1" style={{color: primaryColor}} component="h1" paragraph>
-						Meet Dr. Eric Scroggins
-					</Typography>
-          <img src={wheel} style={{height: "30vh", width: 'auto', margin: '3%'}}/> 
-        </div>
-				<div style={{backgroundColor: '#ffffff'}}>
+render(){
+const { classes } = this.props;
+return (
+<div style={{marginTop: '100px'}}>
+<div style={{paddingTop: '3%',  textAlign: 'center'}}>
+				<Typography variant="h1" style={{color: primaryColor}} component="h1" paragraph>
+					Meet Dr. Eric Scroggins
+				</Typography>
+  <img src={wheel} style={{height: "30vh", width: 'auto', margin: '3%'}}/> 
+</div>
+	<div style={{backgroundColor: '#ffffff'}}>
         <div className={classNames(classes.container, classes.content)} style={{backgroundColor: '#ffffff'}}>
           <GridContainer spacing={32}>
             <GridItem md={4} sm={12} className={classes.grid}>

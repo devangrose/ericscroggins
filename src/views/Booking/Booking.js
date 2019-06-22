@@ -116,16 +116,10 @@ class Booking extends Component {
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div className={classes.feeInfo}>
-                <Typography component="h3" variant="h3" className={classes.left} style={{marginRight: 'auto',textDecoration: 'underline', color: 'black'}} paragraph>
-                  Estimated Fee
-                </Typography>
-                <Typography component="h4" variant="h4" className={classes.right} align="right">
-                  20,000
-                </Typography>
                 <br style={{clear: 'both'}}/>
                 <br/>
                 <Typography component="h4" variant="h4" >
-                  Dr. Eric Scroggins will make every effort to be accommodating and work within your speaker budget. He books his engagements 3-24 months in advance. Eric also offers volume discounts on his book, “Vision Blockers: How to Shatter Barriers to Achieve Your Destiny”, to be included in your conference amenity bags to be given to all attendees upon meeting registration.
+                  Dr. Eric Scroggins will make every effort to be accommodating and work within your speaker budget. He books his engagements 3-24 months in advance. Eric also offers volume discounts on his book, “Vision Blockers: How to Shatter Barriers to Achieve Your Destiny”, to be included in your conference amenity bags and given to all attendees upon meeting registration.
                 </Typography>
               </div>
             </GridItem>
