@@ -6,7 +6,7 @@ import CardBody from "components/Card/CardBody.jsx";
 import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 
 import componentsStyle from "assets/jss/material-kit-pro-react/views/componentsStyle.jsx";
-import wheel from "assets/wheel.png";
+import logo from 'assets/img/logo_download.pdf';
 import photos from "assets/EricPhotos.zip";
 
 import {
@@ -41,7 +41,7 @@ class ConferenceCall extends Component {
             Find Eric's downloadable bio <Link to="/about" className={classes.cardLink}>here</Link>.
           </Typography>
           <Typography component="body1" variant="body1" >
-            His logo <a className={classes.cardLink} href={wheel} download="EricLogo.png">here</a>.
+            His logo <a className={classes.cardLink} href={logo} download="EricLogo.pdf">here</a>.
           </Typography>
           <Typography component="body1" variant="body1" >
             <a className={classes.cardLink} href={photos} download="EricPhotos.zip">Photos of Eric authorized for promotional use</a>.
