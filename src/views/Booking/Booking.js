@@ -114,7 +114,7 @@ class Booking extends Component {
           <GridContainer spacing={24} className={classes.gridContainer}>
             <GridItem md={4} sm={12}>
               <div style={{height: '30vh'}}>
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen;" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6gGkWIC1JR4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen;" allowfullscreen></iframe>
               </div>
               <div className={classes.feeInfo}>
                 <br style={{clear: 'both'}}/>

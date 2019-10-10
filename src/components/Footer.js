@@ -119,7 +119,7 @@ function Footer(props) {
             </Grid>
             <Grid item xs={12} md={3} style={{paddingLeft: "2rem"}}>
               <Typography  className={classes.footerTitle} align="center"><strong>PHONE</strong></Typography>
-              <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:971.319.5430"><span style={{color: 'black'}}></span> 971-319-5430</a></Typography>
+              <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:206-999-9748"><span style={{color: 'black'}}></span>  206.999.9748</a></Typography>
               <Typography  className={classes.footerTitle}><strong>EMAIL</strong></Typography>
               <Typography  className={classes.footerItem} style={{color: 'blue'}} align="center"><a href="mailto:info@ericscroggins.com" style={{textDecoration: "none",color: 'inherit'}}>info@ericscroggins.com </a></Typography>
             </Grid>

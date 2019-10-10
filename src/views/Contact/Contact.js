@@ -288,7 +288,7 @@ class ContactUsPage extends React.Component {
                     title="Give us a ring"
                     description={
                       <p>
-                        Eric Scroggins <br /> <a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel:971.319.5430">971.319.5430</a> <br /> Mon - Fri,
+                        Eric Scroggins <br /> <a rel="noopener noreferrer" style={{textDecoration: "none",color: 'inherit'}} href="tel: 206-999-9748"> 206.999.9748</a> <br /> Mon - Fri,
                         9:30am-5:30pm
                       </p>
                     }

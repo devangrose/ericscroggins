@@ -43,7 +43,7 @@ return (
           <GridContainer spacing={32}>
             <GridItem md={4} sm={12} className={classes.grid}>
 							<div style={{maxHeight: "50vh", height: '100%'}}>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/y1-oweMM0NI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/y1-oweMM0NI?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
             </GridItem>
             <GridItem md={8} sm={12} className={classes.grid}>
