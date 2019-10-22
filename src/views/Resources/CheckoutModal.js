@@ -98,9 +98,7 @@ class _CheckoutModal extends Component {
         });
         console.log('[ERROR]', response);
       });
-      
   }
-
 
   render() {
     const { classes } = this.props;
@@ -124,16 +122,6 @@ class _CheckoutModal extends Component {
             style={{width: '80vw'}}
           >
             <div id="stripe" style={{width: "100%"}}>
-              {this.state.successMessage && 
-                <Typography style={{color: 'green'}}>
-                  {this.state.successsMessage}
-                </Typography>
-              }
-              {this.state.successMessage && 
-                <Typography style={{color: 'red'}}>
-                  {this.state.errorMessage}
-                </Typography>
-              }
               <form onSubmit={this.handleSubmit}>
                   <Typography variant="h2"> Payment Form </Typography>
                 <label>
@@ -176,6 +164,16 @@ class _CheckoutModal extends Component {
                   <CardElement />
                 </label>
                 <button onClick={this.handleSubmit}>Pay</button>
+                {this.state.successMessage && 
+                  <Typography style={{color: 'green'}}>
+                    {this.state.successsMessage}
+                  </Typography>
+                }
+                {this.state.successMessage && 
+                  <Typography style={{color: 'red'}}>
+                    {this.state.errorMessage}
+                  </Typography>
+                }
               </form>
             </div>
           </DialogContent>

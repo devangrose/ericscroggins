@@ -91,6 +91,10 @@ class ShoppingCartPage extends React.Component {
     e.preventDefault();
   }
 
+  handleSuccessMessage = () => {
+    this.handleModalClose();
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -171,7 +175,7 @@ class ShoppingCartPage extends React.Component {
                 <Button type="submit" color="primary" round style={{float: 'right'}} onClick={this.handleModalOpen}>
                   Complete Purchase <KeyboardArrowRight />
                 </Button>
-                <StripeProvider apiKey="pk_test_A9oaJL9EGtWykQ3nxDXTYfhm">
+                <StripeProvider apiKey="pk_live_RukkQ92SnRf7R1whBTXrkG5Z">
                   <Elements>
                     <CheckoutModal 
                         open={this.state.modalOpen} 
