@@ -8,10 +8,13 @@ import { primaryColor } from "assets/jss/material-kit-pro-react.jsx";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import ShoppingCartRow from "views/Resources/ShoppingCartRow.js";
 // core components
+import Slide from "@material-ui/core/Slide";
 import Parallax from "components/Parallax/Parallax.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
 
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutModal from "views/Resources/CheckoutModal.js";
@@ -38,6 +41,9 @@ const styles = {
   }
 }
 
+function Transition(props) {
+  return <Slide direction="down" {...props} />;
+}
 
 class ShoppingCartPage extends React.Component {
   constructor(props){
@@ -54,6 +60,8 @@ class ShoppingCartPage extends React.Component {
       spanishTotal: 0,
       cartTotal: 0.0,
       modalOpen: false,
+      successModalOpen: false,
+      failureModalOpen: false
     }
   }
   componentDidMount() {
@@ -91,9 +99,21 @@ class ShoppingCartPage extends React.Component {
     e.preventDefault();
   }
 
-  handleSuccessMessage = () => {
+  handleSuccess = () => {
     this.handleModalClose();
+    this.handleSuccessModalOpen();
   }
+
+  handleError = () => {
+    this.handleModalClose();
+    this.handleFailureModalOpen();
+  }
+
+  handleSuccessModalOpen = () => this.setState({ successModalOpen: true });
+  handleSuccessModalClose = () => this.setState({ successModalOpen: false });
+
+  handleFailureModalOpen = () => this.setState({ failureModalOpen: true });
+  handleFailureModalClose = () => this.setState({ failureModalOpen: false });
 
   render() {
     const { classes } = this.props;
@@ -180,6 +200,8 @@ class ShoppingCartPage extends React.Component {
                     <CheckoutModal 
                         open={this.state.modalOpen} 
                         handleClose={this.handleModalClose}
+                        handleSuccess={this.handleSuccess}
+                        handleError={this.handleError}
                         numHardCover={this.state.hardcover}
                         numPaperBack={this.state.paperback}
                         numSpanish={this.state.spanish}
@@ -191,6 +213,50 @@ class ShoppingCartPage extends React.Component {
         </div>
       </div>
       {/* ------------------------ Modal Code ------------------------------- */}
+       <Dialog
+          classes={{
+            root: classes.modalRoot,
+            paper: classes.modal
+          }}
+          open={this.state.successModalOpen}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={this.handleSuccessModalClose}
+          aria-labelledby="classic-modal-slide-title"
+          aria-describedby="classic-modal-slide-description"
+       >
+          <DialogContent
+            id="classic-modal-slide-description"
+            className={classes.modalBody}
+            style={{width: '80vw'}}
+          >
+              <Typography style={{color: 'green'}}>
+                Your order has been placed successfully!
+              </Typography>
+          </DialogContent>
+        </Dialog>
+       <Dialog
+          classes={{
+            root: classes.modalRoot,
+            paper: classes.modal
+          }}
+          open={this.state.failureModalOpen}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={this.handleFailureModalClose}
+          aria-labelledby="classic-modal-slide-title"
+          aria-describedby="classic-modal-slide-description"
+       >
+          <DialogContent
+            id="classic-modal-slide-description"
+            className={classes.modalBody}
+            style={{width: '80vw'}}
+          >
+              <Typography style={{color: 'green'}}>
+                An error has occured placing your order
+              </Typography>
+          </DialogContent>
+        </Dialog>
     </div>
     );
   }

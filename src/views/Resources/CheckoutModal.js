@@ -86,15 +86,13 @@ class _CheckoutModal extends Component {
                'Content-Type': 'application/json',
         }
       }).then(response => {
-        this.setState({
-          successMessage: "Order Submitted Successfully"
-        });
+        this.props.handleSuccess();
         console.log('[lambda]', response);
       })
       .catch(response => {
+        this.props.handleError();
         this.setState({
-          apiCallHoold: false,
-          errorMessage: 'There has been an error'
+          apiCallHoold: false
         });
         console.log('[ERROR]', response);
       });
@@ -164,16 +162,6 @@ class _CheckoutModal extends Component {
                   <CardElement />
                 </label>
                 <button onClick={this.handleSubmit}>Pay</button>
-                {this.state.successMessage && 
-                  <Typography style={{color: 'green'}}>
-                    {this.state.successsMessage}
-                  </Typography>
-                }
-                {this.state.successMessage && 
-                  <Typography style={{color: 'red'}}>
-                    {this.state.errorMessage}
-                  </Typography>
-                }
               </form>
             </div>
           </DialogContent>
