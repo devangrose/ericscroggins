@@ -166,7 +166,7 @@ class ContactUsPage extends React.Component {
          "email": this.state.email,
          "phone": this.state.phone,
          "message": this.state.message,
-         "toEmail": "devangrose@gmail.com",
+         "toEmail": "info@ericscroggins.com",
         }
       
         axios.post(url, template_params)

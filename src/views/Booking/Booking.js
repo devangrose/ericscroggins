@@ -78,7 +78,7 @@ class Booking extends Component {
          "company": this.state.company,
           "topic": this.state.topic,
           "date": this.state.date,
-         "toEmail": "devangrose@gmail.com",
+         "toEmail": "info@ericscroggins.com",
         }
       
         axios.post(url, template_params)
