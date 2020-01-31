@@ -40,7 +40,7 @@ class Questionaire extends Component {
             Ground Transportation – Car Service
           </Typography>
           <Typography component="body1" variant="body1" paragraph>
-            When you receive Eric’s flight itinerary from our office, please make arrangements for car service to and from the airport. Please send the details to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
+            When you receive Eric’s flight itinerary from our office, please make arrangements for car service to and from the airport. Please send the details to: <a href="mailto:info@ericscroggins.com" className={classes.emailLink}>info@ericscroggins.com</a>
           </Typography>
         </CardBody> 
       </Card>

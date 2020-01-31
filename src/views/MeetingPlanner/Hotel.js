@@ -40,7 +40,7 @@ class Questionaire extends Component {
             Hotel Accomodations
           </Typography>
           <Typography component="body1" variant="body1" paragraph>
-            Please reserve a room for Eric. When booking hotel accommodations, please notify the hotel that Eric’s lodging and meals are to be charged to your master account. Eric kindly requests a non-smoking room with a king-size bed. Please forward the hotel confirmation number to: <a href="mailto:alyssa@ericscroggins.com" className={classes.emailLink}>alyssa@ericscroggins.com</a>
+            Please reserve a room for Eric. When booking hotel accommodations, please notify the hotel that Eric’s lodging and meals are to be charged to your master account. Eric kindly requests a non-smoking room with a king-size bed. Please forward the hotel confirmation number to: <a href="mailto:info@ericscroggins.com" className={classes.emailLink}>info@ericscroggins.com</a>
           </Typography>
         </CardBody> 
       </Card>
